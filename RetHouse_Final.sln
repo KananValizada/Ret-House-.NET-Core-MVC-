@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetHouse_Final", "RetHouse_Final\RetHouse_Final.csproj", "{C645C3F8-003D-4BE1-9D1B-F75416C04401}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetHouse_Final", "RetHouse_Final\RetHouse_Final.csproj", "{C645C3F8-003D-4BE1-9D1B-F75416C04401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{011B7046-BB33-4DEE-94B2-35100B00EA06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{011B7046-BB33-4DEE-94B2-35100B00EA06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

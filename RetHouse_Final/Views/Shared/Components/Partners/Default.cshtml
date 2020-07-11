@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Partner>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="projects__partner-logo">
+                <ul class="list-inline mb-0">
+                    @foreach (var item in Model)
+                    {
+                        <li class="list-inline-item">
+                            <img src="~/images/@item.Logo" alt="" class="img-fluid">
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>

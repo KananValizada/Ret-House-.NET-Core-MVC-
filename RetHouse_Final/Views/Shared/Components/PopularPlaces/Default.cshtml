@@ -1,0 +1,64 @@
+﻿@model IEnumerable<City>
+@{ int propCount = 0;
+    int a = 0;
+    }
+    <div class="row">
+        <div class="col-lg-5 col-xl-5 col-padd">
+            <!-- CARD IMAGE -->
+            @foreach (var city in Model)
+            {
+                @foreach (var agent in city.Agents)
+                {
+                    propCount += @agent.Properties.Count;
+                }
+                <a href="#">
+                    <div class="card__image-hover-style-v3">
+                        <div class="card__image-hover-style-v3-thumb h-475">
+                            <img src="~/images/@city.Photo" alt="" class="img-fluid w-100">
+                        </div>
+                        <div class="overlay">
+                            <div class="desc">
+                                <h6 class="text-capitalize">@city.Name</h6>
+                                <p class="text-capitalize">@propCount properties</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                propCount = 0;
+                break;
+            }
+
+        </div>
+        <div class="col-lg-7 col-xl-7">
+            <div class="row">
+                @foreach (var city in Model)
+                {
+                    a++;
+                    if(a == 1)
+                    {
+                        continue;
+                    }
+                    @foreach (var agent in city.Agents)
+                    {
+                        propCount += @agent.Properties.Count;
+                    }
+                    <div class="col-md-6 col-padd">
+                        <!-- CARD IMAGE -->
+                        <a href="#">
+                            <div class="card__image-hover-style-v3">
+                                <div class="card__image-hover-style-v3-thumb h-230">
+                                    <img src="~/images/@city.Photo" alt="" class="img-fluid w-100">
+                                </div>
+                                <div class="overlay">
+                                    <div class="desc">
+                                        <h6 class="text-capitalize">@city.Name</h6>
+                                        <p class="text-capitalize">@propCount properties</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>

@@ -37,6 +37,7 @@ namespace Repository.Models
         public bool IsFeatured { get; set; }
         [Required]
         public PropStatus PropStatus { get; set; }
+        public PropFilter PropFilter { get; set; }
         public Country Country { get; set; }
         public Agent Agent { get; set; }
         public Agency Agency { get; set; }

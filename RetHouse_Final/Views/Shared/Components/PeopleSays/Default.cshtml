@@ -1,0 +1,22 @@
+﻿@model IEnumerable<PeopleSay>
+    <!-- TESTIMONIAL -->
+@foreach (var item in Model)
+{
+    <div class="item testimonial__block">
+        <div class="testimonial__block-card bg-reviews">
+            <p>
+                @item.PersonComment
+            </p>
+        </div>
+        <div class="testimonial__block-users">
+            <div class="testimonial__block-users-img">
+                <img src="~/images/@item.PersonImage" alt="" class="img-fluid">
+            </div>
+            <div class="testimonial__block-users-name">
+                @item.PersonName <br>
+                <span>@item.PersonJob</span>
+            </div>
+        </div>
+    </div>
+    <!-- END TESTIMONIAL -->
+}

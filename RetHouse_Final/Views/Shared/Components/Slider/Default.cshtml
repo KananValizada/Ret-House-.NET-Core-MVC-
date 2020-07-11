@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SliderItem>
+
+@{ var a = "";}
+@foreach (var item in Model)
+{
+    if (item.Id == 1)
+    {
+        a = "active";
+    }
+    else
+    {
+        a = "";
+    }
+    <div class="carousel-item @a banner-max-height">
+        <img class="d-block w-100" src="~/images/@item.Image" alt="@item.Id">
+        <div class="carousel-caption banner__slide-overlay d-flex h-100">
+            <div class="carousel__content">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-12 col-sm-12 text-center">
+                            <div class="slider__content-title ">
+                                <h2 data-animation="fadeInDown" data-delay=".2s" data-duration="1000ms"
+                                    class="text-white animated fadeInDown">
+                                    @item.Title
+                                </h2>
+                                <p data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms"
+                                   class="text-white animated fadeInUp">
+                                    @item.Slogan
+                                </p>
+                                <a href="@item.EndPoint" data-animation="fadeInUp" data-delay=".6s"
+                                   data-duration="1000ms"
+                                   class="btn btn-primary text-uppercase animated fadeInUp">
+                                    @item.ActionText
+                                    <i class="fa fa-angle-right arrow-btn "></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

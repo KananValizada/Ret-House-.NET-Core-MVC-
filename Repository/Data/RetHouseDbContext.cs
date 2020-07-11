@@ -28,6 +28,9 @@ namespace Repository.Data
         public DbSet<BlogPhase> BlogPhases { get; set; }
         public DbSet<BlogTag> BlogTags { get; set; }
         public DbSet<BlogTagRelate> BlogTagRelates { get; set; }
+        public DbSet<SliderItem> SliderItems { get; set; }
+        public DbSet<Partner> Partners { get; set; }
+        public DbSet<PeopleSay> PeopleSays { get; set; }
 
 
     }

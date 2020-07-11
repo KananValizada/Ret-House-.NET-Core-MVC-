@@ -4936,11 +4936,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\RetHouse_Final\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\RetHouse_Final\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\RetHouse_Final\\Repository\\Repository.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\RetHouse_Final\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\source\\repos\\RetHouse_Final\\Repository\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\RetHouse_Final\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
