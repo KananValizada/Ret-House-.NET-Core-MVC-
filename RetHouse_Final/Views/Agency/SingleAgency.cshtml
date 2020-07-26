@@ -1,0 +1,535 @@
+﻿@model Category
+
+@{
+    ViewData["Title"] = "SingleAgency";
+}
+
+<div class="bg-theme-overlay">
+    <section class="section__breadcrumb ">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="text-capitalize text-white ">Agentlik</h2>
+                    <ul class="list-inline ">
+                        <li class="list-inline-item">
+                            <a asp-controller="home" asp-action="index" class="text-white">
+                                ana səhifə
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a asp-controller="agency" asp-action="index" class="text-white">
+                                Agentliklər
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@foreach (var item in Model.Agencies)
+{
+    if (ViewBag.AgencyId == item.Id)
+    {
+        <section class="profile__agents">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row no-gutters">
+                            <div class="col-lg-12 cards mt-0">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6">
+                                        <a href="#" class="profile__agency-logo">
+                                            <img src="~/images/@item.Logo" alt="" class="img-fluid">
+                                            <div class="total__property-agent">@item.Properties.Count() Mülk</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 my-auto">
+                                        <div class="profile__agency-info">
+                                            <h5 class="text-capitalize">
+                                                <a href="#" target="_blank">@item.Name</a>
+                                            </h5>
+                                            <p class="text-capitalize mb-1">@item.Adress</p>
+
+                                            <ul class="list-unstyled mt-2">
+                                                <li>
+                                                    <a href="#" class="text-capitalize">
+                                                        <span>
+                                                            <i class="fa fa-building"></i>
+                                                            ofis :
+                                                        </span> @item.OfficePhone
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="text-capitalize">
+                                                        <span>
+                                                            <i class="fa fa-phone"></i>
+                                                            mobil :
+                                                        </span> @item.MobilePhone
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="text-capitalize">
+                                                        <span>
+                                                            <i class="fa fa-fax"></i> fax
+                                                            :
+                                                        </span> @item.Fax
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="text-capitalize">
+                                                        <span>
+                                                            <i class="fa fa-envelope"></i>
+                                                            email :
+                                                        </span>
+                                                        @item.Email
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <p class="mb-0 mt-3">
+                                                <button class="btn btn-social btn-social-o facebook mr-1">
+                                                    <i class="fa fa-facebook-f"></i>
+                                                </button>
+                                                <button class="btn btn-social btn-social-o twitter mr-1">
+                                                    <i class="fa fa-twitter"></i>
+                                                </button>
+
+                                                <button class="btn btn-social btn-social-o linkedin mr-1">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </button>
+                                                <button class="btn btn-social btn-social-o instagram mr-1">
+                                                    <i class="fa fa-instagram"></i>
+                                                </button>
+
+                                                <button class="btn btn-social btn-social-o youtube mr-1">
+                                                    <i class="fa fa-youtube"></i>
+                                                </button>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- LOCATION -->
+                        <div class="single__detail-features tabs__custom">
+                            <h5 class="text-capitalize detail-heading ">Agentlik haqqında</h5>
+                            <!-- FILTER VERTICAL -->
+                            <ul class="nav nav-pills myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active pills-tab-one" data-toggle="pill" href="#pills-tab-one"
+                                       role="tab" aria-controls="pills-tab-one" aria-selected="true">
+                                        Açıqlama
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pills-tab-two" data-toggle="pill" href="#pills-tab-two" role="tab"
+                                       aria-controls="pills-tab-two" aria-selected="false">
+                                        Mülklər
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pills-tab-three" data-toggle="pill" href="#pills-tab-three"
+                                       role="tab" aria-controls="pills-tab-three" aria-selected="false">
+                                        Agentlər
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pills-tab-four" data-toggle="pill" href="#pills-tab-four" role="tab"
+                                       aria-controls="pills-tab-four" aria-selected="false">
+                                        Qiymətləndirmələr
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="pills-tab-one" role="tabpanel"
+                                     aria-labelledby="pills-tab-one">
+                                    <div class="single__detail-desc">
+                                        <h5 class="text-capitalize detail-heading">Salam, xoş gördük</h5>
+                                        <div class="show__more">
+                                            @Html.Raw(item.Description)
+                                            <a href="javascript:void(0)" class="show__more-button ">daha çox</a>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tab-two" role="tabpanel"
+                                     aria-labelledby="pills-tab-two">
+                                    @foreach (var agent in item.Agents)
+                                    {
+                                        @foreach (var prop in agent.Properties)
+                                        {
+                                            var a = "";
+                                            @if (prop.IsFeatured)
+                                            {
+                                                a = "Önə çıxan";
+
+                                            }
+                                            else
+                                            {
+                                                if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                {
+                                                    a = "Satılıb";
+                                                }
+                                            }
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card__image card__box-v1">
+                                                        <div class="row no-gutters">
+                                                            <div class="col-md-4 col-lg-3 col-xl-4">
+                                                                <div class="card__image__header h-250">
+                                                                    <a href="#">
+                                                                        <div class="ribbon text-capitalize">@a</div>
+                                                                        @foreach (var img in prop.PropImages)
+                                                                        {
+                                                                            <img src="~/images/@img.Photo" alt=""
+                                                                                 class="img-fluid w100 img-transition">
+                                                                            break;
+                                                                        }
+
+                                                                        <div class="info">@prop.Status</div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
+                                                                <div class="card__image__body">
+
+                                                                    <span class="badge badge-primary text-capitalize mb-2">@Model.Name</span>
+                                                                    <h6>
+                                                                        <a href="#">@prop.Name</a>
+                                                                    </h6>
+                                                                    <div class="card__image__body-desc">
+                                                                        <!-- <p class="text-capitalize">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
+
+                                        </p> -->
+                                                                        <p class="text-capitalize">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            @prop.Adress
+                                                                        </p>
+                                                                    </div>
+
+                                                                    <ul class="list-inline card__content">
+                                                                        <li class="list-inline-item">
+
+                                                                            <span>
+                                                                                hamam <br>
+                                                                                <i class="fa fa-bath"></i> @prop.BathCount
+                                                                            </span>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <span>
+                                                                                yataq otaqı <br>
+                                                                                <i class="fa fa-bed"></i> @prop.BedCount
+                                                                            </span>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <span>
+                                                                                otaqlar <br>
+                                                                                <i class="fa fa-inbox"></i> @prop.RoomCount
+                                                                            </span>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <span>
+                                                                                sahə <br>
+                                                                                <i class="fa fa-map"></i> @prop.Area
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
+                                                                <div class="card__image__footer">
+                                                                    <figure>
+                                                                        <img src="~/images/logo.jpg" alt=""
+                                                                             class="img-fluid rounded-circle">
+                                                                    </figure>
+                                                                    <ul class="list-inline my-auto">
+                                                                        <li class="list-inline-item name">
+                                                                            <a href="#">
+                                                                                @agent.Name
+                                                                            </a>
+
+                                                                        </li>
+
+
+                                                                    </ul>
+                                                                    <ul class="list-inline my-auto ml-auto price">
+                                                                        <li class="list-inline-item ">
+
+                                                                            @if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                                            {
+                                                                                <h6> @prop.Price</h6>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <h6> @prop.Price ₼ / ayliq</h6>
+                                                                            }
+
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        }
+
+                                    }
+
+                                    <div class="clearfix"></div>
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-tab-three" role="tabpanel"
+                                     aria-labelledby="pills-tab-three">
+                                    <div class="row no-gutters">
+                                        @foreach (var agent in item.Agents)
+                                        {
+                                            <div class="col-lg-12 cards">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-6">
+                                                        <a href="#" class="profile__agents-avatar">
+                                                            <img src="~/images/@agent.Photo" alt="" class="img-fluid ">
+                                                            <div class="total__property-agent">@agent.Properties.Count() Mülk</div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-6 my-auto">
+                                                        <div class="profile__agents-info">
+                                                            <h5 class="text-capitalize">
+                                                                <a href="#" target="_blank">@agent.Name</a>
+                                                            </h5>
+                                                            <p class="text-capitalize mb-1">@Model.Name agenti</p>
+
+                                                            <ul class="list-unstyled mt-2">
+                                                                <li>
+                                                                    <a href="#" class="text-capitalize">
+                                                                        <span>
+                                                                            <i class="fa fa-building"></i> ofis :
+                                                                        </span> @agent.OfficePhone
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="text-capitalize">
+                                                                        <span>
+                                                                            <i class="fa fa-phone"></i> mobil :
+                                                                        </span> @agent.MobilePhone
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="text-capitalize">
+                                                                        <span>
+                                                                            <i class="fa fa-fax"></i> fax :
+                                                                        </span> @agent.Fax
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="text-capitalize">
+                                                                        <span>
+                                                                            <i class="fa fa-envelope"></i> email :
+                                                                        </span>
+                                                                        @agent.Email
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 mt-3">
+                                                                <button class="btn btn-social btn-social-o facebook mr-1">
+                                                                    <i class="fa fa-facebook-f"></i>
+                                                                </button>
+                                                                <button class="btn btn-social btn-social-o twitter mr-1">
+                                                                    <i class="fa fa-twitter"></i>
+                                                                </button>
+
+                                                                <button class="btn btn-social btn-social-o linkedin mr-1">
+                                                                    <i class="fa fa-linkedin"></i>
+                                                                </button>
+                                                                <button class="btn btn-social btn-social-o instagram mr-1">
+                                                                    <i class="fa fa-instagram"></i>
+                                                                </button>
+
+                                                                <button class="btn btn-social btn-social-o youtube mr-1">
+                                                                    <i class="fa fa-youtube"></i>
+                                                                </button>
+                                                            </p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        }
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tab-four" role="tabpanel"
+                                     aria-labelledby="pills-tab-four">
+
+                                    <!-- RATE US  WRITE -->
+                                    <div class="single__detail-features-review">
+                                        @foreach (var review in item.Reviews)
+                                        {
+                                            <div class="media mt-4">
+                                                <img class="mr-3 img-fluid rounded-circle" src="~/images/profile-blog.jpg" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mt-0">@review.Name</h6>
+                                                    <span class="mb-3">@review.CreatedAt.ToString("yyyy-MM-dd")</span>
+                                                    <ul class="list-inline">
+                                                        <li class="list-inline-item">
+                                                            @for (int z = 0; z < review.Star; z++)
+                                                            {
+                                                                <i class="fa fa-star selected"></i>
+                                                            }
+
+                                                            @for (int z = review.Star; z < 5; z++)
+                                                            {
+                                                                <i class="fa fa-star"></i>
+                                                            }
+
+                                                        </li>
+                                                        <li class="list-inline-item">@review.Star/5</li>
+                                                    </ul>
+                                                    <p>
+                                                        @review.Comment
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        <!-- COMMENT -->
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p class="mb-2">Your rating for this listing:</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <i class="fa fa-star selected"></i>
+                                                        <i class="fa fa-star selected"></i>
+                                                        <i class="fa fa-star selected"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item">3/5</li>
+                                                </ul>
+                                                <div class="form-group">
+                                                    <label>Your Name</label>
+                                                    <input type="text" class="form-control" required="required">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>What's your Email?</label>
+                                                    <input type="email" class="form-control" required="required">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Subject</label>
+                                                    <input type="text" class="form-control" required="required">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Your message</label>
+                                                    <textarea class="form-control" rows="4"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary float-right ">
+                                            Submit review <i class="fa fa-paper-plane ml-2"></i>
+                                        </button>
+                                        <!-- END COMMENT -->
+                                    </div>
+
+                                    <!-- END RATE US  WRITE -->
+                                    <div class="clearfix"></div>
+                                </div>
+
+
+                            </div>
+                            <!-- END FILTER VERTICAL -->
+                        </div>
+                        <!-- END LOCATION -->
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="sticky-top">
+                            <!-- FORM FILTER -->
+                            <div class="products__filter mb-30">
+                                <div class="products__filter__group">
+                                    <div class="products__filter__header">
+                                        <h5 class="text-center text-capitalize">Contact Form</h5>
+                                    </div>
+                                    <div class="products__filter__body">
+                                        <div class="form-group">
+                                            <label>Full Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email (Optional)</label>
+                                            <input type="email" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Your message</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="products__filter__footer">
+                                        <div class="form-group mb-0">
+                                            <button class="btn btn-primary text-capitalize btn-block">
+                                                submit <i class="fa fa-paper-plane ml-1"></i>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- END FORM FILTER -->
+                            <!-- ARCHIVE CATEGORY -->
+                            <aside class=" wrapper__list__category">
+                                <!-- CATEGORY -->
+                                <div class="widget widget__archive">
+                                    <div class="widget__title">
+                                        <h5 class="text-dark mb-0 text-center">Kateqoriyalar</h5>
+                                    </div>
+                                  <vc:category></vc:category>
+                                </div>
+                                <!-- END CATEGORY -->
+                            </aside>
+                            <!-- End ARCHIVE CATEGORY -->
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    }
+
+}
+
+
+@section Head{
+    <!-- SPECIFIC CSS -->
+    <link href="~/css/stylesbd04.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+}
+@section Scripts{ 
+<script src="~/"></script>
+}

@@ -3,21 +3,12 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "provider": "unpkg",
+      "provider": "jsdelivr",
       "library": "font-awesome@4.7.0",
-      "destination": "wwwroot/css/font-awesome/",
+      "destination": "wwwroot/font-awesome/",
       "files": [
         "css/font-awesome.min.css"
       ]
-    },
-    {
-      "provider": "jsdelivr",
-      "library": "font-awesome@4.7.0",
-      "destination": "wwwroot/css/font-awesome/"
-    },
-    {
-      "library": "font-awesome@5.13.1",
-      "destination": "wwwroot/font-awesome/"
     }
   ]
 }

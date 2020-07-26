@@ -6,7 +6,7 @@ namespace Repository.Enums
 {
     public enum PropStatus
     {
-        ForSale,
-        ForRent
+        Satılır,
+        Kirayə
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Category>
+@{
     ViewData["Title"] = "Agency Page";
 }
 
@@ -39,370 +40,98 @@
                         <!-- CATEGORY -->
                         <div class="widget widget__archive">
                             <div class="widget__title">
-                                <h5 class="text-dark mb-0 text-center">Categories Property</h5>
+                                <h5 class="text-dark mb-0 text-center">Kateqoriyalar</h5>
                             </div>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="#" class="text-capitalize">
-                                        apartement
-                                        <span class="badge badge-primary">14</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-capitalize">
-                                        villa
-                                        <span class="badge badge-primary">4</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-capitalize">
-                                        family house
-                                        <span class="badge badge-primary">2</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-capitalize">
-                                        modern villa
-                                        <span class="badge badge-primary">8</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-capitalize">
-                                        town house
-                                        <span class="badge badge-primary">10</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-capitalize">
-                                        office
-                                        <span class="badge badge-primary">12</span>
-                                    </a>
-                                </li>
-                            </ul>
+                          <vc:category></vc:category>
                         </div>
                         <!-- END CATEGORY -->
-                    </div>
-                    <!-- End ARCHIVE CATEGORY -->
-                    <div class="download mb-0">
-                        <h5 class="text-center text-capitalize">Property Attachments</h5>
-                        <div class="download__item">
-                            <a href="#" target="_blank">
-                                <i class="fa fa-file-pdf-o mr-3"
-                                   aria-hidden="true"></i>Download Document.Pdf
-                            </a>
-                        </div>
-                        <div class="download__item">
-                            <a href="#" target="_blank">
-                                <i class="fa fa-file-word-o mr-3"
-                                   aria-hidden="true"></i>Presentation
-                                2016-17.Doc
-                            </a>
-                        </div>
                     </div>
 
                 </div>
                 <div class="col-lg-8">
                     <div class="row no-gutters">
-                        <div class="col-lg-12 mt-0">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-6">
-                                    <a href="#" class="profile__agency-logo">
-                                        <img src="images/agency.png" alt="" class="img-fluid">
-                                        <div class="total__property-agent">20 listing</div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-lg-6 my-auto">
-                                    <div class="profile__agency-info">
-                                        <h5 class="text-capitalize">
-                                            <a href="#" target="_blank">real estate company</a>
-                                        </h5>
-                                        <p class="text-capitalize mb-1">
-                                            Los Angeles, city, United States of America
-                                        </p>
+                        @foreach (var cat in Model)
+                        {
+                            
+                            @foreach (var item in cat.Agencies)
+                            {
+                                <div class="col-lg-12 mt-0">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6">
+                                            <a asp-controller="agency" asp-action="singleagency" asp-route-id="@cat.Id" asp-route-agencyId="@item.Id" class="profile__agency-logo">
+                                                <img src="~/images/@item.Logo" alt="" class="img-fluid">
+                                                <div class="total__property-agent">@item.Properties.Count() Mülk</div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6 my-auto">
+                                            <div class="profile__agency-info">
+                                                <h5 class="text-capitalize">
+                                                    <a href="#" target="_blank">Ev alqı satqısı</a>
+                                                </h5>
+                                                <p class="text-capitalize mb-1">
+                                                    @item.Adress
+                                                </p>
 
-                                        <ul class="list-unstyled mt-2">
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-building"></i> office :
-                                                    </span> 123 456
-                                                    789
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-phone"></i> mobile :
-                                                    </span> 123 456
-                                                    789
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-fax"></i>
-                                                        fax :
-                                                    </span> 342 655
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-envelope"></i> email :
-                                                    </span>
-                                                    agents@property.com
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-0 mt-3">
-                                            <button class="btn btn-social btn-social-o facebook mr-1">
-                                                <i class="fa fa-facebook-f"></i>
-                                            </button>
-                                            <button class="btn btn-social btn-social-o twitter mr-1">
-                                                <i class="fa fa-twitter"></i>
-                                            </button>
+                                                <ul class="list-unstyled mt-2">
+                                                    <li>
+                                                        <a href="#" class="text-capitalize">
+                                                            <span>
+                                                                <i class="fa fa-building"></i> ofis :
+                                                            </span> @item.OfficePhone
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="text-capitalize">
+                                                            <span>
+                                                                <i class="fa fa-phone"></i> mobil :
+                                                            </span> @item.MobilePhone
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="text-capitalize">
+                                                            <span>
+                                                                <i class="fa fa-fax"></i>
+                                                                fax :
+                                                            </span> @item.Fax
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="text-capitalize">
+                                                            <span>
+                                                                <i class="fa fa-envelope"></i> email :
+                                                            </span>
+                                                            @item.Email
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <p class="mb-0 mt-3">
+                                                    <button class="btn btn-social btn-social-o facebook mr-1">
+                                                        <i class="fa fa-facebook-f"></i>
+                                                    </button>
+                                                    <button class="btn btn-social btn-social-o twitter mr-1">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </button>
 
-                                            <button class="btn btn-social btn-social-o linkedin mr-1">
-                                                <i class="fa fa-linkedin"></i>
-                                            </button>
-                                            <button class="btn btn-social btn-social-o instagram mr-1">
-                                                <i class="fa fa-instagram"></i>
-                                            </button>
+                                                    <button class="btn btn-social btn-social-o linkedin mr-1">
+                                                        <i class="fa fa-linkedin"></i>
+                                                    </button>
+                                                    <button class="btn btn-social btn-social-o instagram mr-1">
+                                                        <i class="fa fa-instagram"></i>
+                                                    </button>
 
-                                            <button class="btn btn-social btn-social-o youtube mr-1">
-                                                <i class="fa fa-youtube"></i>
-                                            </button>
-                                        </p>
+                                                    <button class="btn btn-social btn-social-o youtube mr-1">
+                                                        <i class="fa fa-youtube"></i>
+                                                    </button>
+                                                </p>
 
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-6">
-                                    <a href="#" class="profile__agency-logo">
-                                        <img src="images/agency1.png" alt="" class="img-fluid">
-                                        <div class="total__property-agent">20 listing</div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-lg-6 my-auto">
-                                    <div class="profile__agency-info">
-                                        <h5 class="text-capitalize mb-0">
-                                            <a href="#" target="_blank">real estate company</a>
-                                        </h5>
-                                        <p class="text-capitalize mb-1">
-                                            Los Angeles, city, United States of America
-                                        </p>
+                            }
 
-                                        <ul class="list-unstyled mt-2">
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-building"></i> office :
-                                                    </span> 123 456
-                                                    789
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-phone"></i> mobile :
-                                                    </span> 123 456
-                                                    789
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-fax"></i>
-                                                        fax :
-                                                    </span> 342 655
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-envelope"></i> email :
-                                                    </span>
-                                                    agents@property.com
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-0 mt-3">
-                                            <button class="btn btn-social btn-social-o facebook mr-1">
-                                                <i class="fa fa-facebook-f"></i>
-                                            </button>
-                                            <button class="btn btn-social btn-social-o twitter mr-1">
-                                                <i class="fa fa-twitter"></i>
-                                            </button>
+                    }
 
-                                            <button class="btn btn-social btn-social-o linkedin mr-1">
-                                                <i class="fa fa-linkedin"></i>
-                                            </button>
-                                            <button class="btn btn-social btn-social-o instagram mr-1">
-                                                <i class="fa fa-instagram"></i>
-                                            </button>
-
-                                            <button class="btn btn-social btn-social-o youtube mr-1">
-                                                <i class="fa fa-youtube"></i>
-                                            </button>
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-6">
-                                    <a href="#" class="profile__agency-logo">
-                                        <img src="images/agency3.png" alt="" class="img-fluid">
-                                        <div class="total__property-agent">20 listing</div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-lg-6 my-auto">
-                                    <div class="profile__agency-info">
-                                        <h5 class="text-capitalize">
-                                            <a href="#" target="_blank">real estate company</a>
-                                        </h5>
-                                        <p class="text-capitalize mb-1">
-                                            Los Angeles, city, United States of America
-                                        </p>
-
-                                        <ul class="list-unstyled mt-2">
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-building"></i> office :
-                                                    </span> 123 456
-                                                    789
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-phone"></i> mobile :
-                                                    </span> 123 456
-                                                    789
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-fax"></i>
-                                                        fax :
-                                                    </span> 342 655
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-envelope"></i> email :
-                                                    </span>
-                                                    agents@property.com
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-0 mt-3">
-                                            <button class="btn btn-social btn-social-o facebook mr-1">
-                                                <i class="fa fa-facebook-f"></i>
-                                            </button>
-                                            <button class="btn btn-social btn-social-o twitter mr-1">
-                                                <i class="fa fa-twitter"></i>
-                                            </button>
-
-                                            <button class="btn btn-social btn-social-o linkedin mr-1">
-                                                <i class="fa fa-linkedin"></i>
-                                            </button>
-                                            <button class="btn btn-social btn-social-o instagram mr-1">
-                                                <i class="fa fa-instagram"></i>
-                                            </button>
-
-                                            <button class="btn btn-social btn-social-o youtube mr-1">
-                                                <i class="fa fa-youtube"></i>
-                                            </button>
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-6">
-                                    <a href="#" class="profile__agency-logo">
-                                        <img src="images/agency4.png" alt="" class="img-fluid">
-                                        <div class="total__property-agent">20 listing</div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-lg-6 my-auto">
-                                    <div class="profile__agency-info">
-                                        <h5 class="text-capitalize">
-                                            <a href="#" target="_blank">real estate company</a>
-                                        </h5>
-                                        <p class="text-capitalize mb-1">
-                                            Los Angeles, city, United States of America
-                                        </p>
-
-                                        <ul class="list-unstyled mt-2">
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-building"></i> office :
-                                                    </span> 123 456
-                                                    789
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-phone"></i> mobile :
-                                                    </span> 123 456
-                                                    789
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-fax"></i>
-                                                        fax :
-                                                    </span> 342 655
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    <span>
-                                                        <i class="fa fa-envelope"></i> email :
-                                                    </span>
-                                                    agents@property.com
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-0 mt-3">
-                                            <button class="btn btn-social btn-social-o facebook mr-1">
-                                                <i class="fa fa-facebook-f"></i>
-                                            </button>
-                                            <button class="btn btn-social btn-social-o twitter mr-1">
-                                                <i class="fa fa-twitter"></i>
-                                            </button>
-
-                                            <button class="btn btn-social btn-social-o linkedin mr-1">
-                                                <i class="fa fa-linkedin"></i>
-                                            </button>
-                                            <button class="btn btn-social btn-social-o instagram mr-1">
-                                                <i class="fa fa-instagram"></i>
-                                            </button>
-
-                                            <button class="btn btn-social btn-social-o youtube mr-1">
-                                                <i class="fa fa-youtube"></i>
-                                            </button>
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -411,26 +140,3 @@
 </section>
 
 <!-- END LISTING LIST -->
-<!-- CALL TO ACTION -->
-<section class="cta-v1 py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-9">
-                <h2 class="text-uppercase text-white">Looking To Sell Or Rent Your Property?</h2>
-                <p class="text-capitalize text-white">
-                    We Will Assist You In The Best And Comfortable Property
-                    Services
-                    For You
-                </p>
-
-            </div>
-            <div class="col-lg-3">
-                <a href="#" class="btn btn-light text-uppercase ">
-                    request a quote
-                    <i class="fa fa-angle-right ml-3 arrow-btn "></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END CALL TO ACTION -->

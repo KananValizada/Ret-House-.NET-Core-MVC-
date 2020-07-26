@@ -1,6 +1,11 @@
-﻿@{
+﻿@model IEnumerable<Category>
+
+@{
     ViewData["Title"] = "Property Page";
 }
+@{ var a = "";
+    }
+
 <!-- BREADCRUMB -->
 <div class="bg-theme-overlay">
 
@@ -40,21 +45,21 @@
                     <div class="products__filter__group">
                         <div class="products__filter__header">
 
-                            <h5 class="text-center text-capitalize">property filter</h5>
+                            <h5 class="text-center text-capitalize">Süzgəc</h5>
                         </div>
                         <div class="products__filter__body">
                             <div class="form-group">
 
                                 <select class="wide select_option">
-                                    <option data-display="Property Status">Property Status</option>
-                                    <option>For Sale</option>
-                                    <option>For Rent</option>
+                                    <option data-display="Property Status">Mülkiyyət statusu</option>
+                                    <option>Satılır</option>
+                                    <option>Kirayə</option>
 
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="wide select_option">
-                                    <option data-display="Property Type">Property Type</option>
+                                    <option data-display="Property Type">Mülkiyyət tipi</option>
                                     <option>Residential</option>
                                     <option>Commercial</option>
                                     <option>Land</option>
@@ -63,7 +68,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="wide select_option">
-                                    <option data-display="Area From">Area From </option>
+                                    <option data-display="Area From">Sahə başlayır </option>
                                     <option>1500</option>
                                     <option>1200</option>
                                     <option>900</option>
@@ -74,7 +79,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="wide select_option">
-                                    <option data-display="Locations">Locations</option>
+                                    <option data-display="Locations">Ölkə</option>
                                     <option>United Kingdom</option>
                                     <option>American Samoa</option>
                                     <option>Belgium</option>
@@ -84,7 +89,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="wide select_option">
-                                    <option data-display="Bedrooms">Bedrooms</option>
+                                    <option data-display="Bedrooms">Yataq otaqı</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -99,7 +104,7 @@
                             <div class="form-group">
                                 <div class="form-group">
                                     <select class="wide select_option">
-                                        <option data-display="Bathrooms">Bathrooms</option>
+                                        <option data-display="Bathrooms">Hamam</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -227,65 +232,11 @@
                     <!-- CATEGORY -->
                     <div class="widget widget__archive">
                         <div class="widget__title">
-                            <h5 class="text-dark mb-0 text-center">Categories Property</h5>
+                            <h5 class="text-dark mb-0 text-center">Kateqoriyalar</h5>
                         </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#" class="text-capitalize">
-                                    apartement
-                                    <span class="badge badge-primary">14</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-capitalize">
-                                    villa
-                                    <span class="badge badge-primary">4</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-capitalize">
-                                    family house
-                                    <span class="badge badge-primary">2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-capitalize">
-                                    modern villa
-                                    <span class="badge badge-primary">8</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-capitalize">
-                                    town house
-                                    <span class="badge badge-primary">10</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-capitalize">
-                                    office
-                                    <span class="badge badge-primary">12</span>
-                                </a>
-                            </li>
-                        </ul>
+                        <vc:category></vc:category>
                     </div>
                     <!-- END CATEGORY -->
-                </div>
-                <!-- End ARCHIVE CATEGORY -->
-                <div class="download mb-0">
-                    <h5 class="text-center text-capitalize">Property Attachments</h5>
-                    <div class="download__item">
-                        <a href="#" target="_blank">
-                            <i class="fa fa-file-pdf-o mr-3" aria-hidden="true"></i>Download
-                            Document.Pdf
-                        </a>
-                    </div>
-                    <div class="download__item">
-                        <a href="#" target="_blank">
-                            <i class="fa fa-file-word-o mr-3"
-                               aria-hidden="true"></i>Presentation
-                            2016-17.Doc
-                        </a>
-                    </div>
                 </div>
 
             </div>
@@ -296,20 +247,20 @@
                             <!-- FILTER VERTICAL -->
                             <ul class="nav nav-pills myTab" role="tablist">
                                 <li class="list-inline-item mr-auto">
-                                    <span class="title-text">Sort by</span>
+                                    <span class="title-text">Sırala</span>
                                     <div class="btn-group">
                                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"
                                            aria-haspopup="true" aria-expanded="false">
-                                            Based Properties
+                                            Xüsusiyyətlərə əsasən
                                         </a>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="javascript:void(0)">Low to High Price</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Qiymət ucuzdan bahaya</a>
                                             <a class="dropdown-item" href="javascript:void(0)">
-                                                High to Low Price
+                                                Qiymət bahadan ucuza
                                             </a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Sell Properties</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Satılır</a>
 
-                                            <a class="dropdown-item" href="javascript:void(0)">Rent Properties</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Kirayə verilir</a>
                                         </div>
                                     </div>
                                 </li>
@@ -333,1288 +284,236 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade " id="pills-tab-one" role="tabpanel"
                                      aria-labelledby="pills-tab-one">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="card__image card__box-v1">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-4 col-lg-3 col-xl-4">
-                                                        <div class="card__image__header h-250">
-                                                            <a href="#">
-                                                                <div class="ribbon text-capitalize">sold out</div>
-                                                                <img src="images/gallery16.jpg" alt=""
-                                                                     class="img-fluid w100 img-transition">
-                                                                <div class="info"> for sale</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                        <div class="card__image__body">
+                                    @foreach (var category in Model)
+                                    {
 
-                                                            <span class="badge badge-primary text-capitalize mb-2">house</span>
-                                                            <h6>
-                                                                <a href="#">vila in coral gables</a>
-                                                            </h6>
-                                                            <div class="card__image__body-desc">
-                                                                <!-- <p class="text-capitalize">
-                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
+                                        @foreach (var item in category.Agents)
+                                        {
+                                            @foreach (var prop in item.Properties)
+                                            {
+                                                if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                {
 
-                                                                </p> -->
-                                                                <p class="text-capitalize">
-                                                                    <i class="fa fa-map-marker"></i>
-                                                                    west flaminggo road, las vegas
-                                                                </p>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="card__image card__box-v1">
+                                                                <div class="row no-gutters">
+                                                                    <div class="col-md-4 col-lg-3 col-xl-4">
+                                                                        <div class="card__image__header h-250">
+                                                                            <a asp-controller="property" asp-action="singleproduct" asp-route-id="@category.Id" asp-route-agentId="@item.Id" asp-route-propId="@prop.Id">
+                                                                                <div class="ribbon text-capitalize">
+                                                                                    @if (prop.IsFeatured)
+                                                                                    {
+                                                                                        a = "Önə çıxan";
+                                                                                        @a
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                                                        {
+                                                                                            a = "Satılıb";
+                                                                                            @a
+                                                                                        }
+                                                                                    }
+                                                                                </div>
+                                                                                @foreach (var img in prop.PropImages)
+                                                                                {
+                                                                                    <img src="~/images/@img.Photo" alt=""
+                                                                                         class="img-fluid w100 img-transition">
+                                                                                    break;
+                                                                                }
+
+                                                                                <div class="info">@prop.PropStatus</div>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
+                                                                        <div class="card__image__body">
+
+                                                                            <span class="badge badge-primary text-capitalize mb-2">@prop.PropFilter</span>
+                                                                            <h6>
+                                                                                <a href="#">@prop.Name</a>
+                                                                            </h6>
+                                                                            <div class="card__image__body-desc">
+                                                                                <!-- <p class="text-capitalize">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
+
+                                                </p> -->
+                                                                                <p class="text-capitalize">
+                                                                                    <i class="fa fa-map-marker"></i>
+                                                                                    @prop.Adress
+                                                                                </p>
+                                                                            </div>
+
+                                                                            <ul class="list-inline card__content">
+                                                                                <li class="list-inline-item">
+
+                                                                                    <span>
+                                                                                        hamam oraqi <br>
+                                                                                        <i class="fa fa-bath"></i> @prop.BathCount
+                                                                                    </span>
+                                                                                </li>
+                                                                                <li class="list-inline-item">
+                                                                                    <span>
+                                                                                        yataq otaqi <br>
+                                                                                        <i class="fa fa-bed"></i> @prop.BedCount
+                                                                                    </span>
+                                                                                </li>
+                                                                                <li class="list-inline-item">
+                                                                                    <span>
+                                                                                        otaqlar <br>
+                                                                                        <i class="fa fa-inbox"></i> @prop.RoomCount
+                                                                                    </span>
+                                                                                </li>
+                                                                                <li class="list-inline-item">
+                                                                                    <span>
+                                                                                        sahə <br>
+                                                                                        <i class="fa fa-map"></i>   @prop.Area
+                                                                                    </span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
+                                                                        <div class="card__image__footer">
+                                                                            <figure>
+                                                                                <img src="images/logo.jpg" alt=""
+                                                                                     class="img-fluid rounded-circle">
+                                                                            </figure>
+                                                                            <ul class="list-inline my-auto">
+                                                                                <li class="list-inline-item name">
+                                                                                    <a href="#">
+                                                                                        @item.Name
+                                                                                    </a>
+
+                                                                                </li>
+
+
+                                                                            </ul>
+                                                                            <ul class="list-inline my-auto ml-auto price">
+                                                                                <li class="list-inline-item ">
+                                                                                        <p class="mb-0">  @prop.Price ₼</p>
+                                                                                </li>
+
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-
-                                                            <ul class="list-inline card__content">
-                                                                <li class="list-inline-item">
-
-                                                                    <span>
-                                                                        baths <br>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        beds <br>
-                                                                        <i class="fa fa-bed"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        rooms <br>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        area <br>
-                                                                        <i class="fa fa-map"></i> 4300 sq ft
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
                                                         </div>
+
                                                     </div>
-                                                    <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                        <div class="card__image__footer">
-                                                            <figure>
-                                                                <img src="images/logo.jpg" alt=""
-                                                                     class="img-fluid rounded-circle">
-                                                            </figure>
-                                                            <ul class="list-inline my-auto">
-                                                                <li class="list-inline-item name">
-                                                                    <a href="#">
-                                                                        tom wilson
-                                                                    </a>
-
-                                                                </li>
 
 
-                                                            </ul>
-                                                            <ul class="list-inline my-auto ml-auto price">
-                                                                <li class="list-inline-item ">
+                                                }
 
-                                                                    <h6>$350.000</h6>
-                                                                </li>
+                                            }
 
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="card__image card__box-v1">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-4 col-lg-3 col-xl-4">
-                                                        <div class="card__image__header h-250">
-                                                            <a href="#">
-                                                                <div class="ribbon text-capitalize">sold out</div>
-                                                                <img src="images/gallery17.jpg" alt=""
-                                                                     class="img-fluid w100 img-transition">
-                                                                <div class="info"> for sale</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                        <div class="card__image__body">
-
-                                                            <span class="badge badge-primary text-capitalize mb-2">house</span>
-                                                            <h6>
-                                                                <a href="#">Ample Apartment At Last Floor</a>
-                                                            </h6>
-                                                            <div class="card__image__body-desc">
-                                                                <!-- <p class="text-capitalize">
-                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
-
-                                                                </p> -->
-                                                                <p class="text-capitalize">
-                                                                    <i class="fa fa-map-marker"></i>
-                                                                    west flaminggo road, las vegas
-                                                                </p>
-                                                            </div>
-
-                                                            <ul class="list-inline card__content">
-                                                                <li class="list-inline-item">
-
-                                                                    <span>
-                                                                        baths <br>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        beds <br>
-                                                                        <i class="fa fa-bed"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        rooms <br>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        area <br>
-                                                                        <i class="fa fa-map"></i> 4300 sq ft
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                        <div class="card__image__footer">
-                                                            <figure>
-                                                                <img src="images/logo.jpg" alt=""
-                                                                     class="img-fluid rounded-circle">
-                                                            </figure>
-                                                            <ul class="list-inline my-auto">
-                                                                <li class="list-inline-item name">
-                                                                    <a href="#">
-                                                                        tom wilson
-                                                                    </a>
-
-                                                                </li>
+                                        }
+                                    }
 
 
-                                                            </ul>
-                                                            <ul class="list-inline  my-auto ml-auto price">
-                                                                <li class="list-inline-item ">
-
-                                                                    <h6>$350.000</h6>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="card__image card__box-v1">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-4 col-lg-3 col-xl-4">
-                                                        <div class="card__image__header h-250">
-                                                            <a href="#">
-                                                                <div class="ribbon text-capitalize">sold out</div>
-                                                                <img src="images/gallery18.jpg" alt=""
-                                                                     class="img-fluid w100 img-transition">
-                                                                <div class="info"> for sale</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                        <div class="card__image__body">
-
-                                                            <span class="badge badge-primary text-capitalize mb-2">house</span>
-                                                            <h6>
-                                                                <a href="#">Ample Apartment At Last Floor</a>
-                                                            </h6>
-                                                            <div class="card__image__body-desc">
-                                                                <!-- <p class="text-capitalize">
-                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
-
-                                                                </p> -->
-                                                                <p class="text-capitalize">
-                                                                    <i class="fa fa-map-marker"></i>
-                                                                    west flaminggo road, las vegas
-                                                                </p>
-                                                            </div>
-
-                                                            <ul class="list-inline card__content">
-                                                                <li class="list-inline-item">
-
-                                                                    <span>
-                                                                        baths <br>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        beds <br>
-                                                                        <i class="fa fa-bed"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        rooms <br>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        area <br>
-                                                                        <i class="fa fa-map"></i> 4300 sq ft
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                        <div class="card__image__footer">
-                                                            <figure>
-                                                                <img src="images/logo.jpg" alt=""
-                                                                     class="img-fluid rounded-circle">
-                                                            </figure>
-                                                            <ul class="list-inline my-auto">
-                                                                <li class="list-inline-item name">
-                                                                    <a href="#">
-                                                                        tom wilson
-                                                                    </a>
-
-                                                                </li>
-
-
-                                                            </ul>
-                                                            <ul class="list-inline  my-auto ml-auto price">
-                                                                <li class="list-inline-item ">
-
-                                                                    <h6>$350.000</h6>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="card__image card__box-v1">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-4 col-lg-3 col-xl-4">
-                                                        <div class="card__image__header h-250">
-                                                            <a href="#">
-                                                                <div class="ribbon text-capitalize">sold out</div>
-                                                                <img src="images/gallery8.jpg" alt=""
-                                                                     class="img-fluid w100 img-transition">
-                                                                <div class="info"> for sale</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                        <div class="card__image__body">
-
-                                                            <span class="badge badge-primary text-capitalize mb-2">house</span>
-                                                            <h6>
-                                                                <a href="#">Family Home For Sale</a>
-                                                            </h6>
-                                                            <div class="card__image__body-desc">
-                                                                <!-- <p class="text-capitalize">
-                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
-
-                                                                </p> -->
-                                                                <p class="text-capitalize">
-                                                                    <i class="fa fa-map-marker"></i>
-                                                                    west flaminggo road, las vegas
-                                                                </p>
-                                                            </div>
-
-                                                            <ul class="list-inline card__content">
-                                                                <li class="list-inline-item">
-
-                                                                    <span>
-                                                                        baths <br>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        beds <br>
-                                                                        <i class="fa fa-bed"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        rooms <br>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        area <br>
-                                                                        <i class="fa fa-map"></i> 4300 sq ft
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                        <div class="card__image__footer">
-                                                            <figure>
-                                                                <img src="images/logo.jpg" alt=""
-                                                                     class="img-fluid rounded-circle">
-                                                            </figure>
-                                                            <ul class="list-inline my-auto">
-                                                                <li class="list-inline-item name">
-                                                                    <a href="#">
-                                                                        tom wilson
-                                                                    </a>
-
-                                                                </li>
-
-
-                                                            </ul>
-                                                            <ul class="list-inline  my-auto ml-auto price">
-                                                                <li class="list-inline-item ">
-
-                                                                    <h6>$350.000</h6>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="card__image card__box-v1">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-4 col-lg-3 col-xl-4">
-                                                        <div class="card__image__header h-250">
-                                                            <a href="#">
-                                                                <div class="ribbon text-capitalize">sold out</div>
-                                                                <img src="images/gallery9.jpg" alt=""
-                                                                     class="img-fluid w100 img-transition">
-                                                                <div class="info"> for sale</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                        <div class="card__image__body">
-
-                                                            <span class="badge badge-primary text-capitalize mb-2">house</span>
-                                                            <h6>
-                                                                <a href="#">Luxury Villa With Pool</a>
-                                                            </h6>
-                                                            <div class="card__image__body-desc">
-                                                                <!-- <p class="text-capitalize">
-                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
-
-                                                                </p> -->
-                                                                <p class="text-capitalize">
-                                                                    <i class="fa fa-map-marker"></i>
-                                                                    west flaminggo road, las vegas
-                                                                </p>
-                                                            </div>
-
-                                                            <ul class="list-inline card__content">
-                                                                <li class="list-inline-item">
-
-                                                                    <span>
-                                                                        baths <br>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        beds <br>
-                                                                        <i class="fa fa-bed"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        rooms <br>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        area <br>
-                                                                        <i class="fa fa-map"></i> 4300 sq ft
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                        <div class="card__image__footer">
-                                                            <figure>
-                                                                <img src="images/logo.jpg" alt=""
-                                                                     class="img-fluid rounded-circle">
-                                                            </figure>
-                                                            <ul class="list-inline my-auto">
-                                                                <li class="list-inline-item name">
-                                                                    <a href="#">
-                                                                        tom wilson
-                                                                    </a>
-
-                                                                </li>
-
-
-                                                            </ul>
-                                                            <ul class="list-inline  my-auto ml-auto price">
-                                                                <li class="list-inline-item ">
-
-                                                                    <h6>$350.000</h6>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="card__image card__box-v1">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-4 col-lg-3 col-xl-4">
-                                                        <div class="card__image__header h-250">
-                                                            <a href="#">
-                                                                <div class="ribbon text-capitalize">sold out</div>
-                                                                <img src="images/gallery10.jpg" alt=""
-                                                                     class="img-fluid w100 img-transition">
-                                                                <div class="info"> for sale</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                        <div class="card__image__body">
-
-                                                            <span class="badge badge-primary text-capitalize mb-2">house</span>
-                                                            <h6>
-                                                                <a href="#">184 Lexington Avenue</a>
-                                                            </h6>
-                                                            <div class="card__image__body-desc">
-                                                                <!-- <p class="text-capitalize">
-                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
-
-                                                                </p> -->
-                                                                <p class="text-capitalize">
-                                                                    <i class="fa fa-map-marker"></i>
-                                                                    west flaminggo road, las vegas
-                                                                </p>
-                                                            </div>
-
-                                                            <ul class="list-inline card__content">
-                                                                <li class="list-inline-item">
-
-                                                                    <span>
-                                                                        baths <br>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        beds <br>
-                                                                        <i class="fa fa-bed"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        rooms <br>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        area <br>
-                                                                        <i class="fa fa-map"></i> 4300 sq ft
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                        <div class="card__image__footer">
-                                                            <figure>
-                                                                <img src="images/logo.jpg" alt=""
-                                                                     class="img-fluid rounded-circle">
-                                                            </figure>
-                                                            <ul class="list-inline my-auto">
-                                                                <li class="list-inline-item name">
-                                                                    <a href="#">
-                                                                        tom wilson
-                                                                    </a>
-                                                                </li>
-
-                                                            </ul>
-                                                            <ul class="list-inline  my-auto ml-auto price">
-                                                                <li class="list-inline-item ">
-
-                                                                    <h6>$350.000</h6>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="card__image card__box-v1">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-4 col-lg-3 col-xl-4">
-                                                        <div class="card__image__header h-250">
-                                                            <a href="#">
-                                                                <div class="ribbon text-capitalize">sold out</div>
-                                                                <img src="images/gallery11.jpg" alt=""
-                                                                     class="img-fluid w100 img-transition">
-                                                                <div class="info"> for sale</div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                        <div class="card__image__body">
-
-                                                            <span class="badge badge-primary text-capitalize mb-2">house</span>
-                                                            <h6>
-                                                                <a href="#">The Citizen Apartment 5th Floor</a>
-                                                            </h6>
-                                                            <div class="card__image__body-desc">
-                                                                <!-- <p class="text-capitalize">
-                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
-
-                                                                </p> -->
-                                                                <p class="text-capitalize">
-                                                                    <i class="fa fa-map-marker"></i>
-                                                                    west flaminggo road, las vegas
-                                                                </p>
-                                                            </div>
-
-                                                            <ul class="list-inline card__content">
-                                                                <li class="list-inline-item">
-
-                                                                    <span>
-                                                                        baths <br>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        beds <br>
-                                                                        <i class="fa fa-bed"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        rooms <br>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    <span>
-                                                                        area <br>
-                                                                        <i class="fa fa-map"></i> 4300 sq ft
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                        <div class="card__image__footer">
-                                                            <figure>
-                                                                <img src="images/logo.jpg" alt=""
-                                                                     class="img-fluid rounded-circle">
-                                                            </figure>
-                                                            <ul class="list-inline my-auto">
-                                                                <li class="list-inline-item name">
-                                                                    <a href="#">
-                                                                        tom wilson
-                                                                    </a>
-
-                                                                </li>
-
-
-                                                            </ul>
-                                                            <ul class="list-inline  my-auto ml-auto price">
-                                                                <li class="list-inline-item ">
-
-                                                                    <h6>$350.000</h6>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     <div class="clearfix"></div>
 
                                 </div>
                                 <div class="tab-pane fade show active" id="pills-tab-two" role="tabpanel"
-                                     aria-labelledby="pills-tab-two">
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
+                                     aria-labelledby="pills-tab-two" style="display:flex ; flex-wrap:wrap">
+                                    @foreach (var category in Model)
+                                    {
 
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Citra Garden Estate</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
+                                        @foreach (var item in category.Agents)
+                                        {
+                                            @foreach (var prop in item.Properties)
+                                            {
+                                                if (prop.PropStatus == Repository.Enums.PropStatus.Kirayə)
+                                                {
+
+                                                    <div class="col-md-6 col-lg-6 mt-4">
+                                                        <!-- CARD IMAGE -->
+
+                                                        <a asp-controller="property" asp-action="singleproduct" asp-route-id="@category.Id" asp-route-agentId="@item.Id" asp-route-propId="@prop.Id">
+                                                            <div class="card__image-hover h-250">
+                                                                <div class="card__image-hover-overlay">
+                                                                    <div class="listing-badges">
+                                                                        @if (prop.IsFeatured)
+                                                                        {
+                                                                            <span class="featured">
+                                                                                Önə çıxan
+                                                                            </span>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                                            {
+                                                                                <span class="featured">
+                                                                                    Satılıb
+                                                                                </span>
+                                                                            }
+                                                                        }
+
+                                                                        <span>
+                                                                            @prop.PropStatus
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="card__image-content">
+                                                                        <div class="card__image-content-desc">
+                                                                            <h6> @prop.Name</h6>
+                                                                            @if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                                            {
+                                                                                <p class="mb-0">  @prop.Price ₼</p>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <p class="mb-0">   @prop.Price ₼ / ayliq</p>
+                                                                            }
+
+                                                                        </div>
+                                                                        <ul class="list-inline card__hidden-content">
+                                                                            <li class="list-inline-item">
+                                                                                Hamam
+                                                                                <span>
+                                                                                    <i class="fa fa-bath"></i> @prop.BathCount
+                                                                                </span>
+                                                                            </li>
+                                                                            <li class="list-inline-item">
+                                                                                Yataq otagi
+                                                                                <span>
+                                                                                    <i class="fa fa-bed"></i> @prop.BedCount
+                                                                                </span>
+                                                                            </li>
+                                                                            <li class="list-inline-item">
+                                                                                Otaqlar
+                                                                                <span>
+                                                                                    <i class="fa fa-inbox"></i> @prop.RoomCount
+                                                                                </span>
+                                                                            </li>
+                                                                            <li class="list-inline-item">
+                                                                                Sahə
+                                                                                <span>
+                                                                                    <i class="fa fa-map"></i>    @prop.Area
+                                                                                </span>
+                                                                            </li>
+
+                                                                        </ul>
+                                                                    </div>
+                                                                    @foreach (var image in prop.PropImages)
+                                                                    {
+                                                                        <img alt="" src="~/images/@image.Photo"
+                                                                             class="img-fluid h-40 ">
+                                                                        break;
+                                                                    }
+
+                                                                </div>
                                                             </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery18.jpg"
-                                                             class="img-fluid h-40 ">
+                                                        </a>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Ample Apartment At Last Floor</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
 
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery16.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Contemporary Apartment</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
+                                                }
 
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery17.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Citra Garden Estate</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
 
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery2.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Family Home For Sale</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery7.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Citra Garden Estate</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery8.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Luxury Villa With Pool</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery9.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Citra Garden Estate</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery10.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> 184 Lexington Avenue</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery17.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> The Citizen Apartment 5th Floor</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery12.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6>
-                                                                    Ample Apartment At Last Floor
-                                                                </h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery15.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6 mt-4">
-                                            <!-- CARD IMAGE -->
-                                            <a href="#">
-                                                <div class="card__image-hover h-250">
-                                                    <div class="card__image-hover-overlay">
-                                                        <div class="listing-badges">
-                                                            <span class="featured">
-                                                                Featured
-                                                            </span>
-                                                            <span>
-                                                                For Rent
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__image-content">
-                                                            <div class="card__image-content-desc">
-                                                                <h6> Contemporary Apartment</h6>
-                                                                <p class="mb-0"> $1300 / monthly</p>
-                                                            </div>
-                                                            <ul class="list-inline card__hidden-content">
-                                                                <li class="list-inline-item">
-                                                                    Baths
-                                                                    <span>
-                                                                        <i class="fa fa-bath"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Beds
-                                                                    <span>
-                                                                        <i class="fa fa-bed"></i> 2
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Rooms
-                                                                    <span>
-                                                                        <i class="fa fa-inbox"></i> 3
-                                                                    </span>
-                                                                </li>
-                                                                <li class="list-inline-item">
-                                                                    Area
-                                                                    <span>
-                                                                        <i class="fa fa-map"></i> 1450 sq ft
-                                                                    </span>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <img alt="" src="images/gallery14.jpg"
-                                                             class="img-fluid h-40 ">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
+                                            }
+                                        }
+                                    }
 
                                     <div class="cleafix"></div>
                                 </div>
@@ -1632,26 +531,3 @@
     </div>
 </section>
 <!-- END LISTING LIST -->
-<!-- CALL TO ACTION -->
-<section class="cta-v1 py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-9">
-                <h2 class="text-uppercase text-white">Looking To Sell Or Rent Your Property?</h2>
-                <p class="text-capitalize text-white">
-                    We Will Assist You In The Best And Comfortable Property
-                    Services
-                    For You
-                </p>
-
-            </div>
-            <div class="col-lg-3">
-                <a href="#" class="btn btn-light text-uppercase ">
-                    request a quote
-                    <i class="fa fa-angle-right ml-3 arrow-btn "></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END CALL TO ACTION -->

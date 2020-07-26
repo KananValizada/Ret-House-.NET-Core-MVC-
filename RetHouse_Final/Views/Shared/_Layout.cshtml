@@ -26,6 +26,8 @@
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="theme-color" content="#3454d1">
     <link href="css/stylesbd04.css?8918068d71def746395d" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @RenderSection("Head", required: false)
 </head>
 
 <body>
@@ -318,6 +320,7 @@
     <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- END SCROLL TO TOP -->
     <script src="~/js/index.bundlebd04.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

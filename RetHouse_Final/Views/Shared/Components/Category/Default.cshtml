@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Category>
+@{ 
+    int count = 0;
+}
+<ul class="list-unstyled">
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="#" class="text-capitalize">
+                @item.Name
+                <span class="badge badge-primary">
+                    @foreach (var agent in item.Agents)
+                    {
+                        count += agent.Properties.Count();
+                    }
+                    @count
+                </span>
+            </a>
+        </li>
+    }
+
+</ul>

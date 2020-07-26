@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetHouse_Final", "RetHouse_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{011B7046-BB33-4DEE-94B2-35100B00EA06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "Admin\Admin.csproj", "{6740C898-224E-4987-A729-A0CD435CC3CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{011B7046-BB33-4DEE-94B2-35100B00EA06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{011B7046-BB33-4DEE-94B2-35100B00EA06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{011B7046-BB33-4DEE-94B2-35100B00EA06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6740C898-224E-4987-A729-A0CD435CC3CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6740C898-224E-4987-A729-A0CD435CC3CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6740C898-224E-4987-A729-A0CD435CC3CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6740C898-224E-4987-A729-A0CD435CC3CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

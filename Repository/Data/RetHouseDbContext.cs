@@ -31,6 +31,8 @@ namespace Repository.Data
         public DbSet<SliderItem> SliderItems { get; set; }
         public DbSet<Partner> Partners { get; set; }
         public DbSet<PeopleSay> PeopleSays { get; set; }
+        public DbSet<AboutUs> AboutUs { get; set; }
+        public DbSet<Team> Teams { get; set; }
 
 
     }

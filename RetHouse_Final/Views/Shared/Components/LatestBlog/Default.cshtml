@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Blog>
+    <div class="widget__sidebar">
+        <div class="widget__sidebar__header">
+            <h6 class="text-capitalize">Son xəbərlər</h6>
+        </div>
+        <div class="widget__sidebar__body">
+                @foreach (var blog in Model)
+                {
+                    <!-- ONE -->
+
+            <a asp-controller="blog" asp-action="blogsingle" asp-route-Id="@blog.BlogPhaseId" asp-route-BlogId="@blog.Id">
+
+                <div class="widget__sidebar__body-img">
+                    <img src="~/images/@blog.Image" alt="" class="img-fluid">
+
+                    <div class="widget__sidebar__body-heading">
+                        <h6 class="text-capitalize">
+                            @blog.Title
+                        </h6>
+
+                    </div>
+                    <span class="badge badge-secondary p-1 text-capitalize mb-1">
+                        @blog.CreatedAt.ToString("yyyy-MM-dd")
+                    </span>
+                </div>
+
+            </a>
+
+
+                }
+        </div>
+    </div>

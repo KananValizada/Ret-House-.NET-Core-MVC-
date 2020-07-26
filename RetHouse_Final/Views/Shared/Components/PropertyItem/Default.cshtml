@@ -37,7 +37,10 @@
             <div class="card__image-body">
                 <span class="badge badge-primary text-capitalize mb-2">@prop.PropFilter</span>
                 <h6 class="text-capitalize">
-                   @prop.Name
+                    <a asp-controller="property" asp-action="SingleProduct" asp-route-id="@item.CategoryId" asp-route-agentId="@item.Id" asp-route-propId="@prop.Id">
+
+                        @prop.Name
+                    </a>
                 </h6>
 
                 <p class="text-capitalize">
