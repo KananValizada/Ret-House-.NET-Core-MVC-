@@ -19,8 +19,15 @@ using Admin;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\Administrator\Desktop\RetHouse_Final\Admin\Views\_ViewImports.cshtml"
+using Admin.Models.Account;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4f4835c374f505523ad68e4f9d129ed4f41d0355", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"704491fd141cbe5be5b0914971e63026cb8a3e92", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

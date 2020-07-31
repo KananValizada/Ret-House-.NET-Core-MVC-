@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NMJaDoLYni/oFRvCKzqLxTo6RxvCbG4f801XU2yrgIRpoaUqhYNcLxURwGkP13gQJ/B7F4xQ9dx+BOTBKoFulA==",
+  "dgSpecHash": "lcaSgNhRyRWgfynRYeZWsNQDZ/wAB6U3rFDkUZcAUsIPSknJrCgYj+iZ4xe1s3hlm4N8ztf8hx2VJ+ac1qngyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Desktop\\RetHouse_Final\\Admin\\Admin.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\cryptohelper\\3.0.2\\cryptohelper.3.0.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.0.1\\microsoft.aspnetcore.cryptography.internal.2.0.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\2.0.1\\microsoft.aspnetcore.cryptography.keyderivation.2.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

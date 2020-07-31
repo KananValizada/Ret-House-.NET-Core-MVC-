@@ -33,6 +33,7 @@ namespace Repository.Data
         public DbSet<PeopleSay> PeopleSays { get; set; }
         public DbSet<AboutUs> AboutUs { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Admin> Admins { get; set; }
 
 
     }
