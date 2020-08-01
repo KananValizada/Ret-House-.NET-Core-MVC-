@@ -56,9 +56,11 @@ namespace Repository.Repositories.AdminPagesCrud
         {
             categoryToUpdate.Status = model.Status;
             categoryToUpdate.Name = model.Name;
+            categoryToUpdate.ModifiedBy = model.ModifiedBy;
             categoryToUpdate.ModifiedAt = DateTime.Now;
             _context.SaveChanges();
         }
+
 
     }
 }

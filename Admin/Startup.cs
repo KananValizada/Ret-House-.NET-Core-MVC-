@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Admin.Libs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,8 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
+using Repository.Models;
 using Repository.Repositories.AdminPagesCrud;
 using Repository.Repositories.AdminRepositories;
+using Repository.Services;
 
 namespace Admin
 {
@@ -33,6 +36,11 @@ namespace Admin
                    x => x.MigrationsAssembly("Repository")));
             services.AddTransient<IAdminRepository, AdminRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<ICountryRepository, CountryRepository>();
+            services.AddTransient<IPartnerRepository, PartnerRepository>();
+            services.AddTransient<ICloudinaryService, CloudinaryService>();
+            services.AddTransient<IFileManager, FileManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

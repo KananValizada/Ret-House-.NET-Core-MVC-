@@ -142,3 +142,16 @@ C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\stat
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Admin.dll
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Admin.pdb
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Admin.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Cities\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Cities\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Cities\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Countries\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Countries\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Countries\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Partners\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Partners\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Partners\Edit.cshtml.g.cs

@@ -13,6 +13,6 @@ C:\Users\Administrator\Desktop\RetHouse_Final\Repository\bin\Debug\netcoreapp3.1
 C:\Users\Administrator\Desktop\RetHouse_Final\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
-C:\Users\Administrator\Desktop\RetHouse_Final\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\Repository\obj\Debug\netcoreapp3.1\Repository.dll
 C:\Users\Administrator\Desktop\RetHouse_Final\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Administrator\Desktop\RetHouse_Final\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
