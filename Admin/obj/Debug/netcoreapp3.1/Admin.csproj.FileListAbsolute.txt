@@ -155,3 +155,15 @@ C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Partners\Index.cshtml.g.cs
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Partners\Create.cshtml.g.cs
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Partners\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Teams\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Teams\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Teams\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\AboutUs\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\AboutUs\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\AboutUs\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agencies\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agencies\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agencies\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agents\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agents\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agents\Edit.cshtml.g.cs

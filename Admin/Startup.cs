@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Admin.Libs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Repository.Data;
 using Repository.Models;
 using Repository.Repositories.AdminPagesCrud;
+using Repository.Repositories.AdminPagesCrud.Agency_and_Agent;
 using Repository.Repositories.AdminRepositories;
 using Repository.Services;
 
@@ -39,6 +36,10 @@ namespace Admin
             services.AddTransient<ICityRepository, CityRepository>();
             services.AddTransient<ICountryRepository, CountryRepository>();
             services.AddTransient<IPartnerRepository, PartnerRepository>();
+            services.AddTransient<ITeamRepository, TeamRepository>();
+            services.AddTransient<IAboutUsRepository, AboutUsRepository>();
+            services.AddTransient<IAgencyRepository, AgencyRepository>();
+            services.AddTransient<IAgentRepository, AgentRepository>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
             services.AddTransient<IFileManager, FileManager>();
         }
