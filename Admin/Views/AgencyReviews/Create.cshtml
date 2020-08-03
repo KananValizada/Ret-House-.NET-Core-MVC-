@@ -1,0 +1,68 @@
+﻿@model Repository.Models.AgencyReview
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Yeni Şərh</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Vəziyyəti</label>
+                    <div class="custom-control custom-radio custom-control-inline ml-3">
+                        <input type="checkbox" asp-for="Status" class="custom-control-input">
+                        <label class="custom-control-label" asp-for="Status">Aktiv</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name">Ad</label>
+                    <input class="form-control form-control-user slug-source" asp-for="Name">
+                    <span class="field-validation-valid text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Comment">Şərh</label>
+                    <input class="form-control form-control-user slug-source" asp-for="Comment">
+                    <span class="field-validation-valid text-danger" asp-validation-for="Comment"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Star">Ulduz</label>
+                    <input class="form-control form-control-user slug-source" asp-for="Star">
+                    <span class="field-validation-valid text-danger" asp-validation-for="Star"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AgencyId">Agentlik</label>
+                    <select asp-for="AgencyId">
+                        <option selected disabled>Seçin</option>
+                        @foreach (var item in ViewBag.Agencies)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span class="field-validation-valid" asp-validation-for="AgencyId"></span>
+                </div>
+                <div class="form-group d-flex justify-content-end mt-3">
+                    <button type="submit" class="btn btn-primary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-pencil-alt"></i>
+                        </span>
+                        <span class="text">Yarat</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+@section Scripts{
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}

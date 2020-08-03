@@ -10,6 +10,7 @@ using Repository.Data;
 using Repository.Models;
 using Repository.Repositories.AdminPagesCrud;
 using Repository.Repositories.AdminPagesCrud.Agency_and_Agent;
+using Repository.Repositories.AdminPagesCrud.Blogs;
 using Repository.Repositories.AdminRepositories;
 using Repository.Services;
 
@@ -40,6 +41,13 @@ namespace Admin
             services.AddTransient<IAboutUsRepository, AboutUsRepository>();
             services.AddTransient<IAgencyRepository, AgencyRepository>();
             services.AddTransient<IAgentRepository, AgentRepository>();
+            services.AddTransient<IAgencyReviewRepository, AgencyReviewRepository>();
+            services.AddTransient<IAgentReviewRepository, AgentReviewRepository>();
+            services.AddTransient<IBlogPhaseRepository, BlogPhaseRepository>();
+            services.AddTransient<IBlogRepository, BlogRepository>();
+            services.AddTransient<IBlogReviewRepository, BlogReviewRepository>();
+            services.AddTransient<IBlogTagRelateRepository, BlogTagRelateRepository>();
+            services.AddTransient<IBlogTagRepository, BlogTagRepository>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
             services.AddTransient<IFileManager, FileManager>();
         }
