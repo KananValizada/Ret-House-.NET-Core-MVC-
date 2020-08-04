@@ -45,7 +45,7 @@ namespace Admin.Controllers
         }
         public IActionResult Edit(int id)
         {
-            ViewBag.Agencies = _BlogRepository.GetAllBlogs();
+            ViewBag.Blogs = _BlogRepository.GetAllBlogs();
             BlogReview abs = _BlogReview.GetBlogReviewById(id);
             if (abs == null) return NotFound();
             return View(abs);

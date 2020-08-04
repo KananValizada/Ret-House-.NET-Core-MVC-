@@ -179,3 +179,12 @@ C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Blogs\Index.cshtml.g.cs
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Blogs\Create.cshtml.g.cs
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Blogs\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogReviews\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogReviews\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogReviews\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogTags\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogTags\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogTags\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogTagRelate\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogTagRelate\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\BlogTagRelate\Edit.cshtml.g.cs

@@ -10,12 +10,12 @@ using Repository.Repositories.AdminPagesCrud.Blogs;
 namespace Admin.Controllers
 {
     [TypeFilter(typeof(Auth))]
-    public class BlogTagController : Controller
+    public class BlogTagsController : Controller
     {
         private Repository.Models.Admin _admin => RouteData.Values["Admin"] as Repository.Models.Admin;
         private readonly IBlogTagRepository _BlogTagRepository;
 
-        public BlogTagController(IBlogTagRepository BlogTagRepository)
+        public BlogTagsController(IBlogTagRepository BlogTagRepository)
         {
             _BlogTagRepository = BlogTagRepository;
         }

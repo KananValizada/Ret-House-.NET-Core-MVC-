@@ -14,10 +14,16 @@ namespace Admin.Controllers
     {
         private Repository.Models.Admin _admin => RouteData.Values["Admin"] as Repository.Models.Admin;
         private readonly IBlogTagRelateRepository _BlogTagRelateRepository;
+        private readonly IBlogRepository _blogRepository;
+        private readonly IBlogTagRepository _blogTagRepository;
 
-        public BlogTagRelateController(IBlogTagRelateRepository BlogTagRelateRepository)
+        public BlogTagRelateController(IBlogTagRelateRepository BlogTagRelateRepository, 
+                                       IBlogRepository blogRepository,
+                                       IBlogTagRepository blogTagRepository)
         {
             _BlogTagRelateRepository = BlogTagRelateRepository;
+            _blogRepository = blogRepository;
+            _blogTagRepository = blogTagRepository;
         }
         public IActionResult Index()
         {
@@ -26,6 +32,8 @@ namespace Admin.Controllers
         }
         public IActionResult Create()
         {
+            ViewBag.Blogs = _blogRepository.GetAllBlogs();
+            ViewBag.BlogTags = _blogTagRepository.GetAllBlogTags();
             return View();
         }
         [HttpPost]
@@ -34,6 +42,7 @@ namespace Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 _BlogTagRelateRepository.CreateBlogTagRelate(BlogTagRelate);
                 return RedirectToAction("index");
             }
@@ -41,6 +50,8 @@ namespace Admin.Controllers
         }
         public IActionResult Edit(int id)
         {
+            ViewBag.Blogs = _blogRepository.GetAllBlogs();
+            ViewBag.BlogTags = _blogTagRepository.GetAllBlogTags();
             BlogTagRelate abs = _BlogTagRelateRepository.GetBlogTagRelateById(id);
             if (abs == null) return NotFound();
             return View(abs);
