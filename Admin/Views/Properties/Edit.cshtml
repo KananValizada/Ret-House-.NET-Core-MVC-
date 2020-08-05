@@ -1,0 +1,146 @@
+﻿@model Repository.Models.Property
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Əmlak düzəlişi</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                <input asp-for="Id" type="hidden" />
+                <div class="form-group">
+                    <label>Vəziyyəti</label>
+                    <div class="custom-control custom-radio custom-control-inline ml-3">
+                        <input type="checkbox" asp-for="Status" class="custom-control-input">
+                        <label class="custom-control-label" asp-for="Status">Aktiv</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Önə çıxan</label>
+                    <div class="custom-control custom-radio custom-control-inline ml-3">
+                        <input type="checkbox" asp-for="IsFeatured" class="custom-control-input">
+                        <label class="custom-control-label" asp-for="IsFeatured">Bəli</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name">Adı</label>
+                    <input class="form-control form-control-user slug-source" asp-for="Name">
+                    <span class="field-validation-valid text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RoomCount">Otaq sayı</label>
+                    <input type="number" class="form-control form-control-user slug-source" asp-for="RoomCount" />
+                    <span class="field-validation-valid text-danger" asp-validation-for="RoomCount"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BathCount">Hamam otağı</label>
+                    <input type="number" class="form-control form-control-user slug-source" asp-for="BathCount" />
+                    <span class="field-validation-valid text-danger" asp-validation-for="BathCount"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BedCount">Yataq otağı</label>
+                    <input type="number" class="form-control form-control-user slug-source" asp-for="BedCount" />
+                    <span class="field-validation-valid text-danger" asp-validation-for="BedCount"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Qiymət</label>
+                    <input type="number" class="form-control form-control-user slug-source" asp-for="Price" />
+                    <span class="field-validation-valid text-danger" asp-validation-for="Price"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Adress">Ünvan</label>
+                    <input class="form-control form-control-user slug-source" asp-for="Adress" />
+                    <span class="field-validation-valid text-danger" asp-validation-for="Adress"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Ətraflı</label>
+                    <textarea class="form-control form-control-user slug-source" asp-for="Description"></textarea>
+                    <span class="field-validation-valid text-danger" asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Area">Sahə</label>
+                    <input class="form-control form-control-user slug-source" asp-for="Area">
+                    <span class="field-validation-valid text-danger" asp-validation-for="Area"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Video">Video linki</label>
+                    <input class="form-control form-control-user slug-source" asp-for="Video">
+                    <span class="field-validation-valid text-danger" asp-validation-for="Video"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PropStatus">Əmlak statusu</label>
+                    <select asp-for="PropStatus">
+                        <option value="0">Satılır</option>
+                        <option value="1">Kirayə verilir</option>
+                    </select>
+                    <span class="field-validation-valid text-danger" asp-validation-for="PropStatus"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PropFilter">Əmlak Növü</label>
+                    <select asp-for="PropFilter">
+                        <option value="0">Mənzil</option>
+                        <option value="1">Həyət evi</option>
+                        <option value="1">Ofis</option>
+                    </select>
+                    <span class="field-validation-valid text-danger" asp-validation-for="PropFilter"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CountryId">Ölkə</label>
+                    <select asp-for="CountryId">
+                        <option selected disabled>Seçin</option>
+                        @foreach (var item in ViewBag.Countries)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span class="field-validation-valid" asp-validation-for="CountryId"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AgencyId">Agentlik</label>
+                    <select asp-for="AgencyId">
+                        <option selected disabled>Seçin</option>
+                        @foreach (var item in ViewBag.Agencies)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span class="field-validation-valid" asp-validation-for="AgencyId"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AgentId">Agent</label>
+                    <select asp-for="AgentId">
+                        <option selected disabled>Seçin</option>
+                        @foreach (var item in ViewBag.Agents)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span class="field-validation-valid" asp-validation-for="AgentId"></span>
+                </div>
+                <div class="form-group d-flex justify-content-end mt-3">
+                    <button type="submit" class="btn btn-primary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-pencil-alt"></i>
+                        </span>
+                        <span class="text">Düzəliş</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+@section Scripts{
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}

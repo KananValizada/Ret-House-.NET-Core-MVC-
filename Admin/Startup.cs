@@ -11,6 +11,7 @@ using Repository.Models;
 using Repository.Repositories.AdminPagesCrud;
 using Repository.Repositories.AdminPagesCrud.Agency_and_Agent;
 using Repository.Repositories.AdminPagesCrud.Blogs;
+using Repository.Repositories.AdminPagesCrud.Properties;
 using Repository.Repositories.AdminRepositories;
 using Repository.Services;
 
@@ -48,6 +49,7 @@ namespace Admin
             services.AddTransient<IBlogReviewRepository, BlogReviewRepository>();
             services.AddTransient<IBlogTagRelateRepository, BlogTagRelateRepository>();
             services.AddTransient<IBlogTagRepository, BlogTagRepository>();
+            services.AddTransient<IPropertyRepository, PropertyRepository>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
             services.AddTransient<IFileManager, FileManager>();
         }
