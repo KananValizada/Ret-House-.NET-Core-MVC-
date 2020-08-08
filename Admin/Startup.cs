@@ -1,16 +1,15 @@
 using Admin.Libs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
-using Repository.Models;
 using Repository.Repositories.AdminPagesCrud;
 using Repository.Repositories.AdminPagesCrud.Agency_and_Agent;
 using Repository.Repositories.AdminPagesCrud.Blogs;
+using Repository.Repositories.AdminPagesCrud.PropDetails;
 using Repository.Repositories.AdminPagesCrud.Properties;
 using Repository.Repositories.AdminRepositories;
 using Repository.Services;
@@ -50,6 +49,11 @@ namespace Admin
             services.AddTransient<IBlogTagRelateRepository, BlogTagRelateRepository>();
             services.AddTransient<IBlogTagRepository, BlogTagRepository>();
             services.AddTransient<IPropertyRepository, PropertyRepository>();
+            services.AddTransient<IPropertyReviewRepository, PropertyReviewRepository>();
+            services.AddTransient<IPropFeatureRepository, PropFeatureRepository>();
+            services.AddTransient<IPropDetailRepository, PropDetailRepository>();
+            services.AddTransient<IPropFloorRepository, PropFloorRepository>();
+            services.AddTransient<IPropImageRepository, PropImageRepository>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
             services.AddTransient<IFileManager, FileManager>();
         }

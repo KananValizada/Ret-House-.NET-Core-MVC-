@@ -1,0 +1,60 @@
+﻿@model Repository.Models.PropFeature
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<!-- Begin Page Content -->
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Xüsusiyyət düzəlişi</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Key">Ad</label>
+                    <input class="form-control form-control-user slug-source" asp-for="Key">
+                    <span class="field-validation-valid text-danger" asp-validation-for="Key"></span>
+                </div>
+                <div class="form-group">
+                    <label>Mövcudluğu</label>
+                    <div class="custom-control custom-radio custom-control-inline ml-3">
+                        <input type="checkbox" asp-for="Value" class="custom-control-input">
+                        <label class="custom-control-label" asp-for="Value">Bəli</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PropertyId">Əmlak</label>
+                    <select asp-for="PropertyId">
+                        <option selected disabled>Seçin</option>
+                        @foreach (var item in ViewBag.Properties)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group d-flex justify-content-end mt-3">
+                    <button type="submit" class="btn btn-primary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-pencil-alt"></i>
+                        </span>
+                        <span class="text">Düzəliş et</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+@section Scripts{
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
