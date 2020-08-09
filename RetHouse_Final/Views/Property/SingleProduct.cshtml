@@ -1,4 +1,5 @@
 ﻿@model Category
+@inject ICloudinaryService _CloudinaryService
 @{
     ViewData["Title"] = "SingleProduct";
 }
@@ -53,7 +54,7 @@
                                     {
                                         <div class="item">
                                             <div class="slider__image__detail-large-one">
-                                                <img src="~/images/@img.Photo" alt="" class="img-fluid w-100 img-transition">
+                                                <img src="@_CloudinaryService.BuildUrl(img.Photo)" alt="" class="img-fluid w-100 img-transition">
                                                 <div class="description">
                                                     <figure>
                                                         <img src="images/profile-blog.jpg" alt="" class="img-fluid">
@@ -85,7 +86,7 @@
                                     {
                                         <div class="item">
                                             <div class="slider__image__detail-thumb-one">
-                                                <img src="~/images/@img.Photo" alt="" class="img-fluid w-100 img-transition">
+                                                <img src="@_CloudinaryService.BuildUrl(img.Photo)" alt="" class="img-fluid w-100 img-transition">
                                             </div>
                                         </div>
                                     }
@@ -245,7 +246,7 @@
                                                              aria-labelledby="headingOne" data-parent="#accordion">
                                                             <div class="card-body">
                                                                 <figure>
-                                                                    <img src="~/images/@floor.Photo" alt="" class="img-fluid">
+                                                                    <img src="@_CloudinaryService.BuildUrl(floor.Photo)" alt="" class="img-fluid">
                                                                 </figure>
 
                                                             </div>
@@ -653,24 +654,24 @@
                                                     <figure>
                                                         <img src="~/images/profile-blog.jpg" alt="" class="img-fluid">
                                                     </figure>
-
+                                                   
                                                     <ul class="list-unstyled mb-0">
                                                         <li>
-                                                            <h5 class="text-capitalize">jhon doe</h5>
+                                                            <h5 class="text-capitalize">@item.Name</h5>
                                                         </li>
                                                         <li>
                                                             <a href="tel:123456">
-                                                                <i class="fa fa-phone-square mr-1"></i>(123)456-7890
+                                                                <i class="fa fa-phone-square mr-1"></i>@item.MobilePhone
                                                             </a>
                                                         </li>
                                                         <li>
                                                             <a href="javascript:void(0)">
                                                                 <i class=" fa fa-building mr-1"></i>
-                                                                Company name
+                                                                @item.Agency.Name
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:void(0)" class="text-primary">View My Listing</a>
+                                                            <a asp-controller="agent" asp-action="singleagent" asp-route-id="@Model.Id" asp-route-agentId="@item.Id" class="text-primary">Əmlaklarına bax</a>
                                                         </li>
                                                     </ul>
 
@@ -744,7 +745,7 @@
                                                                 <div class="ribbon text-capitalize">@c</div>
                                                                 @foreach (var img in props.PropImages)
 	                                                            {
-                                                            <img src="~/images/@img.Photo" alt="" class="img-fluid w100 img-transition">
+                                                            <img src="@_CloudinaryService.BuildUrl(img.Photo)" alt="" class="img-fluid w100 img-transition">
                                                                     break;
                                                                 }
                                                                 

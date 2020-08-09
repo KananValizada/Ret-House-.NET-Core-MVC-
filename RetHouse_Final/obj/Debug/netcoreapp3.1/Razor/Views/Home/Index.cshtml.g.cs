@@ -26,8 +26,15 @@ using Repository.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\Views\_ViewImports.cshtml"
+using Repository.Services;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4cd6d86ad0becfe33c6260f57faf062e93628798", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3dd1b779b2d2539833c593ff17955efaca151f3a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3c3a312bca82feb75033b3acff2b47ae74393e0f", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Property>
     {
         #line hidden
@@ -80,7 +87,7 @@ using Repository.Models;
             </ol>
             <div class=""carousel-inner"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:slider", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e936287984602", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:slider", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e936287984797", async() => {
             }
             );
             __SliderViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Home_Index.__Generated__SliderViewComponentTagHelper>();
@@ -142,7 +149,7 @@ using Repository.Models;
                     <li class=""list-inline-item btn-filter"" data-filter=""2"">Ev</li>
                     <li class=""list-inline-item btn-fil");
             WriteLiteral("ter\" data-filter=\"4\">Ofis</li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"filtr-container\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:property-item", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e936287987863", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:property-item", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e936287988058", async() => {
             }
             );
             __PropertyItemViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Home_Index.__Generated__PropertyItemViewComponentTagHelper>();
@@ -178,7 +185,7 @@ using Repository.Models;
             <div class=""clearfix""></div>
         </div>
         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:popular-places", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e936287989480", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:popular-places", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e936287989675", async() => {
             }
             );
             __PopularPlacesViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Home_Index.__Generated__PopularPlacesViewComponentTagHelper>();
@@ -219,7 +226,7 @@ using Repository.Models;
                     <h2 class=""text-center text-capitalize"">Bizim partnyorlar</h2>
                     <p cl");
             WriteLiteral("ass=\"text-center text-capitalize\">\r\n                        Marka Tərəfdaşları Uğurlu Layihələr Bir çox Müştərilərə Daşınmaz Əmlaka Etibar\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:partners", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e9362879811728", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:partners", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e9362879811923", async() => {
             }
             );
             __PartnersViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Home_Index.__Generated__PartnersViewComponentTagHelper>();
@@ -251,7 +258,7 @@ using Repository.Models;
         </div>
         <div class=""testimonial owl-carousel owl-theme"">
            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:people-says", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e9362879813269", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:people-says", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e9362879813464", async() => {
             }
             );
             __PeopleSaysViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Home_Index.__Generated__PeopleSaysViewComponentTagHelper>();
@@ -286,7 +293,7 @@ using Repository.Models;
         </div>
         <div class=""row"">
             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:blog-item", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e9362879814909", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:blog-item", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd6d86ad0becfe33c6260f57faf062e9362879815104", async() => {
             }
             );
             __BlogItemViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Home_Index.__Generated__BlogItemViewComponentTagHelper>();

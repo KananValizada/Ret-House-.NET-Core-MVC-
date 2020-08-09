@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<Partner>
+@inject ICloudinaryService _cloudinaryService
+<div class="row">
+    <div class="col-md-12">
+        <div class="projects__partner-logo">
+            <ul class="list-inline mb-0">
+                @foreach (var item in Model)
+                {
+                    <li class="list-inline-item">
+                        <img src="@_cloudinaryService.BuildUrl(item.Logo)" alt="" class="img-fluid">
+                    </li>
+                }
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="projects__partner-logo">
-                <ul class="list-inline mb-0">
-                    @foreach (var item in Model)
-                    {
-                        <li class="list-inline-item">
-                            <img src="~/images/@item.Logo" alt="" class="img-fluid">
-                        </li>
-                    }
-
-                </ul>
-            </div>
+            </ul>
         </div>
     </div>
+</div>

@@ -1,4 +1,5 @@
 ﻿@model Category
+@inject ICloudinaryService _cloudinaryService
 @{
     ViewData["Title"] = "SingleAgent";
 }
@@ -45,7 +46,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
                                         <a href="#" class="profile__agents-avatar">
-                                            <img src="~/images/@item.Photo" alt="" class="img-fluid ">
+                                            <img src="@_cloudinaryService.BuildUrl(item.Photo)" alt="" class="img-fluid ">
                                             <div class="total__property-agent">@item.Properties.Count() mülk</div>
                                         </a>
                                     </div>
@@ -182,7 +183,7 @@
                                                                     <div class="ribbon text-capitalize">@a</div>
                                                                     @foreach (var img in prop.PropImages)
                                                                     {
-                                                                        <img src="~/images/@img.Photo" alt=""
+                                                                        <img src="@_cloudinaryService.BuildUrl(img.Photo)" alt=""
                                                                              class="img-fluid w100 img-transition">
                                                                         break;
                                                                     }

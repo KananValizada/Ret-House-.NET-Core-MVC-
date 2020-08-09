@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Category>
+@inject ICloudinaryService _cloudinaryService
 @{
     ViewData["Title"] = "Agent Page";
 }
@@ -110,7 +111,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
                                         <a asp-controller="agent" asp-action="SingleAgent" asp-route-id="@item.Id" asp-route-agentId="@agent.Id" class="profile__agents-avatar">
-                                            <img src="~/images/@agent.Photo" alt="" class="img-fluid ">
+                                            <img src="@_cloudinaryService.BuildUrl(agent.Photo)" alt="" class="img-fluid ">
                                             <div class="total__property-agent">@agent.Properties.Count() Mülk</div>
                                         </a>
                                     </div>

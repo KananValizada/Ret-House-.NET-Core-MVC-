@@ -5,8 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
+using Repository.Repositories.AdminPagesCrud.Agency_and_Agent;
 using Repository.Repositories.MainPage;
 using Repository.Repositories.Pages;
+using Repository.Services;
 
 namespace RetHouse_Final
 {
@@ -30,8 +32,10 @@ namespace RetHouse_Final
             services.AddTransient<ISliderRepository, SliderRepository>();
             services.AddTransient<IMainRepository, MainRepository>();
             services.AddTransient<IAboutUsRepository, AboutUsRepository>();
-            services.AddTransient<IAgencyRepository, AgencyRepository>();
+            services.AddTransient<Repository.Repositories.Pages.IAgencyRepository, Repository.Repositories.Pages.AgencyRepository>();
             services.AddTransient<IBlogRepository, BlogRepository>();
+            services.AddTransient<IAgencyReviewRepository, AgencyReviewRepository>();
+            services.AddTransient<ICloudinaryService, CloudinaryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

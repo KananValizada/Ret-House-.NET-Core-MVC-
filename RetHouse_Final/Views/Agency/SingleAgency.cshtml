@@ -1,5 +1,5 @@
 ﻿@model Category
-
+@inject ICloudinaryService _cloudinaryService
 @{
     ViewData["Title"] = "SingleAgency";
 }
@@ -42,7 +42,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
                                         <a href="#" class="profile__agency-logo">
-                                            <img src="~/images/@item.Logo" alt="" class="img-fluid">
+                                            <img src="@_cloudinaryService.BuildUrl(item.Logo)" alt="" class="img-fluid">
                                             <div class="total__property-agent">@item.Properties.Count() Mülk</div>
                                         </a>
                                     </div>
@@ -186,7 +186,7 @@
                                                                         <div class="ribbon text-capitalize">@a</div>
                                                                         @foreach (var img in prop.PropImages)
                                                                         {
-                                                                            <img src="~/images/@img.Photo" alt=""
+                                                                            <img src="@_cloudinaryService.BuildUrl(img.Photo)" alt=""
                                                                                  class="img-fluid w100 img-transition">
                                                                             break;
                                                                         }
@@ -296,7 +296,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6 col-lg-6">
                                                         <a href="#" class="profile__agents-avatar">
-                                                            <img src="~/images/@agent.Photo" alt="" class="img-fluid ">
+                                                            <img src="@_cloudinaryService.BuildUrl(agent.Photo)" alt="" class="img-fluid ">
                                                             <div class="total__property-agent">@agent.Properties.Count() Mülk</div>
                                                         </a>
                                                     </div>
@@ -375,6 +375,7 @@
                                     <div class="single__detail-features-review">
                                         @foreach (var review in item.Reviews)
                                         {
+
                                             <div class="media mt-4">
                                                 <img class="mr-3 img-fluid rounded-circle" src="~/images/profile-blog.jpg" alt="">
                                                 <div class="media-body">
@@ -400,61 +401,51 @@
                                                     </p>
                                                 </div>
                                             </div>
+
                                         }
 
                                         <!-- COMMENT -->
                                         <hr>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p class="mb-2">Your rating for this listing:</p>
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item">
-                                                        <i class="fa fa-star selected"></i>
-                                                        <i class="fa fa-star selected"></i>
-                                                        <i class="fa fa-star selected"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </li>
-                                                    <li class="list-inline-item">3/5</li>
-                                                </ul>
-                                                <div class="form-group">
-                                                    <label>Your Name</label>
-                                                    <input type="text" class="form-control" required="required">
-
+                                        <form method="post">
+                                            <input asp-for="catId" value="@Model.Id" type="hidden" />
+                                            <input asp-for="ModifiedBy" value="@item.Id" type="hidden" />
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="mb-2">Reytinqiniz:</p>
+                                                    <select asp-for="Id">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                    <span class="field-validation-valid text-danger" asp-validation-for="Id"></span>
+                                                    <div class="form-group mt-2" >
+                                                        <label>Sizin adınız</label>
+                                                        <input type="text" class="form-control" required="required" asp-for="CreatedBy">
+                                                        <span class="field-validation-valid text-danger" asp-validation-for="CreatedBy"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Mesajınız</label>
+                                                        <textarea class="form-control" rows="4" asp-for="Name"></textarea>
+                                                        <span class="field-validation-valid text-danger" asp-validation-for="Name"></span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>What's your Email?</label>
-                                                    <input type="email" class="form-control" required="required">
 
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Subject</label>
-                                                    <input type="text" class="form-control" required="required">
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Your message</label>
-                                                    <textarea class="form-control" rows="4"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button type="submit" class="btn btn-primary float-right ">
-                                            Submit review <i class="fa fa-paper-plane ml-2"></i>
-                                        </button>
-                                        <!-- END COMMENT -->
+                                            <button type="submit" class="btn btn-primary float-right ">
+                                                Göndər <i class="fa fa-paper-plane ml-2"></i>
+                                            </button>
+                                            <!-- END COMMENT -->
+                                        </form>
                                     </div>
-
-                                    <!-- END RATE US  WRITE -->
-                                    <div class="clearfix"></div>
-                                </div>
-
+                                       
+                                        <!-- END RATE US  WRITE -->
+                                        <div class="clearfix"></div>
+                                    </div>
+                                      
 
                             </div>
                             <!-- END FILTER VERTICAL -->
@@ -467,7 +458,7 @@
                             <div class="products__filter mb-30">
                                 <div class="products__filter__group">
                                     <div class="products__filter__header">
-                                        <h5 class="text-center text-capitalize">Contact Form</h5>
+                                        <h5 class="text-center text-capitalize">Əlaqə formu</h5>
                                     </div>
                                     <div class="products__filter__body">
                                         <div class="form-group">

@@ -235,3 +235,5 @@ C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreap
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\staticwebassets\RetHouse_Final.StaticWebAssets.Manifest.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\staticwebassets\RetHouse_Final.StaticWebAssets.xml
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\CryptoHelper.dll

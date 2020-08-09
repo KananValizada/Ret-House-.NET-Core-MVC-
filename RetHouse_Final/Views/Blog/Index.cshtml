@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<BlogPhase>
+@inject ICloudinaryService _cloudinaryServise
 @{
     ViewData["Title"] = "Blog Page";
 }
@@ -46,7 +47,7 @@
                                     <!-- BLOG  -->
                                     <div class="card__image">
                                         <div class="card__image-header h-250">
-                                            <img src="~/images/@blog.Image" alt="" class="img-fluid w100 img-transition">
+                                            <img src="@_cloudinaryServise.BuildUrl(blog.Image)" alt="" class="img-fluid w100 img-transition">
 
                                         </div>
                                         <div class="card__image-body">

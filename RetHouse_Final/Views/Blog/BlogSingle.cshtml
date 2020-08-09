@@ -1,4 +1,5 @@
 ﻿@model BlogPhase
+@inject ICloudinaryService _cloudinaryService
 @{
     ViewData["Title"] = "BlogSingle";
 }
@@ -41,7 +42,7 @@
                                 </ul>
                             </div>
                             <figure>
-                                <img src="~/images/@blog.Image" class="img-fluid" alt="">
+                                <img src="@_cloudinaryService.BuildUrl(blog.Image)" class="img-fluid" alt="">
                             </figure>
 
                             @Html.Raw(blog.Text)

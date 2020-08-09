@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Category>
-
+@inject ICloudinaryService _cloudinaryService
 @{
     ViewData["Title"] = "Property Page";
 }
@@ -318,7 +318,7 @@
                                                                                 </div>
                                                                                 @foreach (var img in prop.PropImages)
                                                                                 {
-                                                                                    <img src="~/images/@img.Photo" alt=""
+                                                                                    <img src="@_cloudinaryService.BuildUrl(img.Photo)" alt=""
                                                                                          class="img-fluid w100 img-transition">
                                                                                     break;
                                                                                 }
@@ -498,8 +498,8 @@
                                                                     </div>
                                                                     @foreach (var image in prop.PropImages)
                                                                     {
-                                                                        <img alt="" src="~/images/@image.Photo"
-                                                                             class="img-fluid h-40 ">
+                                                                        <img alt="" src="@_cloudinaryService.BuildUrl(image.Photo)"
+                                                                             class="img-fluid w100 img-transition">
                                                                         break;
                                                                     }
 
