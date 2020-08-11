@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
 using Repository.Repositories.AdminPagesCrud.Agency_and_Agent;
+using Repository.Repositories.AdminPagesCrud.Blogs;
+using Repository.Repositories.AdminPagesCrud.Properties;
 using Repository.Repositories.MainPage;
 using Repository.Repositories.Pages;
 using Repository.Services;
@@ -33,7 +35,12 @@ namespace RetHouse_Final
             services.AddTransient<IMainRepository, MainRepository>();
             services.AddTransient<IAboutUsRepository, AboutUsRepository>();
             services.AddTransient<Repository.Repositories.Pages.IAgencyRepository, Repository.Repositories.Pages.AgencyRepository>();
-            services.AddTransient<IBlogRepository, BlogRepository>();
+            services.AddTransient<IAgentRepository, AgentRepository>();
+            services.AddTransient<IAgentReviewRepository, AgentReviewRepository>();
+            services.AddTransient<IPropertyRepository, PropertyRepository>();
+            services.AddTransient<IPropertyReviewRepository, PropertyReviewRepository>();
+            services.AddTransient<Repository.Repositories.Pages.IBlogRepository, Repository.Repositories.Pages.BlogRepository>();
+            services.AddTransient<IBlogReviewRepository, BlogReviewRepository>();
             services.AddTransient<IAgencyReviewRepository, AgencyReviewRepository>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
         }

@@ -404,6 +404,11 @@
 
                                         }
 
+                                        @{ 
+                                            var ark = Model.Name;
+                                            Model.Name = "";
+                                            Model.CreatedBy = "";
+                                        }
                                         <!-- COMMENT -->
                                         <hr>
                                         <form method="post">
@@ -420,7 +425,7 @@
                                                         <option>5</option>
                                                     </select>
                                                     <span class="field-validation-valid text-danger" asp-validation-for="Id"></span>
-                                                    <div class="form-group mt-2" >
+                                                    <div class="form-group mt-2">
                                                         <label>Sizin adınız</label>
                                                         <input type="text" class="form-control" required="required" asp-for="CreatedBy">
                                                         <span class="field-validation-valid text-danger" asp-validation-for="CreatedBy"></span>
@@ -493,13 +498,16 @@
                             </div>
                             <!-- END FORM FILTER -->
                             <!-- ARCHIVE CATEGORY -->
+                            @{Model.Name = ark;}
                             <aside class=" wrapper__list__category">
                                 <!-- CATEGORY -->
                                 <div class="widget widget__archive">
                                     <div class="widget__title">
                                         <h5 class="text-dark mb-0 text-center">Kateqoriyalar</h5>
                                     </div>
+                                     <div class="widget__sidebar__body">
                                   <vc:category></vc:category>
+                                </div>
                                 </div>
                                 <!-- END CATEGORY -->
                             </aside>

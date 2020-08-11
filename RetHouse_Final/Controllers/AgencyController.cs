@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository.Models;
 using Repository.Repositories.AdminPagesCrud.Agency_and_Agent;
 using Repository.Repositories.MainPage;
-using Repository.Repositories.Pages;
 using System;
-using System.ComponentModel;
 
 namespace RetHouse_Final.Controllers
 {

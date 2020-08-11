@@ -159,131 +159,74 @@
                             </div>
                             <div class="clearfix"></div>
 
+                            <h6>@blog.BlogReviews.Count() Komment:</h6>
                             <!-- COMMENTS -->
-                            <h6>3 Comments:</h6>
-                            <div class="single__detail-features-review">
-                                <div class="media mt-4">
-                                    <img class="mr-3 img-fluid rounded-circle" src="images/profile-blog.jpg" alt="">
-                                    <div class="media-body">
-                                        <h6 class="mt-0">Jhon doe</h6>
-                                        <span class="mb-3">Mei 13, 2020</span>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item">3/5</li>
-                                        </ul>
-                                        <p>
-                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                                            ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-                                            viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                                            Donec
-                                            lacinia congue felis in faucibus.
-                                        </p>
 
-                                        <div class="media mt-4">
-                                            <a class="pr-3" href="#">
-                                                <img src="images/client.png" alt="" class="img-fluid rounded-circle">
-                                            </a>
-                                            <div class="media-body">
-                                                <h6 class="mt-0">Christine </h6>
-                                                <span class="mb-3">Mei 13, 2020</span>
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item">
+                            <div class="single__detail-features-review">
+                                @foreach (var review in blog.BlogReviews)
+                                {
+                                    <div class="media mt-4">
+                                        <img class="mr-3 img-fluid rounded-circle" src="~/images/profile-blog.jpg" alt="">
+                                        <div class="media-body">
+                                            <h6 class="mt-0">@review.Name</h6>
+                                            <span class="mb-3">@review.CreatedAt.ToString("yyyy-MM-dd")</span>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    @for (int z = 0; z < review.Star; z++)
+                                                    {
                                                         <i class="fa fa-star selected"></i>
-                                                        <i class="fa fa-star selected"></i>
-                                                        <i class="fa fa-star selected"></i>
-                                                        <i class="fa fa-star selected"></i>
-                                                        <i class="fa fa-star selected"></i>
-                                                    </li>
-                                                    <li class="list-inline-item">5/5</li>
-                                                </ul>
-                                                <p>
-                                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                                    scelerisque ante sollicitudin.
-                                                </p>
+                                                    }
+
+                                                    @for (int z = review.Star; z < 5; z++)
+                                                    {
+                                                        <i class="fa fa-star"></i>
+                                                    }
+
+                                                </li>
+                                                <li class="list-inline-item">@review.Star/5</li>
+                                            </ul>
+                                            <p>
+                                                @review.Comment
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+                                <!-- COMMENT -->
+                                <hr>
+                                <form method="post">
+                                    <input asp-for="Phase" value="@Model.Id" type="hidden" />
+                                    <input asp-for="ModifiedBy" value="@blog.Id" type="hidden" />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="mb-2">Reytinqiniz:</p>
+                                            <select asp-for="Id">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <span class="field-validation-valid text-danger" asp-validation-for="Id"></span>
+                                            <div class="form-group mt-2">
+                                                <label>Sizin adınız</label>
+                                                <input type="text" class="form-control" required="required" asp-for="CreatedBy">
+                                                <span class="field-validation-valid text-danger" asp-validation-for="CreatedBy"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Mesajınız</label>
+                                                <textarea class="form-control" rows="4" asp-for="Name"></textarea>
+                                                <span class="field-validation-valid text-danger" asp-validation-for="Name"></span>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="media mt-4">
-                                    <img class="mr-3 img-fluid rounded-circle" src="images/profile-blog.jpg" alt="">
-                                    <div class="media-body">
-                                        <h6 class="mt-0">Jhon Doe</h6>
-                                        <span class="mb-3">Mei 13, 2020</span>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star selected"></i>
-                                            </li>
-                                            <li class="list-inline-item">5/5</li>
-                                        </ul>
-                                        <p>
-                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                                            ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-                                            viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                                            Donec
-                                            lacinia congue felis in faucibus.
-                                        </p>
-
-
-                                    </div>
-                                </div>
-                                <!-- COMMENT -->
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p class="mb-2">Your rating for this listing:</p>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star selected"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item">3/5</li>
-                                        </ul>
-                                        <div class="form-group">
-                                            <label>Your Name</label>
-                                            <input type="text" class="form-control" required="required">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>What's your Email?</label>
-                                            <input type="email" class="form-control" required="required">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Subject</label>
-                                            <input type="text" class="form-control" required="required">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Your message</label>
-                                            <textarea class="form-control" rows="4"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary float-right ">
-                                    Submit review <i class="fa fa-paper-plane ml-2"></i>
-                                </button>
-                                <!-- END COMMENT -->
+                                    <button type="submit" class="btn btn-primary float-right ">
+                                        Göndər <i class="fa fa-paper-plane ml-2"></i>
+                                    </button>
+                                    <!-- END COMMENT -->
+                                </form>
 
                             </div>
                             <!-- END COMMENTS -->
@@ -314,47 +257,10 @@
                             <aside>
                                 <div class="widget__sidebar">
                                     <div class="widget__sidebar__header">
-                                        <h6 class="text-capitalize">category</h6>
+                                        <h6 class="text-capitalize">Kateqoriyalar</h6>
                                     </div>
                                     <div class="widget__sidebar__body">
-                                        <ul class="list-unstyled">
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    apartement
-                                                    <span class="badge badge-primary">14</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    villa
-                                                    <span class="badge badge-primary">4</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    family house
-                                                    <span class="badge badge-primary">2</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    modern villa
-                                                    <span class="badge badge-primary">8</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    town house
-                                                    <span class="badge badge-primary">10</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-capitalize">
-                                                    office
-                                                    <span class="badge badge-primary">12</span>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                       <vc:category></vc:category>
                                     </div>
 
                                 </div>
