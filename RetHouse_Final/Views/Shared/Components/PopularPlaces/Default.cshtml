@@ -12,8 +12,7 @@
             {
                 propCount += @agent.Properties.Count;
             }
-            <a href="#">
-                <div class="card__image-hover-style-v3">
+                <div class="card__image-hover-style-v3" style="cursor:pointer">
                     <div class="card__image-hover-style-v3-thumb h-475">
                         <img src="@_cloudinaryService.BuildUrl(city.Photo)" alt="" class="img-fluid w-100">
                     </div>
@@ -24,7 +23,6 @@
                         </div>
                     </div>
                 </div>
-            </a>
             propCount = 0;
             break;
         }
@@ -43,9 +41,8 @@
                 {
                     propCount += @agent.Properties.Count;
                 }
-                <div class="col-md-6 col-padd">
+                <div class="col-md-6 col-padd" style="cursor:pointer">
                     <!-- CARD IMAGE -->
-                    <a href="#">
                         <div class="card__image-hover-style-v3">
                             <div class="card__image-hover-style-v3-thumb h-230">
                                 <img src="@_cloudinaryService.BuildUrl(city.Photo)" alt="" class="img-fluid w-100">
@@ -57,7 +54,6 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
                 </div>
             }
         </div>

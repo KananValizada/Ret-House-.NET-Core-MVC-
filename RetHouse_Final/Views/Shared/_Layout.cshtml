@@ -31,41 +31,6 @@
 </head>
 
 <body>
-    <!-- NAVBAR TOP -->
-    <div class="topbar d-none d-sm-block">
-        <div class="container ">
-            <div class="row">
-                <div class="col-sm-12 col-md-5">
-                    <div class="topbar-left">
-                        <div class="topbar-text">
-                            Monday, March 22, 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-7">
-                    <div class="list-unstyled topbar-right">
-                        <ul class="topbar-link">
-                            <li><a href="#" title="">Karyera</a></li>
-                            <li><a href="#" title="">Bizimlə əlaqə</a></li>
-                            <li><a href="#" title="">Loqin / Reqistrasiya</a></li>
-                        </ul>
-                        <ul class="topbar-sosmed">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END NAVBAR TOP -->
     <nav class="navbar navbar-hover navbar-expand-lg navbar-soft">
         <div class="container">
             <a class="navbar-brand" asp-controller="home" asp-action="index">
@@ -143,22 +108,21 @@
                                 <img src="images/logo-blue.png" alt="" class="logo-footer">
                             </figure>
                             <p>
-                                Rethouse Real Estate is a premium Property template based on Bootstrap 4. Rethouse Real
-                                Estate helped thousands of clients to find the right property for their needs.
+                                Rethouse Real Estate saytı Bootstrap 4 və Asp.net core MVC ilə yığılıb.
+                                Bütün hüquqları qorunur.
 
                             </p>
 
                             <ul class="list-unstyled mb-0 mt-3">
                                 <li>
                                     <b> <i class="fa fa-map-marker"></i></b><span>
-                                        214 West Arnold St. New York, NY
-                                        10002
+                                        205 Sarayev, Əhmədli q., Xətayi rayonu.
                                     </span>
                                 </li>
-                                <li> <b><i class="fa fa-phone-square"></i></b><span>(123) 345-6789</span> </li>
-                                <li> <b><i class="fa fa-phone-square"></i></b><span>(+100) 123 456 7890</span> </li>
+                                <li> <b><i class="fa fa-phone-square"></i></b><span>(12) 345-6789</span> </li>
+                                <li> <b><i class="fa fa-phone-square"></i></b><span>(+994) 55 456 7890</span> </li>
                                 <li> <b><i class="fa fa-headphones"></i></b><span>support@realvilla.demo</span> </li>
-                                <li> <b><i class="fa fa-clock-o"></i></b><span>Mon - Sun / 9:00AM - 8:00PM</span> </li>
+                                <li> <b><i class="fa fa-clock-o"></i></b><span>Bazar ertəsi - Bazar / 9:00AM - 8:00PM</span> </li>
                             </ul>
                         </div>
 
@@ -167,50 +131,27 @@
                     <!-- QUICK LINKS -->
                     <div class="col-md-4">
                         <div class="widget__footer">
-                            <h4 class="footer-title">Quick Links</h4>
+                            <h4 class="footer-title">Qısa keçidlər</h4>
                             <div class="link__category-two-column">
                                 <ul class="list-unstyled ">
                                     <li class="list-inline-item">
-                                        <a href="#">Commercial</a>
+                                        <a asp-controller="property" asp-action="index"> Əmlaklar </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="#">business</a>
+                                        <a asp-controller="agent" asp-action="index"> Agentlər </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="#">House</a>
+                                        <a asp-controller="agency" asp-action="index"> Agentliklər </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="#">Residential</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <a href="#">Residential Tower</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Beverly Hills</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Los angeles</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">The beach</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Property Listing</a>
+                                        <a asp-controller="aboutus" asp-action="index">Haqqımızda </a>
                                     </li>
 
                                     <li class="list-inline-item">
-                                        <a href="#">Clasic</a>
+                                    <a asp-controller="contact" asp-action="index"> Əlaqə </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="#">Modern Home</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <a href="#">Luxury</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Beach Pasadena</a>
+                                        <a  asp-controller="blog" asp-action="index"> Bloq </a>
                                     </li>
                                 </ul>
                             </div>
@@ -220,47 +161,32 @@
                     <!-- NEWSLETTERS -->
                     <div class="col-md-4">
                         <div class="widget__footer">
-                            <h4 class="footer-title">follow us </h4>
+                            <h4 class="footer-title">Bizi izlə </h4>
                             <p class="mb-2">
-                                Follow us and stay in touch to get the latest news
+                                Bizi izlə və son yeniliklərdən xəbərdar ol
                             </p>
                             <p>
-                                <button class="btn btn-social btn-social-o facebook mr-1">
+                                <a href="https://www.facebook.com/" class="btn btn-social btn-social-o facebook mr-1">
                                     <i class="fa fa-facebook-f"></i>
-                                </button>
-                                <button class="btn btn-social btn-social-o twitter mr-1">
+                                </a>
+                                <a href="https://twitter.com/?lang=en" class="btn btn-social btn-social-o twitter mr-1">
                                     <i class="fa fa-twitter"></i>
-                                </button>
+                                </a>
 
-                                <button class="btn btn-social btn-social-o linkedin mr-1">
+                                <a href="https://www.linkedin.com/" class="btn btn-social btn-social-o linkedin mr-1">
                                     <i class="fa fa-linkedin"></i>
-                                </button>
-                                <button class="btn btn-social btn-social-o instagram mr-1">
+                                </a>
+                                <a href="https://www.instagram.com/accounts/login/?hl=en" class="btn btn-social btn-social-o instagram mr-1">
                                     <i class="fa fa-instagram"></i>
-                                </button>
+                                </a>
 
-                                <button class="btn btn-social btn-social-o youtube mr-1">
+                                <a href="https://www.youtube.com/watch?v=yVIRcnlRKF8" class="btn btn-social btn-social-o youtube mr-1">
                                     <i class="fa fa-youtube"></i>
-                                </button>
+                                </a>
                             </p>
                             <br>
-                            <h4 class="footer-title">newsletter</h4>
-                            <!-- Form Newsletter -->
-                            <div class="widget__form-newsletter ">
-                                <p>
-
-                                    Don’t miss to subscribe to our news feeds, kindly fill the form below
-                                </p>
-                                <div class="mt-3">
-                                    <input type="text" class="form-control mb-2" placeholder="Your email address">
-
-                                    <button class="btn btn-primary btn-block text-capitalize" type="button">
-                                        subscribe
-
-                                    </button>
-                                </div>
-                            </div>
-
+                       
+                   
                         </div>
                     </div>
                     <!-- END NEWSLETTER -->
@@ -268,44 +194,6 @@
             </div>
         </div>
 
-        <!-- Footer Bottom -->
-        <div class="bg__footer-bottom-v1">
-            <div class="container">
-                <div class="row flex-column-reverse flex-md-row">
-                    <div class="col-md-6">
-                        <span>
-                            © 2020 Rethouse Real Estate - Premium real estate & theme &amp; theme by
-                            <a href="#">retenvi.com</a>
-                        </span>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-inline ">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    privacy
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    contact
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    about
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    faq
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Footer  -->
     </footer>
 
     <!-- SCROLL TO TOP -->
