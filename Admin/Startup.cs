@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
+using Repository.Repositories;
 using Repository.Repositories.AdminPagesCrud;
 using Repository.Repositories.AdminPagesCrud.Agency_and_Agent;
 using Repository.Repositories.AdminPagesCrud.Blogs;
@@ -54,6 +55,8 @@ namespace Admin
             services.AddTransient<IPropDetailRepository, PropDetailRepository>();
             services.AddTransient<IPropFloorRepository, PropFloorRepository>();
             services.AddTransient<IPropImageRepository, PropImageRepository>();
+            services.AddTransient<ISliderItemRepository, SliderItemRepository>();
+            services.AddTransient<IPeopleSayRepository, PeopleSayRepository>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
             services.AddTransient<IFileManager, FileManager>();
         }

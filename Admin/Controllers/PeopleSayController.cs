@@ -5,24 +5,24 @@ using System.Threading.Tasks;
 using Admin.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Models;
-using Repository.Repositories.AdminPagesCrud;
+using Repository.Repositories;
 
 namespace Admin.Controllers
 {
     [TypeFilter(typeof(Auth))]
-    public class SliderController : Controller
+    public class PeopleSayController : Controller
     {
         private Repository.Models.Admin _admin => RouteData.Values["Admin"] as Repository.Models.Admin;
-        private readonly ISliderItemRepository _SliderRepository;
+        private readonly IPeopleSayRepository _PeopleSayRepository;
 
-        public SliderController(ISliderItemRepository SliderRepository)
+        public PeopleSayController(IPeopleSayRepository PeopleSayRepository)
         {
-            _SliderRepository = SliderRepository;
+            _PeopleSayRepository = PeopleSayRepository;
         }
         public IActionResult Index()
         {
-            var Slider = _SliderRepository.GetAllSliderItem();
-            return View(Slider);
+            var PeopleSay = _PeopleSayRepository.GetAllPeopleSay();
+            return View(PeopleSay);
         }
         public IActionResult Create()
         {
@@ -30,43 +30,41 @@ namespace Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(SliderItem Slider)
+        public IActionResult Create(PeopleSay PeopleSay)
         {
             if (ModelState.IsValid)
             {
-                Slider.CreatedBy = _admin.Fullname;
-                _SliderRepository.CreateSliderItem(Slider);
+                PeopleSay.CreatedBy = _admin.Fullname;
+                _PeopleSayRepository.CreatePeopleSay(PeopleSay);
                 return RedirectToAction("index");
             }
-            return View(Slider);
+            return View(PeopleSay);
         }
         public IActionResult Edit(int id)
         {
-            SliderItem abs = _SliderRepository.GetSliderItemById(id);
+            PeopleSay abs = _PeopleSayRepository.GetPeopleSayById(id);
             if (abs == null) return NotFound();
             return View(abs);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(SliderItem abs)
+        public IActionResult Edit(PeopleSay abs)
         {
-            abs.ActionText = "#";
-            abs.EndPoint = "#";
             if (ModelState.IsValid)
             {
                 abs.ModifiedBy = _admin.Fullname;
-                SliderItem SliderToUpdate = _SliderRepository.GetSliderItemById(abs.Id);
-                if (SliderToUpdate == null) return NotFound();
-                _SliderRepository.UpdateSliderItem(SliderToUpdate, abs);
+                PeopleSay PeopleSayToUpdate = _PeopleSayRepository.GetPeopleSayById(abs.Id);
+                if (PeopleSayToUpdate == null) return NotFound();
+                _PeopleSayRepository.UpdatePeopleSay(PeopleSayToUpdate, abs);
                 return RedirectToAction("index");
             }
             return View(abs);
         }
         public IActionResult Delete(int id)
         {
-            SliderItem abs = _SliderRepository.GetSliderItemById(id);
+            PeopleSay abs = _PeopleSayRepository.GetPeopleSayById(id);
             if (abs == null) return NotFound();
-            _SliderRepository.DeleteSliderItem(abs);
+            _PeopleSayRepository.DeletePeopleSay(abs);
             return RedirectToAction("index");
         }
     }

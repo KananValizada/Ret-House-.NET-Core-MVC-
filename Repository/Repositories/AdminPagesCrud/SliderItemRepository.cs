@@ -27,6 +27,8 @@ namespace Repository.Repositories.AdminPagesCrud
         public void CreateSliderItem(SliderItem model)
         {
             model.CreatedAt = DateTime.Now;
+            model.ActionText = "#";
+            model.EndPoint = "#";
             _context.SliderItems.Add(model);
             _context.SaveChanges();
         }

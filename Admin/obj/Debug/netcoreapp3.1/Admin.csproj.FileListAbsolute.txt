@@ -206,3 +206,9 @@ C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\PropertyImages\Index.cshtml.g.cs
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\PropertyImages\Create.cshtml.g.cs
 C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\PropertyImages\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Slider\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Slider\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Slider\Edit.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\PeopleSay\Index.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\PeopleSay\Create.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\Admin\obj\Debug\netcoreapp3.1\Razor\Views\PeopleSay\Edit.cshtml.g.cs

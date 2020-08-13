@@ -10,17 +10,17 @@ namespace Repository.Models
         public int OrderBy { get; set; }
         [Required]
         [MaxLength(100)]
+        [MinLength(10, ErrorMessage = "Minimum 10 xarakter")]
         public string Title { get; set; }
         [Required]
-        [MaxLength(100)]
+        [MaxLength(50)]
+        [MinLength(15, ErrorMessage = "Minimum 15 xarakter")]
         public string Slogan { get; set; }
         [Required]
         [MaxLength(100)]
         public string Image { get; set; }
-        [Required]
         [MaxLength(50)]
         public string ActionText { get; set; }
-        [Required]
         [MaxLength(200)]
         public string EndPoint { get; set; }
     }

@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<SliderItem>
+@inject ICloudinaryService _cloudinaryService
 
 @{ var a = "";}
 @foreach (var item in Model)
@@ -12,7 +13,7 @@
         a = "";
     }
     <div class="carousel-item @a banner-max-height">
-        <img class="d-block w-100" src="~/images/@item.Image" alt="@item.Id">
+        <img class="d-block w-100" src="@_cloudinaryService.BuildUrl(item.Image)" alt="@item.Id">
         <div class="carousel-caption banner__slide-overlay d-flex h-100">
             <div class="carousel__content">
                 <div class="container">
