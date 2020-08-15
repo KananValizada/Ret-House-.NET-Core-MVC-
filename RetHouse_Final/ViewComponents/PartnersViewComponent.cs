@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Repository.Models;
 using Repository.Repositories.MainPage;
 using System;
 using System.Collections.Generic;

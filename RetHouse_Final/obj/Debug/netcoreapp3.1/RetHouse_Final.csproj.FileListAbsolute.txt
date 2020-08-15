@@ -187,8 +187,6 @@ C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreap
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.AssemblyInfoInputs.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.AssemblyInfo.cs
-C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.RazorAssemblyInfo.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.RazorAssemblyInfo.cs
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.TagHelpers.input.cache
@@ -237,3 +235,7 @@ C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreap
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.genruntimeconfig.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\CryptoHelper.dll
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\Razor\Views\Property\FilteredProperty.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\MailChimp.Net.dll

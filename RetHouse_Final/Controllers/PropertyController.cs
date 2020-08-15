@@ -2,6 +2,8 @@
 using Repository.Models;
 using Repository.Repositories.AdminPagesCrud.Properties;
 using Repository.Repositories.MainPage;
+using RetHouse_Final.MailChip;
+using RetHouse_Final.Models;
 using System;
 
 namespace RetHouse_Final.Controllers
@@ -13,9 +15,12 @@ namespace RetHouse_Final.Controllers
         private readonly IPropertyReviewRepository _propertyReviewRepository;
         private int _catId;
         private int _propId;
+       
+       
         public PropertyController (IMainRepository mainRepository,
                                    IPropertyRepository propertyRepository,
-                                   IPropertyReviewRepository propertyReviewRepository)
+                                   IPropertyReviewRepository propertyReviewRepository,
+                                   MailchimpRepository mailchimpRepository)
         {
             _mainRepository = mainRepository;
             _propertyRepository = propertyRepository;
@@ -26,6 +31,11 @@ namespace RetHouse_Final.Controllers
             var model = _mainRepository.GetCategories();
             return View(model);
         }
+        public IActionResult FilteredProperty()
+        {
+            return View();
+        }
+        
         public IActionResult SingleProduct(int id,int agentId,int propId) 
         {
             _catId = id;

@@ -11,6 +11,7 @@ using Repository.Repositories.AdminPagesCrud.Properties;
 using Repository.Repositories.MainPage;
 using Repository.Repositories.Pages;
 using Repository.Services;
+using RetHouse_Final.MailChip;
 
 namespace RetHouse_Final
 {
@@ -43,6 +44,7 @@ namespace RetHouse_Final
             services.AddTransient<IBlogReviewRepository, BlogReviewRepository>();
             services.AddTransient<IAgencyReviewRepository, AgencyReviewRepository>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
+            services.AddTransient<MailchimpRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

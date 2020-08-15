@@ -15,6 +15,7 @@ namespace RetHouse_Final.Controllers
         {
             var model = _aboutUsRepository.GetAbout();
             return View(model);
+            
         }
     }
 }

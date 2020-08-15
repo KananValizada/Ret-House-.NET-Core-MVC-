@@ -1,4 +1,4 @@
-﻿@model Property
+﻿@model RetHouse_Final.Models.Message
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -122,7 +122,7 @@
                 </div>
             </div>
         </div>
-     <vc:partners></vc:partners>
+        <vc:partners></vc:partners>
     </div>
 </section>
 <!-- END BRAND PARTNER -->
@@ -141,7 +141,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="testimonial owl-carousel owl-theme">
-           <vc:people-says></vc:people-says>
+            <vc:people-says></vc:people-says>
         </div>
     </div>
 </section>
@@ -153,7 +153,7 @@
             <div class="col-md-8 col-lg-6 mx-auto">
                 <div class="title__head">
                     <h2 class="text-center text-capitalize">
-                        Bizim Bloqdan 
+                        Bizim Bloqdan
                     </h2>
                     <p class="text-center text-capitalize">
                         Dünyanın hər yerindəki daşınmaz əmlak agentliklərini tapın
@@ -168,3 +168,20 @@
     </div>
 </section>
 <!-- END BLOG -->
+@section form{
+    <div class="mt-3">
+        <form method="post">
+            @if (Model != null)
+            {
+                <span style="color:white">Qeydiyyat üçün təşəkkürlər</span>
+
+                Model.TextMessage = "";
+            }
+            <input type="text" class="form-control mb-2" asp-for="TextMessage" placeholder="E-poçt adresiniz">
+            <button class="btn btn-primary btn-block text-capitalize" type="submit">
+                Xəbərlərə abunə ol
+            </button>
+        </form>
+    </div>
+
+}

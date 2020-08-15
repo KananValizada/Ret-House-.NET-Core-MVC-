@@ -1,0 +1,29 @@
+﻿@model RetHouse_Final.Models.Message
+@{
+    ViewData["Title"] = "FilteredProperty";
+}
+
+    <div>
+        @if (Model != null)
+        {
+            <span>@Model.TextMessage</span>
+
+
+            Model.TextMessage = "";
+        }
+
+        <form method="post">
+            <input type="text" id="subscribe" asp-for="TextMessage" />
+            <input type="submit" value="subscribe" />
+        </form>
+
+
+
+    </div>
+
+
+@section Head{
+    <!-- SPECIFIC CSS -->
+    <link href="~/css/stylesbd04.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+}
