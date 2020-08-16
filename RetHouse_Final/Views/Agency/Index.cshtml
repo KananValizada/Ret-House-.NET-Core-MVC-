@@ -3,7 +3,9 @@
 @{
     ViewData["Title"] = "Agency Page";
 }
-
+@{
+    var count = 0;
+}
 <!-- BREADCRUMB -->
 <div class="bg-theme-overlay">
     <section class="section__breadcrumb ">
@@ -43,7 +45,7 @@
                             <div class="widget__title">
                                 <h5 class="text-dark mb-0 text-center">Kateqoriyalar</h5>
                             </div>
-                          <vc:category></vc:category>
+                            <vc:category></vc:category>
                         </div>
                         <!-- END CATEGORY -->
                     </div>
@@ -53,10 +55,20 @@
                     <div class="row no-gutters">
                         @foreach (var cat in Model)
                         {
-                            
+
                             @foreach (var item in cat.Agencies)
                             {
-                                <div class="col-lg-12 mt-0">
+                                count += 1;
+                                var style = "";
+                                if (count > 3)
+                                {
+                                    style = "d-none";
+                                }
+                                else
+                                {
+                                    style = "";
+                                }
+                                <div class="col-lg-12 mt-0 @style">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6">
                                             <a asp-controller="agency" asp-action="singleagency" asp-route-id="@cat.Id" asp-route-agencyId="@item.Id" class="profile__agency-logo">
@@ -67,7 +79,7 @@
                                         <div class="col-md-6 col-lg-6 my-auto">
                                             <div class="profile__agency-info">
                                                 <h5 class="text-capitalize">
-                                                    <a href="#" target="_blank">Ev alqı satqısı</a>
+                                                    <a href="#" target="_blank">@item.Name</a>
                                                 </h5>
                                                 <p class="text-capitalize mb-1">
                                                     @item.Adress
@@ -131,7 +143,11 @@
                                 </div>
                             }
 
-                    }
+                        }
+                        @if (count > 3)
+                        {
+                            <button type="button" class="btn btn-primary mt-3" id="moreProp"> Daha çox göstər</button>
+                        }
 
                     </div>
                 </div>
@@ -141,3 +157,24 @@
 </section>
 
 <!-- END LISTING LIST -->
+@section Scripts
+{
+<script src="~/js/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#moreProp").click(function () {
+            var list = $(".d-none");
+            if (list.length > 3) {
+                $(".d-none").first().removeClass("d-none");
+                $(".d-none").first().removeClass("d-none");
+                $(".d-none").first().removeClass("d-none");
+            } else {
+                list.removeClass("d-none")
+                $(this).hide();
+            }
+           
+        });
+    });
+</script>
+
+}

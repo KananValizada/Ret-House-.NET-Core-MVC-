@@ -374,40 +374,39 @@
                         <div class="sticky-top">
                             <!-- FORM FILTER -->
                             <div class="products__filter mb-30">
-                                <div class="products__filter__group">
-                                    <div class="products__filter__header">
-                                        <h5 class="text-center text-capitalize">Contact Jhon Doe</h5>
+                                <form method="post">
+                                    <input type="hidden" asp-for="Id" value="9999" />
+                                    <input type="hidden" asp-for="ModifiedBy" value="@item.Email" />
+                                    <div class="products__filter__group">
+                                        <div class="products__filter__header">
+                                            <h5 class="text-center text-capitalize">@item.Name ilə əlaqəyə keç</h5>
+                                        </div>
+                                        <div class="products__filter__body">
+                                            <div class="form-group">
+                                                <label>Adınız</label>
+                                                <input required type="text" asp-for="Name" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Telefon nömrəsi</label>
+                                                <input required type="text" asp-for="othrId" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Mesajınız</label>
+                                                <textarea required class="form-control" asp-for="CreatedBy" rows="3"></textarea>
+                                            </div>
+
+                                        </div>
+                                        <div class="products__filter__footer">
+                                            <div class="form-group mb-0">
+                                                <button type="submit" class="btn btn-primary text-capitalize btn-block">
+                                                    Göndər <i class="fa fa-paper-plane ml-1"></i>
+                                                </button>
+
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="products__filter__body">
-                                        <div class="form-group">
-                                            <label>Full Name</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email (Optional)</label>
-                                            <input type="email" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Your message</label>
-                                            <textarea class="form-control" rows="3"></textarea>
-                                        </div>
-
-                                    </div>
-                                    <div class="products__filter__footer">
-                                        <div class="form-group mb-0">
-                                            <button class="btn btn-primary text-capitalize btn-block">
-                                                submit <i class="fa fa-paper-plane ml-1"></i>
-                                            </button>
-
-                                        </div>
-                                    </div>
-                                </div>
-
+                                </form>
                             </div>
                             <!-- END FORM FILTER -->
                             <!-- ARCHIVE CATEGORY -->

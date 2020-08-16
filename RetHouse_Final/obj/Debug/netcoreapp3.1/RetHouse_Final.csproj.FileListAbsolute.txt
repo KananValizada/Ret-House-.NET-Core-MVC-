@@ -235,7 +235,10 @@ C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreap
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.genruntimeconfig.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\CryptoHelper.dll
-C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\Razor\Views\Property\FilteredProperty.cshtml.g.cs
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\MailChimp.Net.dll
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\Razor\Views\Property\SuccessPage.cshtml.g.cs
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\obj\Debug\netcoreapp3.1\RetHouse_Final.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Administrator\Desktop\RetHouse_Final\RetHouse_Final\bin\Debug\netcoreapp3.1\MailChimp.Net.dll

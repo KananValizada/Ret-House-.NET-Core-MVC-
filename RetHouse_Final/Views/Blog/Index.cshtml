@@ -3,7 +3,9 @@
 @{
     ViewData["Title"] = "Blog Page";
 }
-
+@{
+    var count = 0;
+}
 <!-- BREADCRUMB -->
 <div class="bg-theme-overlay">
     <section class="section__breadcrumb ">
@@ -41,8 +43,17 @@
                     {
                         @foreach (var blog in item.Blogs)
                         {
-
-                            <div class="col-md-6 col-lg-6">
+                            count++;
+                            var style = "";
+                            if (count > 2)
+                            {
+                                style = "d-none";
+                            }
+                            else
+                            {
+                                style = "";
+                            }
+                            <div class="col-md-6 col-lg-6 @style">
                                 <div class="blog__grid mt-0">
                                     <!-- BLOG  -->
                                     <div class="card__image">
@@ -96,6 +107,10 @@
                         }
 
                     }
+                    @if (count > 2)
+                    {
+                        <button type="button" class="btn btn-primary mt-3" id="moreProp"> Daha çox göstər</button>
+                    }
                 </div>
             </div>
             <!-- END BLOG  -->
@@ -133,7 +148,7 @@
                         </div>
                     </aside>
                     <aside>
-                  <vc:latest-blog></vc:latest-blog>
+                        <vc:latest-blog></vc:latest-blog>
                     </aside>
                     <aside>
                         <div class="widget__sidebar">
@@ -171,3 +186,24 @@
     </div>
 </section>
 <!-- END LISTING LIST -->
+
+@section Scripts
+{
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#moreProp").click(function () {
+            var list = $(".d-none");
+            if (list.length > 2) {
+                $(".d-none").first().removeClass("d-none");
+                $(".d-none").first().removeClass("d-none");
+            } else {
+                list.removeClass("d-none")
+                $(this).hide();
+            }
+
+        });
+    });
+    </script>
+
+}

@@ -33,7 +33,7 @@
 {
     if (ViewBag.AgencyId == item.Id)
     {
-        <section class="profile__agents">
+        <section class="profile__agents ">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
@@ -43,7 +43,15 @@
                                     <div class="col-md-6 col-lg-6">
                                         <a href="#" class="profile__agency-logo">
                                             <img src="@_cloudinaryService.BuildUrl(item.Logo)" alt="" class="img-fluid">
-                                            <div class="total__property-agent">@item.Properties.Count() Mülk</div>
+                                            @if (item.Properties == null)
+                                            {
+
+                                            }
+                                            else
+                                            {
+                                                <div class="total__property-agent">@item.Properties.Count() Mülk</div>
+                                            }
+
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-lg-6 my-auto">
@@ -157,130 +165,138 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-tab-two" role="tabpanel"
+                                <div class="tab-pane fade " id="pills-tab-two" role="tabpanel"
                                      aria-labelledby="pills-tab-two">
                                     @foreach (var agent in item.Agents)
                                     {
-                                        @foreach (var prop in agent.Properties)
+                                        if (agent.Properties.Count() == 0)
                                         {
-                                            var a = "";
-                                            @if (prop.IsFeatured)
-                                            {
-                                                a = "Önə çıxan";
 
-                                            }
-                                            else
+                                        }
+                                        else
+                                        {
+                                            @foreach (var prop in agent.Properties)
                                             {
-                                                if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                var a = "";
+                                                @if (prop.IsFeatured)
                                                 {
-                                                    a = "Satılıb";
+                                                    a = "Önə çıxan";
+
                                                 }
-                                            }
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card__image card__box-v1">
-                                                        <div class="row no-gutters">
-                                                            <div class="col-md-4 col-lg-3 col-xl-4">
-                                                                <div class="card__image__header h-250">
-                                                                    <a href="#">
-                                                                        <div class="ribbon text-capitalize">@a</div>
-                                                                        @foreach (var img in prop.PropImages)
-                                                                        {
-                                                                            <img src="@_cloudinaryService.BuildUrl(img.Photo)" alt=""
-                                                                                 class="img-fluid w100 img-transition">
-                                                                            break;
-                                                                        }
+                                                else
+                                                {
+                                                    if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                    {
+                                                        a = "Satılıb";
+                                                    }
+                                                }
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="card__image card__box-v1">
+                                                            <div class="row no-gutters">
+                                                                <div class="col-md-4 col-lg-3 col-xl-4">
+                                                                    <div class="card__image__header h-250">
+                                                                        <a href="#">
+                                                                            <div class="ribbon text-capitalize">@a</div>
+                                                                            @foreach (var img in prop.PropImages)
+                                                                            {
+                                                                                <img src="@_cloudinaryService.BuildUrl(img.Photo)" alt=""
+                                                                                     class="img-fluid w100 img-transition">
+                                                                                break;
+                                                                            }
 
-                                                                        <div class="info">@prop.Status</div>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                                <div class="card__image__body">
-
-                                                                    <span class="badge badge-primary text-capitalize mb-2">@Model.Name</span>
-                                                                    <h6>
-                                                                        <a href="#">@prop.Name</a>
-                                                                    </h6>
-                                                                    <div class="card__image__body-desc">
-                                                                        <!-- <p class="text-capitalize">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
-
-                                        </p> -->
-                                                                        <p class="text-capitalize">
-                                                                            <i class="fa fa-map-marker"></i>
-                                                                            @prop.Adress
-                                                                        </p>
+                                                                            <div class="info">@prop.Status</div>
+                                                                        </a>
                                                                     </div>
-
-                                                                    <ul class="list-inline card__content">
-                                                                        <li class="list-inline-item">
-
-                                                                            <span>
-                                                                                hamam <br>
-                                                                                <i class="fa fa-bath"></i> @prop.BathCount
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="list-inline-item">
-                                                                            <span>
-                                                                                yataq otaqı <br>
-                                                                                <i class="fa fa-bed"></i> @prop.BedCount
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="list-inline-item">
-                                                                            <span>
-                                                                                otaqlar <br>
-                                                                                <i class="fa fa-inbox"></i> @prop.RoomCount
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="list-inline-item">
-                                                                            <span>
-                                                                                sahə <br>
-                                                                                <i class="fa fa-map"></i> @prop.Area
-                                                                            </span>
-                                                                        </li>
-                                                                    </ul>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                                <div class="card__image__footer">
-                                                                    <figure>
-                                                                        <img src="~/images/logo.jpg" alt=""
-                                                                             class="img-fluid rounded-circle">
-                                                                    </figure>
-                                                                    <ul class="list-inline my-auto">
-                                                                        <li class="list-inline-item name">
-                                                                            <a href="#">
-                                                                                @agent.Name
-                                                                            </a>
+                                                                <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
+                                                                    <div class="card__image__body">
 
-                                                                        </li>
+                                                                        <span class="badge badge-primary text-capitalize mb-2">@Model.Name</span>
+                                                                        <h6>
+                                                                            <a href="#">@prop.Name</a>
+                                                                        </h6>
+                                                                        <div class="card__image__body-desc">
+                                                                            <!-- <p class="text-capitalize">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
+
+                                            </p> -->
+                                                                            <p class="text-capitalize">
+                                                                                <i class="fa fa-map-marker"></i>
+                                                                                @prop.Adress
+                                                                            </p>
+                                                                        </div>
+
+                                                                        <ul class="list-inline card__content">
+                                                                            <li class="list-inline-item">
+
+                                                                                <span>
+                                                                                    hamam <br>
+                                                                                    <i class="fa fa-bath"></i> @prop.BathCount
+                                                                                </span>
+                                                                            </li>
+                                                                            <li class="list-inline-item">
+                                                                                <span>
+                                                                                    yataq otaqı <br>
+                                                                                    <i class="fa fa-bed"></i> @prop.BedCount
+                                                                                </span>
+                                                                            </li>
+                                                                            <li class="list-inline-item">
+                                                                                <span>
+                                                                                    otaqlar <br>
+                                                                                    <i class="fa fa-inbox"></i> @prop.RoomCount
+                                                                                </span>
+                                                                            </li>
+                                                                            <li class="list-inline-item">
+                                                                                <span>
+                                                                                    sahə <br>
+                                                                                    <i class="fa fa-map"></i> @prop.Area
+                                                                                </span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
+                                                                    <div class="card__image__footer">
+                                                                        <figure>
+                                                                            <img src="~/images/logo.jpg" alt=""
+                                                                                 class="img-fluid rounded-circle">
+                                                                        </figure>
+                                                                        <ul class="list-inline my-auto">
+                                                                            <li class="list-inline-item name">
+                                                                                <a href="#">
+                                                                                    @agent.Name
+                                                                                </a>
+
+                                                                            </li>
 
 
-                                                                    </ul>
-                                                                    <ul class="list-inline my-auto ml-auto price">
-                                                                        <li class="list-inline-item ">
+                                                                        </ul>
+                                                                        <ul class="list-inline my-auto ml-auto price">
+                                                                            <li class="list-inline-item ">
 
-                                                                            @if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
-                                                                            {
-                                                                                <h6> @prop.Price</h6>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <h6> @prop.Price ₼ / ayliq</h6>
-                                                                            }
+                                                                                @if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                                                                                {
+                                                                                    <h6> @prop.Price</h6>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <h6> @prop.Price ₼ / ayliq</h6>
+                                                                                }
 
-                                                                        </li>
+                                                                            </li>
 
-                                                                    </ul>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
-                                            </div>
+                                                </div>
+                                            }
                                         }
+
 
                                     }
 
@@ -289,7 +305,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="pills-tab-three" role="tabpanel"
                                      aria-labelledby="pills-tab-three">
-                                    <div class="row no-gutters">
+                                    <div class="row no-gutters ">
                                         @foreach (var agent in item.Agents)
                                         {
                                             <div class="col-lg-12 cards">
@@ -372,7 +388,7 @@
                                      aria-labelledby="pills-tab-four">
 
                                     <!-- RATE US  WRITE -->
-                                    <div class="single__detail-features-review">
+                                    <div class="single__detail-features-review ">
                                         @foreach (var review in item.Reviews)
                                         {
 
@@ -460,35 +476,36 @@
                     <div class="col-lg-4">
                         <div class="sticky-top">
                             <!-- FORM FILTER -->
+                            <form method="post">
+
                             <div class="products__filter mb-30">
+                                <input type="hidden" asp-for="Id" value="9999"/>
+                                <input type="hidden" asp-for="ModifiedBy" value="@item.Email"/>
                                 <div class="products__filter__group">
                                     <div class="products__filter__header">
                                         <h5 class="text-center text-capitalize">Əlaqə formu</h5>
                                     </div>
                                     <div class="products__filter__body">
                                         <div class="form-group">
-                                            <label>Full Name</label>
-                                            <input type="text" class="form-control">
+                                            <label>Adınız</label>
+                                            <input asp-for="Name" required type="text" class="form-control">
+                                            <span asp-validation-for="Name"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label>Email (Optional)</label>
-                                            <input type="email" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            <input type="text" class="form-control">
+                                            <label>Əlaqə nömrəsi</label>
+                                            <input required asp-for="othrId" type="text" class="form-control">
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Your message</label>
-                                            <textarea class="form-control" rows="3"></textarea>
+                                            <label>İsmarıcınız</label>
+                                            <textarea asp-for="CreatedBy" required class="form-control" rows="3"></textarea>
                                         </div>
 
                                     </div>
                                     <div class="products__filter__footer">
                                         <div class="form-group mb-0">
-                                            <button class="btn btn-primary text-capitalize btn-block">
-                                                submit <i class="fa fa-paper-plane ml-1"></i>
+                                            <button type="submit" class="btn btn-primary text-capitalize btn-block">
+                                                Göndər <i class="fa fa-paper-plane ml-1"></i>
                                             </button>
 
                                         </div>
@@ -496,6 +513,7 @@
                                 </div>
 
                             </div>
+                            </form>
                             <!-- END FORM FILTER -->
                             <!-- ARCHIVE CATEGORY -->
                             @{Model.Name = ark;}
