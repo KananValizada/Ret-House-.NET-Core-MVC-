@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "About Us Page";
 }
+@{
+    var count = 0;
+    var style = "";
+}
 <!-- BREADCRUMB -->
 <div class="bg-theme-overlay">
     <section class="section__breadcrumb ">
@@ -74,7 +78,7 @@
                 </div>
             </div>
         </div>
-     <vc:partners></vc:partners>
+        <vc:partners></vc:partners>
     </div>
 </section>
 
@@ -95,7 +99,16 @@
         <div class="row">
             @foreach (var item in Model.Teams)
             {
-                <div class="col-md-4">
+                count++;
+                if (count > 3)
+                {
+                    style = "d-none";
+                }
+                else
+                {
+                    style = "";
+                }
+                <div class="col-md-4 @style">
                     <div class="wrap-agent">
                         <div class="team-member">
                             <div class="team-img">
@@ -104,10 +117,10 @@
                             <div class="team-hover">
                                 <div class="desk">
                                     <h5>
-                                       Salam !
+                                        Salam !
                                     </h5>
                                     <p>
-                                       Mən @item.Profession  @item.Name
+                                        Mən @item.Profession  @item.Name
                                     </p>
                                 </div>
                                 <ul class="list-inline s-link mb-0">
@@ -143,8 +156,32 @@
                     </div>
                 </div>
             }
-
+            @if (count > 3)
+            {
+                <button type="button" class="btn btn-primary mt-3 ml-auto mr-auto" id="moreProp"> Daha çox göstər</button>
+            }
         </div>
     </div>
 </section>
 <!-- END TEAM -->
+@section Scripts
+{
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#moreProp").click(function () {
+            var list = $(".d-none");
+            if (list.length > 3) {
+                $(".d-none").first().removeClass("d-none");
+                $(".d-none").first().removeClass("d-none");
+                $(".d-none").first().removeClass("d-none");
+            } else {
+                list.removeClass("d-none")
+                $(this).hide();
+            }
+
+        });
+    });
+    </script>
+
+}

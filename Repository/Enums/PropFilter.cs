@@ -7,8 +7,8 @@ namespace Repository.Enums
 {
     public enum PropFilter
     {
-        Apartment,
-        House,
-        Offise
+        Mənzil,
+        Ev,
+        Ofis
     }
 }

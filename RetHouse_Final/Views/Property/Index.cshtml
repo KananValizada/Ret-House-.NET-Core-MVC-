@@ -4,7 +4,7 @@
     ViewData["Title"] = "Property Page";
 }
 @{ var a = "";
-    }
+}
 
 <!-- BREADCRUMB -->
 <div class="bg-theme-overlay">
@@ -41,189 +41,163 @@
             <div class="col-lg-4">
 
                 <!-- FORM FILTER -->
-                <div class="products__filter mb-30">
-                    <div class="products__filter__group">
-                        <div class="products__filter__header">
 
-                            <h5 class="text-center text-capitalize">Süzgəc</h5>
-                        </div>
-                        <div class="products__filter__body">
-                            <div class="form-group">
-                                <select class="wide select_option">
-                                    <option data-display="Property Status">Mülkiyyət statusu</option>
-                                    <option>Satılır</option>
-                                    <option>Kirayə</option>
-                                </select>
+                    <div class="products__filter mb-30">
+                        <div class="products__filter__group">
+                            <div class="products__filter__header">
+
+                                <h5 class="text-center text-capitalize">Süzgəc</h5>
                             </div>
-                            <div class="form-group">
-                                <select class="wide select_option">
-                                    <option data-display="Property Type">Mülkiyyət tipi</option>
-                                    <option>Residential</option>
-                                    <option>Commercial</option>
-                                    <option>Land</option>
-                                    <option>Luxury</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="wide select_option">
-                                    <option data-display="Area From">Sahə başlayır </option>
-                                    <option>1500</option>
-                                    <option>1200</option>
-                                    <option>900</option>
-                                    <option>600</option>
-                                    <option>300</option>
-                                    <option>100</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="wide select_option">
-                                    <option data-display="Locations">Ölkə</option>
-                                    <option>United Kingdom</option>
-                                    <option>American Samoa</option>
-                                    <option>Belgium</option>
-                                    <option>Canada</option>
-                                    <option>Delaware</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="wide select_option">
-                                    <option data-display="Bedrooms">Yataq otaqı</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
+                            <div class="products__filter__body">
                                 <div class="form-group">
-                                    <select class="wide select_option">
-                                        <option data-display="Bathrooms">Hamam</option>
+                                    <select required id="propStatus" class="wide select_option">
+                                        <option selected disabled value="" data-display="Mulkiyyet statusu">Mülkiyyət statusu</option>
+                                        <option value="Satılır">Satılır</option>
+                                        <option value="Kirayə">Kirayə</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select id="propType" class="wide select_option">
+                                        <option selected disabled value="" data-display="Mülkiyyət tipi">Mülkiyyət tipi</option>
+                                        <option value="Mənzil" >Mənzil</option>
+                                        <option value="Ev">Ev</option>
+                                        <option value="Ofis">Ofis</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select id="propArea" class="wide select_option">
+                                        <option selected disabled value="" data-display="Sahə başlayır">Sahə başlayır </option>
+                                        <option value="1500">1500</option>
+                                        <option value="1200">1200</option>
+                                        <option value="900">900</option>
+                                        <option value="600">600</option>
+                                        <option value="300">300</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select id="propBed" class="wide select_option">
+                                        <option selected disabled data-display="Yataq otağı">Yataq otaqı</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
                                         <option>5</option>
-
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="mb-3">Price range</label>
-                                <div class="filter__price">
-                                    <input class="price-range" type="text" name="my_range" value="" />
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <select id="propBath" class="wide select_option">
+                                            <option selected disabled data-display="Hamam otağı">Hamam</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <label class="mb-3">Qiymət aralığı</label>
+                                    <div class="filter__price">
+                                        <input id="propPrise" class="price-range" type="text" name="my_range" value="" />
+                                    </div>
+                                </div>
 
-                            <div class="form-group mb-0 mt-2">
+                                <div class="form-group mb-0 mt-2">
 
-                                <a class="btn btn-outline-primary btn-block text-capitalize advanced-filter"
-                                   data-toggle="collapse" href="#multiCollapseExample1"
-                                   aria-controls="multiCollapseExample1">
-                                    <i class="fa fa-plus-circle"></i> advanced
-                                    filter
-                                </a>
+                                    <a class="btn btn-outline-primary btn-block text-capitalize advanced-filter"
+                                       data-toggle="collapse" href="#multiCollapseExample1"
+                                       aria-controls="multiCollapseExample1">
+                                        <i class="fa fa-plus-circle"></i> ətraflı
+                                        filter
+                                    </a>
 
-                                <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                    <div class="advancedfilter">
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox2" type="checkbox">
-                                            <label for="checkbox2" class="label-brand text-capitalize">
-                                                Air Conditioning
-                                            </label>
+                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                        <div class="advancedfilter">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox2" type="checkbox">
+                                                <label for="checkbox2" class="label-brand text-capitalize">
+                                                    Havalandırma
+                                                </label>
 
-                                        </div>
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox3" type="checkbox">
-                                            <label for="checkbox3" class="label-brand text-capitalize">
-                                                Swiming Pool
-                                            </label>
+                                            </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox3" type="checkbox">
+                                                <label for="checkbox3" class="label-brand text-capitalize">
+                                                    Hovuz
+                                                </label>
 
-                                        </div>
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox4" type="checkbox">
-                                            <label for="checkbox4" class="label-brand text-capitalize">
-                                                Central Heating
-                                            </label>
+                                            </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox4" type="checkbox">
+                                                <label for="checkbox4" class="label-brand text-capitalize">
+                                                    İstilik sistemi
+                                                </label>
 
-                                        </div>
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox5" type="checkbox">
-                                            <label for="checkbox5" class="label-brand text-capitalize">
-                                                Spa & Massage
-                                            </label>
+                                            </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox5" type="checkbox">
+                                                <label for="checkbox5" class="label-brand text-capitalize">
+                                                    Masaj salonu
+                                                </label>
 
-                                        </div>
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox6" type="checkbox">
-                                            <label for="checkbox6" class="label-brand text-capitalize">
-                                                Pets Allow
-                                            </label>
+                                            </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox6" type="checkbox">
+                                                <label for="checkbox6" class="label-brand text-capitalize">
+                                                    Heyvan icazəsi
+                                                </label>
 
-                                        </div>
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox7" type="checkbox">
-                                            <label for="checkbox7" class="label-brand text-capitalize">
-                                                Air Conditioning
-                                            </label>
+                                            </div>
 
-                                        </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox8" type="checkbox">
+                                                <label for="checkbox8" class="label-brand text-capitalize">
+                                                    İdman zalı
+                                                </label>
 
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox8" type="checkbox">
-                                            <label for="checkbox8" class="label-brand text-capitalize">
-                                                Gym
-                                            </label>
+                                            </div>
 
-                                        </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox9" type="checkbox">
+                                                <label for="checkbox9" class="label-brand text-capitalize">
+                                                    Siqnalizasiya
+                                                </label>
 
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox9" type="checkbox">
-                                            <label for="checkbox9" class="label-brand text-capitalize">
-                                                Alarm
-                                            </label>
+                                            </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox11" type="checkbox">
+                                                <label for="checkbox11" class="label-brand text-capitalize">
+                                                    Pulsuz Wifi
+                                                </label>
 
-                                        </div>
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox10" type="checkbox">
-                                            <label for="checkbox10" class="label-brand text-capitalize">
-                                                Window Covering
-                                            </label>
-
-                                        </div>
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox11" type="checkbox">
-                                            <label for="checkbox11" class="label-brand text-capitalize">
-                                                Free WiFi
-                                            </label>
-
-                                        </div>
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox12" type="checkbox">
-                                            <label for="checkbox12" class="label-brand text-capitalize">
-                                                Car Parking
-                                            </label>
+                                            </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox12" type="checkbox">
+                                                <label for="checkbox12" class="label-brand text-capitalize">
+                                                    Qaraj
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="products__filter__footer">
-                            <div class="form-group mb-0">
-                                <button class="btn btn-primary text-capitalize btn-block">
-                                    <i class="fa fa-search ml-1"></i> search
-                                    property
-                                </button>
+                            <div class="products__filter__footer">
+                                <div class="form-group mb-0">
+                                    <button id="propFilter" class="btn btn-primary text-capitalize btn-block">
+                                        <i class="fa fa-search ml-1"></i> Mülk axtar
+                                    </button>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
+                    </div>
                 <!-- END FORM FILTER -->
                 <!-- ARCHIVE CATEGORY -->
                 <div class=" wrapper__list__category">
@@ -274,7 +248,7 @@
                                                 if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
                                                 {
 
-                                                    <div class="row">
+                                                    <div class="row property">
                                                         <div class="col-lg-12">
                                                             <div class="card__image card__box-v1">
                                                                 <div class="row no-gutters">
@@ -303,7 +277,7 @@
                                                                                     break;
                                                                                 }
 
-                                                                                <div class="info">@prop.PropStatus</div>
+                                                                                <div class="info propStatus">@prop.PropStatus</div>
                                                                             </a>
                                                                         </div>
                                                                     </div>
@@ -316,9 +290,9 @@
                                                                             </h6>
                                                                             <div class="card__image__body-desc">
                                                                                 <!-- <p class="text-capitalize">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
+                                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias!
 
-                                                </p> -->
+                                                                                </p> -->
                                                                                 <p class="text-capitalize">
                                                                                     <i class="fa fa-map-marker"></i>
                                                                                     @prop.Adress
@@ -372,7 +346,7 @@
                                                                             </ul>
                                                                             <ul class="list-inline my-auto ml-auto price">
                                                                                 <li class="list-inline-item ">
-                                                                                        <p class="mb-0">  @prop.Price ₼</p>
+                                                                                    <p class="mb-0">  @prop.Price ₼</p>
                                                                                 </li>
 
                                                                             </ul>
@@ -408,7 +382,7 @@
                                                 if (prop.PropStatus == Repository.Enums.PropStatus.Kirayə)
                                                 {
 
-                                                    <div class="col-md-6 col-lg-6 mt-4">
+                                                    <div class="col-md-6 col-lg-6 mt-4 property2">
                                                         <!-- CARD IMAGE -->
 
                                                         <a asp-controller="property" asp-action="singleproduct" asp-route-id="@category.Id" asp-route-agentId="@item.Id" asp-route-propId="@prop.Id">
@@ -431,7 +405,7 @@
                                                                             }
                                                                         }
 
-                                                                        <span>
+                                                                        <span class="propStatus">
                                                                             @prop.PropStatus
                                                                         </span>
                                                                     </div>
@@ -511,3 +485,70 @@
     </div>
 </section>
 <!-- END LISTING LIST -->
+
+@section Scripts {
+    <script>
+       
+        
+        window.onload = function () {
+           
+            
+            document.getElementById("propFilter").addEventListener("click", function () {
+                var propStatus = document.getElementById("propStatus");
+                var propType = document.getElementById("propType");
+                var propArea = document.getElementById("propArea")
+                var properties = document.querySelectorAll(".property");
+                var properties2 = document.querySelectorAll(".property2");
+                var propBed = document.getElementById("propBed");
+
+                if (propStatus.value == "") {
+                    properties.forEach(x => x.hidden = false)
+                    properties2.forEach(x => x.hidden = false)
+                    return;
+                }
+                if (propStatus.value == "Satılır" && propType == "") {
+                    properties2.forEach(x => x.hidden = true)
+                    properties.forEach(x => x.hidden = false)
+                    return;
+                }
+                if (propStatus.value == "Kirayə") {
+                    properties2.forEach(x => x.hidden = false)
+                    properties.forEach(x => x.hidden = true)
+                    return;
+                }
+                if (propArea.value == "") {
+                    properties2.forEach(x => x.hidden = false)
+                    properties.forEach(x => x.hidden = false)
+                    return;
+                }
+                if (propBed.value == "") {
+                    properties2.forEach(x => x.hidden = false)
+                    properties.forEach(x => x.hidden = false)
+                    return;
+                }
+                properties.forEach(function (x) {
+                    if (x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.firstElementChild.textContent == propType.value && parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.childNodes[7].lastElementChild.firstElementChild.childNodes[4].textContent) >= parseInt(propArea.value)) {
+                        x.hidden = false
+                    } else {
+                        x.hidden = true
+                    }
+                });
+                properties2.forEach(function (x) {
+                    
+                    if (parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].lastElementChild.lastElementChild.firstElementChild.childNodes[2].textContent) >= parseInt(propArea.value)) {
+                        x.hidden = false
+                    } else {
+                        x.hidden = true
+                    }
+
+                });
+
+                })
+                    
+
+
+        }
+       
+    </script>
+
+} 
