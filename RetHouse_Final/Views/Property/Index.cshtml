@@ -55,14 +55,16 @@
                                         <option value="Satılır">Satılır</option>
                                         <option value="Kirayə">Kirayə</option>
                                     </select>
+                                    <span hidden class="text-danger">Daxil edin</span>
                                 </div>
                                 <div class="form-group">
                                     <select id="propType" class="wide select_option">
                                         <option selected disabled value="" data-display="Mülkiyyət tipi">Mülkiyyət tipi</option>
-                                        <option value="Mənzil" >Mənzil</option>
+                                        <option value="Mənzil">Mənzil</option>
                                         <option value="Ev">Ev</option>
                                         <option value="Ofis">Ofis</option>
                                     </select>
+                                    <span hidden class="text-danger">Daxil edin</span>
                                 </div>
                                 <div class="form-group">
                                     <select id="propArea" class="wide select_option">
@@ -74,10 +76,11 @@
                                         <option value="300">300</option>
                                         <option value="100">100</option>
                                     </select>
+                                    <span hidden class="text-danger">Daxil edin</span>
                                 </div>
                                 <div class="form-group">
                                     <select id="propBed" class="wide select_option">
-                                        <option selected disabled data-display="Yataq otağı">Yataq otaqı</option>
+                                        <option value="" selected disabled data-display="Yataq otağı">Yataq otaqı</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -88,102 +91,19 @@
                                         <option>8</option>
                                         <option>9</option>
                                     </select>
+                                    <span hidden class="text-danger">Daxil edin</span>
                                 </div>
                                 <div class="form-group">
                                     <div class="form-group">
                                         <select id="propBath" class="wide select_option">
-                                            <option selected disabled data-display="Hamam otağı">Hamam</option>
+                                            <option value="" selected disabled data-display="Hamam otağı">Hamam</option>
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
                                             <option>5</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="mb-3">Qiymət aralığı</label>
-                                    <div class="filter__price">
-                                        <input id="propPrise" class="price-range" type="text" name="my_range" value="" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group mb-0 mt-2">
-
-                                    <a class="btn btn-outline-primary btn-block text-capitalize advanced-filter"
-                                       data-toggle="collapse" href="#multiCollapseExample1"
-                                       aria-controls="multiCollapseExample1">
-                                        <i class="fa fa-plus-circle"></i> ətraflı
-                                        filter
-                                    </a>
-
-                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                        <div class="advancedfilter">
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox2" type="checkbox">
-                                                <label for="checkbox2" class="label-brand text-capitalize">
-                                                    Havalandırma
-                                                </label>
-
-                                            </div>
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox3" type="checkbox">
-                                                <label for="checkbox3" class="label-brand text-capitalize">
-                                                    Hovuz
-                                                </label>
-
-                                            </div>
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox4" type="checkbox">
-                                                <label for="checkbox4" class="label-brand text-capitalize">
-                                                    İstilik sistemi
-                                                </label>
-
-                                            </div>
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox5" type="checkbox">
-                                                <label for="checkbox5" class="label-brand text-capitalize">
-                                                    Masaj salonu
-                                                </label>
-
-                                            </div>
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox6" type="checkbox">
-                                                <label for="checkbox6" class="label-brand text-capitalize">
-                                                    Heyvan icazəsi
-                                                </label>
-
-                                            </div>
-
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox8" type="checkbox">
-                                                <label for="checkbox8" class="label-brand text-capitalize">
-                                                    İdman zalı
-                                                </label>
-
-                                            </div>
-
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox9" type="checkbox">
-                                                <label for="checkbox9" class="label-brand text-capitalize">
-                                                    Siqnalizasiya
-                                                </label>
-
-                                            </div>
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox11" type="checkbox">
-                                                <label for="checkbox11" class="label-brand text-capitalize">
-                                                    Pulsuz Wifi
-                                                </label>
-
-                                            </div>
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox12" type="checkbox">
-                                                <label for="checkbox12" class="label-brand text-capitalize">
-                                                    Qaraj
-                                                </label>
-                                            </div>
-                                        </div>
+                                        <span hidden class="text-danger">Daxil edin</span>
                                     </div>
                                 </div>
                             </div>
@@ -230,6 +150,9 @@
                                        aria-selected="false">
                                         <span class="fa fa-th-large"></span>
                                     </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a type="submit" class="nav-link" asp-controller="property" asp-action="index">Yenilə</a>
                                 </li>
                             </ul>
 
@@ -488,11 +411,9 @@
 
 @section Scripts {
     <script>
-       
+        
         
         window.onload = function () {
-           
-            
             document.getElementById("propFilter").addEventListener("click", function () {
                 var propStatus = document.getElementById("propStatus");
                 var propType = document.getElementById("propType");
@@ -500,16 +421,25 @@
                 var properties = document.querySelectorAll(".property");
                 var properties2 = document.querySelectorAll(".property2");
                 var propBed = document.getElementById("propBed");
+                var propBath = document.getElementById("propBath");
+                propStatus.nextElementSibling.nextElementSibling.hidden = true;
+                propType.nextElementSibling.nextElementSibling.hidden = true;
+                propArea.nextElementSibling.nextElementSibling.hidden = true;
+                propBed.nextElementSibling.nextElementSibling.hidden = true;
+                propBath.nextElementSibling.nextElementSibling.hidden = true;
 
                 if (propStatus.value == "") {
                     properties.forEach(x => x.hidden = false)
                     properties2.forEach(x => x.hidden = false)
+                    propStatus.nextElementSibling.nextElementSibling.hidden = false;
                     return;
                 }
                 if (propStatus.value == "Satılır" && propType == "") {
                     properties2.forEach(x => x.hidden = true)
                     properties.forEach(x => x.hidden = false)
+                    propType.nextElementSibling.nextElementSibling.hidden = false;
                     return;
+
                 }
                 if (propStatus.value == "Kirayə") {
                     properties2.forEach(x => x.hidden = false)
@@ -519,23 +449,38 @@
                 if (propArea.value == "") {
                     properties2.forEach(x => x.hidden = false)
                     properties.forEach(x => x.hidden = false)
+                    propArea.nextElementSibling.nextElementSibling.hidden = false;
                     return;
                 }
                 if (propBed.value == "") {
                     properties2.forEach(x => x.hidden = false)
                     properties.forEach(x => x.hidden = false)
+                    propBed.nextElementSibling.nextElementSibling.hidden = false;
+                    return;
+                }
+                if (propBath.value == "") {
+                    properties2.forEach(x => x.hidden = false)
+                    properties.forEach(x => x.hidden = false)
+                    propBath.nextElementSibling.nextElementSibling.hidden = false;
                     return;
                 }
                 properties.forEach(function (x) {
-                    if (x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.firstElementChild.textContent == propType.value && parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.childNodes[7].lastElementChild.firstElementChild.childNodes[4].textContent) >= parseInt(propArea.value)) {
+                    if (x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.firstElementChild.textContent == propType.value &&
+                        parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.childNodes[7].lastElementChild.firstElementChild.childNodes[4].textContent) >= parseInt(propArea.value) &&
+                        parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.lastElementChild.childNodes[3].firstElementChild.childNodes[4].textContent) == parseInt(propBed.value) &&
+                        parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.lastElementChild.childNodes[1].firstElementChild.childNodes[4].textContent) == parseInt(propBath.value) 
+                    ) {
                         x.hidden = false
                     } else {
                         x.hidden = true
                     }
                 });
                 properties2.forEach(function (x) {
-                    
-                    if (parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].lastElementChild.lastElementChild.firstElementChild.childNodes[2].textContent) >= parseInt(propArea.value)) {
+                    console.log(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].lastElementChild.childNodes[1].firstElementChild.childNodes[2].textContent)
+                    if (parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].lastElementChild.lastElementChild.firstElementChild.childNodes[2].textContent) >= parseInt(propArea.value) &&
+                        parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].lastElementChild.childNodes[3].childNodes[1].childNodes[2].textContent) == parseInt(propBed.value) &&
+                        parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].lastElementChild.childNodes[1].firstElementChild.childNodes[2].textContent) == parseInt(propBath.value)
+                        ) {
                         x.hidden = false
                     } else {
                         x.hidden = true
@@ -548,7 +493,7 @@
 
 
         }
-       
+
     </script>
 
 } 
