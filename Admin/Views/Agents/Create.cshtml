@@ -51,17 +51,6 @@
                     <span class="field-validation-valid text-danger" asp-validation-for="Description"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="CategoryId">Xidmət</label>
-                    <select asp-for="CategoryId">
-                        <option selected disabled>Seçin</option>
-                        @foreach (var item in ViewBag.Category)
-                        {
-                            <option value="@item.Id">@item.Name</option>
-                        }
-                    </select>
-                    <span class="field-validation-valid" asp-validation-for="CategoryId"></span>
-                </div>
-                <div class="form-group">
                     <label asp-for="CityId">Şəhər</label>
                     <select asp-for="CityId">
                         <option selected disabled>Seçin</option>
@@ -79,6 +68,7 @@
                         @foreach (var item in ViewBag.Agencies)
                         {
                             <option value="@item.Id">@item.Name</option>
+                            
                         }
                     </select>
                     <span class="field-validation-valid" asp-validation-for="AgencyId"></span>
@@ -86,7 +76,7 @@
 
                 <div class="form-group gallery">
                     <label for="files" type="button" id="uploader" class="btn btn-secondary">Şəkil yüklə</label>
-                    <input type="file" name="files" id="files" multiple="" class="d-none" accept="image/*">
+                    <input required type="file" name="files" id="files" multiple="" class="d-none" accept="image/*">
                     <div class="photos"></div>
                 </div>
                 <div class="form-group d-flex justify-content-end mt-3">

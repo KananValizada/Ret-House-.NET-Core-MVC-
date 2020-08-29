@@ -58,7 +58,7 @@ namespace Admin.Controllers
                 _BlogPhaseRepository.UpdateBlogPhase(BlogPhaseToUpdate, abs);
                 return RedirectToAction("index");
             }
-            return Ok(abs);
+            return View(abs);
         }
         public IActionResult Delete(int id)
         {

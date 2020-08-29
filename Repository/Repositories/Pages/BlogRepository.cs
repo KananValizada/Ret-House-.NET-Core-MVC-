@@ -13,6 +13,8 @@ namespace Repository.Repositories.Pages
         IEnumerable<BlogPhase> GetBlogPhases();
         BlogPhase GetBlogPhaseById(int id);
         IEnumerable<Blog> GetLatestBlogs(int count);
+        List<BlogTagRelate> GetBlogsByTagId(int Id);
+        IEnumerable<Blog> GetBlogsByIds(List<BlogTagRelate> model);
     }
     public class BlogRepository : IBlogRepository
     {
@@ -33,6 +35,24 @@ namespace Repository.Repositories.Pages
         public IEnumerable<BlogPhase> GetBlogPhases()
         {
             return _context.BlogPhases.Include("Blogs").Include("Blogs.BlogTagRelates.BlogTag").Where(b => b.Status).ToList();
+        }
+
+        public IEnumerable<Blog> GetBlogsByIds(List<BlogTagRelate> model)
+        {
+            List<Blog> Blogs = new List<Blog>();
+            for (int i = 0; i < model.Count(); i++)
+            {
+                var blog = _context.Blogs.Include("BlogTagRelates").Include("BlogTagRelates.BlogTag")
+                                        .Include("BlogPhase").FirstOrDefault(b=>b.Id == model[i].BlogId);
+                Blogs.Add(blog);
+            }
+            IEnumerable<Blog> newModel = Blogs;
+            return newModel;
+        }
+
+        public List<BlogTagRelate> GetBlogsByTagId(int Id)
+        {
+            return _context.BlogTagRelates.Where(b => b.BlogTagId == Id).ToList();
         }
 
         public IEnumerable<Blog> GetLatestBlogs(int count)

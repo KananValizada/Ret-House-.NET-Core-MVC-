@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using Repository.Data;
 using Repository.Models;
 
@@ -50,7 +51,7 @@ namespace Repository.Repositories.AdminPagesCrud.Blogs
 
         public IEnumerable<Blog> GetAllBlogs()
         {
-            return _context.Blogs.ToList();
+            return _context.Blogs.Include("BlogPhase").ToList();
         }
 
         public void UpdateBlog(Blog BlogToUpdate, Blog model)

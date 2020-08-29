@@ -165,7 +165,7 @@
                                                 @foreach (var relate in blog.BlogTagRelates)
                                                 {
                                                     <li class="list-inline-item">
-                                                        <a href="#">
+                                                        <a asp-controller="blog" asp-action="blogfilter" asp-route-id="@relate.BlogTagId">
                                                             #@relate.BlogTag.Name
                                                         </a>
                                                     </li>

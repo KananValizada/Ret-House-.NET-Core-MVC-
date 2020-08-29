@@ -8,7 +8,7 @@ namespace Repository.Models
     {
         public int CountryId { get; set; }
         public int AgentId { get; set; }
-        public int AgencyId { get; set; }
+
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
@@ -37,10 +37,8 @@ namespace Repository.Models
         public bool IsFeatured { get; set; }
         [Required]
         public PropStatus PropStatus { get; set; }
-        public PropFilter PropFilter { get; set; }
         public Country Country { get; set; }
         public Agent Agent { get; set; }
-        public Agency Agency { get; set; }
         public ICollection<PropDetail> PropDetails { get; set; }
         public ICollection<PropFeature> PropFeatures { get; set; }
         public ICollection<PropFloor> PropFloors { get; set; }

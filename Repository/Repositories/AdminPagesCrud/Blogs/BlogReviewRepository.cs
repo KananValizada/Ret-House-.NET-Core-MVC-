@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace Repository.Repositories.AdminPagesCrud.Blogs
 
         public IEnumerable<BlogReview> GetAllBlogReviews()
         {
-            return _context.BlogReviews.ToList();
+            return _context.BlogReviews.Include("Blog").ToList();
         }
 
         public void UpdateBlogReview(BlogReview BlogReviewToUpdate, BlogReview model)

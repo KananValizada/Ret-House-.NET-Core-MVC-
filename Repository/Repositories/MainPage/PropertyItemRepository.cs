@@ -27,20 +27,22 @@ namespace Repository.Repositories.MainPage
         }
         public IEnumerable<Agent> GetAgents()
         {
-            return _context.Agents.Include("Properties").Include("Properties.PropImages").Where(p => p.Status).ToList();
+            return _context.Agents.Include("Properties").Include("Category").Include("Properties.PropImages").Where(p => p.Status).ToList();
                                                             
         }
 
         public IEnumerable<BlogPhase> GetBlogItem(int count)
         {
-            return _context.BlogPhases.Include("Blogs").Where(b => b.Status).Take(count).ToList();
+            return _context.BlogPhases.Include("Blogs").Include("Blogs.BlogTagRelates")
+                                      .Include("Blogs.BlogTagRelates.BlogTag").Where(b => b.Status).Take(count).ToList();
         }
 
         public IEnumerable<Category> GetCategories()
         {
             return _context.Categories.Include("Agents")
                                       .Include("Agencies")
-                                      .Include("Agencies.Properties")
+                                      .Include("Agencies.Agents")
+                                      .Include("Agencies.Agents.Properties.PropImages")
                                       .Include("Agents.Properties")
                                       .Include("Agents.Properties.PropImages")
                                       .Where(c => c.Status).ToList();

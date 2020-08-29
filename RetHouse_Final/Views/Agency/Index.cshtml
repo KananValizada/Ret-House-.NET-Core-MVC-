@@ -59,6 +59,7 @@
                             @foreach (var item in cat.Agencies)
                             {
                                 count += 1;
+                                var propCount = 0;
                                 var style = "";
                                 if (count > 3)
                                 {
@@ -73,8 +74,12 @@
                                         <div class="col-md-6 col-lg-6">
                                             <a asp-controller="agency" asp-action="singleagency" asp-route-id="@cat.Id" asp-route-agencyId="@item.Id" class="profile__agency-logo">
                                                 <img src="@_cloudinaryService.BuildUrl(item.Logo)" alt="" class="img-fluid">
-                                                <div class="total__property-agent">@item.Properties.Count() Mülk</div>
+                                                @foreach (var agent in item.Agents)
+                                                {
+                                                    propCount += agent.Properties.Count();
+                                                }
                                             </a>
+                                            <div class="total__property-agent">@propCount Mülk</div>
                                         </div>
                                         <div class="col-md-6 col-lg-6 my-auto">
                                             <div class="profile__agency-info">

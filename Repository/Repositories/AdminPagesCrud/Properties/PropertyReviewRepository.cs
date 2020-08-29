@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace Repository.Repositories.AdminPagesCrud.Properties
 
         public IEnumerable<PropertyReview> GetAllPropertyReviews()
         {
-            return _context.PropertyReviews.ToList();
+            return _context.PropertyReviews.Include("Property").ToList();
         }
 
         public void UpdatePropertyReview(PropertyReview PropertyReviewToUpdate, PropertyReview model)

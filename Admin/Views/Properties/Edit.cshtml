@@ -83,15 +83,6 @@
                     <span class="field-validation-valid text-danger" asp-validation-for="PropStatus"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="PropFilter">Əmlak Növü</label>
-                    <select asp-for="PropFilter">
-                        <option value="0">Mənzil</option>
-                        <option value="1">Həyət evi</option>
-                        <option value="1">Ofis</option>
-                    </select>
-                    <span class="field-validation-valid text-danger" asp-validation-for="PropFilter"></span>
-                </div>
-                <div class="form-group">
                     <label asp-for="CountryId">Ölkə</label>
                     <select asp-for="CountryId">
                         <option selected disabled>Seçin</option>
@@ -101,17 +92,6 @@
                         }
                     </select>
                     <span class="field-validation-valid" asp-validation-for="CountryId"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="AgencyId">Agentlik</label>
-                    <select asp-for="AgencyId">
-                        <option selected disabled>Seçin</option>
-                        @foreach (var item in ViewBag.Agencies)
-                        {
-                            <option value="@item.Id">@item.Name</option>
-                        }
-                    </select>
-                    <span class="field-validation-valid" asp-validation-for="AgencyId"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="AgentId">Agent</label>

@@ -58,15 +58,6 @@
                                     <span hidden class="text-danger">Daxil edin</span>
                                 </div>
                                 <div class="form-group">
-                                    <select id="propType" class="wide select_option">
-                                        <option selected disabled value="" data-display="Mülkiyyət tipi">Mülkiyyət tipi</option>
-                                        <option value="Mənzil">Mənzil</option>
-                                        <option value="Ev">Ev</option>
-                                        <option value="Ofis">Ofis</option>
-                                    </select>
-                                    <span hidden class="text-danger">Daxil edin</span>
-                                </div>
-                                <div class="form-group">
                                     <select id="propArea" class="wide select_option">
                                         <option selected disabled value="" data-display="Sahə başlayır">Sahə başlayır </option>
                                         <option value="1500">1500</option>
@@ -207,7 +198,7 @@
                                                                     <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
                                                                         <div class="card__image__body">
 
-                                                                            <span class="badge badge-primary text-capitalize mb-2">@prop.PropFilter</span>
+                                                                            <span class="badge badge-primary text-capitalize mb-2">@category.Name</span>
                                                                             <h6>
                                                                                 <a href="#">@prop.Name</a>
                                                                             </h6>
@@ -259,7 +250,7 @@
                                                                             </figure>
                                                                             <ul class="list-inline my-auto">
                                                                                 <li class="list-inline-item name">
-                                                                                    <a href="#">
+                                                                                    <a asp-controller="agent" asp-action="singleagent" asp-route-id="@category.Id" asp-route-agentId="@item.Id">
                                                                                         @item.Name
                                                                                     </a>
 
@@ -416,14 +407,12 @@
         window.onload = function () {
             document.getElementById("propFilter").addEventListener("click", function () {
                 var propStatus = document.getElementById("propStatus");
-                var propType = document.getElementById("propType");
                 var propArea = document.getElementById("propArea")
                 var properties = document.querySelectorAll(".property");
                 var properties2 = document.querySelectorAll(".property2");
                 var propBed = document.getElementById("propBed");
                 var propBath = document.getElementById("propBath");
                 propStatus.nextElementSibling.nextElementSibling.hidden = true;
-                propType.nextElementSibling.nextElementSibling.hidden = true;
                 propArea.nextElementSibling.nextElementSibling.hidden = true;
                 propBed.nextElementSibling.nextElementSibling.hidden = true;
                 propBath.nextElementSibling.nextElementSibling.hidden = true;
@@ -432,18 +421,6 @@
                     properties.forEach(x => x.hidden = false)
                     properties2.forEach(x => x.hidden = false)
                     propStatus.nextElementSibling.nextElementSibling.hidden = false;
-                    return;
-                }
-                if (propStatus.value == "Satılır" && propType == "") {
-                    properties2.forEach(x => x.hidden = true)
-                    properties.forEach(x => x.hidden = false)
-                    propType.nextElementSibling.nextElementSibling.hidden = false;
-                    return;
-
-                }
-                if (propStatus.value == "Kirayə") {
-                    properties2.forEach(x => x.hidden = false)
-                    properties.forEach(x => x.hidden = true)
                     return;
                 }
                 if (propArea.value == "") {
@@ -465,8 +442,7 @@
                     return;
                 }
                 properties.forEach(function (x) {
-                    if (x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.firstElementChild.textContent == propType.value &&
-                        parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.childNodes[7].lastElementChild.firstElementChild.childNodes[4].textContent) >= parseInt(propArea.value) &&
+                    if (parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.childNodes[7].lastElementChild.firstElementChild.childNodes[4].textContent) >= parseInt(propArea.value) &&
                         parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.lastElementChild.childNodes[3].firstElementChild.childNodes[4].textContent) == parseInt(propBed.value) &&
                         parseInt(x.firstElementChild.firstElementChild.firstElementChild.childNodes[3].firstElementChild.lastElementChild.childNodes[1].firstElementChild.childNodes[4].textContent) == parseInt(propBath.value) 
                     ) {

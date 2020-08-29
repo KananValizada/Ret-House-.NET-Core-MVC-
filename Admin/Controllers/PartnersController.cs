@@ -58,7 +58,7 @@ namespace Admin.Controllers
                 _PartnerRepository.UpdatePartner(PartnerToUpdate, abs);
                 return RedirectToAction("index");
             }
-            return Ok(abs);
+            return View(abs);
         }
         public IActionResult Delete(int id)
         {

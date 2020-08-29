@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace Repository.Repositories.AdminPagesCrud.Agency_and_Agent
 
         public IEnumerable<Agency> GetAllAgencies()
         {
-            return _context.Agencies.ToList();
+            return _context.Agencies.Include("Category").ToList();
         }
 
         public void UpdateAgency(Agency AgencyToUpdate, Agency model)

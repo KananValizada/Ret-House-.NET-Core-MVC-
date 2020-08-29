@@ -68,7 +68,7 @@
                                     @foreach (var tag in blog.BlogTagRelates)
                                     {
                                         <li class="list-inline-item">
-                                            <a href="#">
+                                            <a asp-controller="blog" asp-action="blogfilter" asp-route-id="@tag.BlogTagId">
                                                 #@tag.BlogTag.Name
                                             </a>
                                         </li>
@@ -84,13 +84,10 @@
                                         <img src="~/images/profile-blog.jpg" alt="" class="img-fluid img-circle">
                                     </figure>
                                     <div class="wrap__profile-author-detail">
-                                        <div class="wrap__profile-author-detail-name">author</div>
+                                        <div class="wrap__profile-author-detail-name">müəllif</div>
                                         <h5>@Model.Name</h5>
                                         <p>
-                                            Hi, nice to meet you let me introduce for you, I am Jhon Doe freelancer designer
-                                            & web programmer from
-                                            indonesia,
-                                            base lampung
+                                            @Model.Phase
                                         </p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
@@ -252,72 +249,20 @@
                             <aside>
                                 <div class="widget__sidebar">
                                     <div class="widget__sidebar__header">
-                                        <h6 class="text-capitalize">tags</h6>
+                                        <h6 class="text-capitalize">Təqlər</h6>
                                     </div>
                                     <div class="widget__sidebar__body">
                                         <div class="blog__tags p-0">
                                             <ul class="list-inline">
 
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #property
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #wfh
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #estate
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #real estate
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #listing
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #rent
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #sell
-                                                    </a>
-                                                </li>
-
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #family
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #happy
-                                                    </a>
-                                                </li>
-
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #agents
-                                                    </a>
-                                                </li>
-
-                                                <li class="list-inline-item">
-                                                    <a href="#">
-                                                        #promo
-                                                    </a>
-                                                </li>
-
-
+                                                        @foreach (var relate in blog.BlogTagRelates)
+                                                        {
+                                                            <li class="list-inline-item">
+                                                                <a asp-controller="blog" asp-action="blogfilter" asp-route-id="@relate.BlogTagId">
+                                                                    #@relate.BlogTag.Name
+                                                                </a>
+                                                            </li>
+                                                        }
                                             </ul>
                                         </div>
                                     </div>

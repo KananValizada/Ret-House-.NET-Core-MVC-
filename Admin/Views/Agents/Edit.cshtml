@@ -53,17 +53,6 @@
                     <span class="field-validation-valid text-danger" asp-validation-for="Description"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="CategoryId">Xidmət</label>
-                    <select asp-for="CategoryId">
-                        <option selected disabled>Seçin</option>
-                        @foreach (var item in ViewBag.Category)
-                        {
-                            <option value="@item.Id">@item.Name</option>
-                        }
-                    </select>
-                    <span class="field-validation-valid" asp-validation-for="CategoryId"></span>
-                </div>
-                <div class="form-group">
                     <label asp-for="CityId">Şəhər</label>
                     <select asp-for="CityId">
                         <option selected disabled>Seçin</option>

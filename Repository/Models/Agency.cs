@@ -31,7 +31,6 @@ namespace Repository.Models
         [MaxLength(500)]
         public string Description { get; set; }
         public Category Category { get; set; }
-        public ICollection<Property> Properties { get; set; }
         public ICollection<Agent> Agents { get; set; }
         public ICollection<AgencyReview> Reviews { get; set; }
     }

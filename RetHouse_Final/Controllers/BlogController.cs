@@ -21,6 +21,13 @@ namespace RetHouse_Final.Controllers
             var model = _blogRepository.GetBlogPhases();
             return View(model);
         }
+
+        public IActionResult BlogFilter(int id)
+        {
+            var model = _blogRepository.GetBlogsByTagId(id);
+            var blogmodel = _blogRepository.GetBlogsByIds(model);
+            return View(blogmodel);
+        }
         public IActionResult BlogSingle(int Id,int BlogId)
         {
             var model = _blogRepository.GetBlogPhaseById(Id);

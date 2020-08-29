@@ -58,7 +58,7 @@ namespace Admin.Controllers
                 _BlogTagRepository.UpdateBlogTag(BlogTagToUpdate, abs);
                 return RedirectToAction("index");
             }
-            return Ok(abs);
+            return View(abs);
         }
         public IActionResult Delete(int id)
         {

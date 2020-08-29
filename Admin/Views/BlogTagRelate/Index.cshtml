@@ -36,8 +36,8 @@
                         @foreach (var item in Model)
                         {
                         <tr>
-                            <td>@item.BlogId</td>
-                            <td>@item.BlogTagId</td>
+                            <td>@item.Blog.Title</td>
+                            <td>@item.BlogTag.Name</td>
                             <td>
                                 <a class="btn btn-info btn-circle btn-sm" asp-action="edit" asp-route-id="@item.Id">
                                     <i class="fas fa-pencil-alt"></i>

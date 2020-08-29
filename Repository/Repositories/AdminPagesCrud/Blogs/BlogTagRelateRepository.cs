@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace Repository.Repositories.AdminPagesCrud.Blogs
 
         public IEnumerable<BlogTagRelate> GetAllBlogTagRelates()
         {
-            return _context.BlogTagRelates.ToList();
+            return _context.BlogTagRelates.Include("Blog").Include("BlogTag").ToList();
         }
 
         public void UpdateBlogTagRelate(BlogTagRelate BlogTagRelateToUpdate, BlogTagRelate model)

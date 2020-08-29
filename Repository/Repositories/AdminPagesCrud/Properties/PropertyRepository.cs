@@ -56,7 +56,6 @@ namespace Repository.Repositories.AdminPagesCrud.Properties
         {
             PropertyToUpdate.Status = model.Status;
             PropertyToUpdate.CountryId = model.CountryId;
-            PropertyToUpdate.AgencyId = model.AgencyId;
             PropertyToUpdate.AgentId = model.AgentId;
             PropertyToUpdate.Name = model.Name;
             PropertyToUpdate.RoomCount = model.RoomCount;
@@ -69,7 +68,6 @@ namespace Repository.Repositories.AdminPagesCrud.Properties
             PropertyToUpdate.Video = model.Video;
             PropertyToUpdate.IsFeatured = model.IsFeatured;
             PropertyToUpdate.PropStatus = model.PropStatus;
-            PropertyToUpdate.PropFilter = model.PropFilter;
             PropertyToUpdate.ModifiedBy = model.ModifiedBy;
             PropertyToUpdate.ModifiedAt = DateTime.Now;
             _context.SaveChanges();

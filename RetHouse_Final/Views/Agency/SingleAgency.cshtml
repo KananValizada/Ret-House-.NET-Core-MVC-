@@ -3,7 +3,9 @@
 @{
     ViewData["Title"] = "SingleAgency";
 }
-
+@{
+    var propCount = 0;
+}
 <div class="bg-theme-overlay">
     <section class="section__breadcrumb ">
         <div class="container">
@@ -43,13 +45,12 @@
                                     <div class="col-md-6 col-lg-6">
                                         <a href="#" class="profile__agency-logo">
                                             <img src="@_cloudinaryService.BuildUrl(item.Logo)" alt="" class="img-fluid">
-                                            @if (item.Properties == null)
+                                            @foreach (var agent in item.Agents)
                                             {
+                                                propCount += agent.Properties.Count();
 
-                                            }
-                                            else
-                                            {
-                                                <div class="total__property-agent">@item.Properties.Count() Mülk</div>
+                                                    <div class="total__property-agent">@propCount Mülk</div>
+
                                             }
 
                                         </a>
@@ -158,9 +159,8 @@
                                      aria-labelledby="pills-tab-one">
                                     <div class="single__detail-desc">
                                         <h5 class="text-capitalize detail-heading">Salam, xoş gördük</h5>
-                                        <div class="show__more">
+                                        <div >
                                             @Html.Raw(item.Description)
-                                            <a href="javascript:void(0)" class="show__more-button ">daha çox</a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -319,7 +319,7 @@
                                                     <div class="col-md-6 col-lg-6 my-auto">
                                                         <div class="profile__agents-info">
                                                             <h5 class="text-capitalize">
-                                                                <a href="#" target="_blank">@agent.Name</a>
+                                                                <a asp-controller="agent" asp-action="singleagent" asp-route-id="@Model.Id" asp-route-agentId="@agent.Id" >@agent.Name</a>
                                                             </h5>
                                                             <p class="text-capitalize mb-1">@Model.Name agenti</p>
 

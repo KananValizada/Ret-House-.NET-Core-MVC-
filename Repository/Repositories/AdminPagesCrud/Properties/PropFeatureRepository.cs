@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace Repository.Repositories.AdminPagesCrud.Properties
 
         public IEnumerable<PropFeature> GetAllPropFeatures()
         {
-            return _context.PropFeatures.ToList();
+            return _context.PropFeatures.Include("Property").ToList();
         }
 
         public void UpdatePropFeature(PropFeature PropFeatureToUpdate, PropFeature model)

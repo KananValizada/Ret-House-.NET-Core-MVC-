@@ -138,125 +138,147 @@
                                     <div class="col-lg-12">
                                         <div class="single__detail-desc">
                                             <h6 class="text-capitalize detail-heading">Haqqında</h6>
-                                            <div class="show__more">
-                                                @Html.Raw(prop.Description)
-                                                <a href="javascript:void(0)" class="show__more-button ">daha ətraflı</a>
+                                            <div >
+                                                 @Html.Raw(prop.Description)
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
 
                                         <!-- PROPERTY DETAILS SPEC -->
-                                        <div class="single__detail-features">
-                                            <h6 class="text-capitalize detail-heading">Göstəricilər</h6>
-                                            <!-- INFO PROPERTY DETAIL -->
-                                            <div class="property__detail-info">
-                                                <div class="row">
-                                                    <div class="col-md-6 col-lg-6">
-                                                        <ul class="property__detail-info-list list-unstyled">
-                                                            @{ var i = 0;}
-                                                            @foreach (var det in prop.PropDetails)
-                                                            {
-                                                                i++;
-                                                                <li><b>@det.Key</b> @det.Value</li>
-                                                                if (i == 5)
-                                                                {
-                                                                    break;
-                                                                }
-                                                            }
+                                        @if (prop.PropDetails.Count() == 0)
+                                        {
 
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-6">
-                                                        <ul class="property__detail-info-list list-unstyled">
-                                                            @{ i = 0;}
-                                                            @foreach (var det in prop.PropDetails)
-                                                            {
-                                                                i++;
-                                                                if (i < 6)
+                                        }
+                                        else
+                                        {
+                                            <div class="single__detail-features">
+                                                <h6 class="text-capitalize detail-heading">Göstəricilər</h6>
+                                                <!-- INFO PROPERTY DETAIL -->
+                                                <div class="property__detail-info">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-6">
+                                                            <ul class="property__detail-info-list list-unstyled">
+                                                                @{ var i = 0;}
+                                                                @foreach (var det in prop.PropDetails)
                                                                 {
-                                                                    continue;
+                                                                    i++;
+                                                                    <li><b>@det.Key</b> @det.Value</li>
+                                                                    if (i == 5)
+                                                                    {
+                                                                        break;
+                                                                    }
                                                                 }
 
-                                                                <li><b>@det.Key</b> @det.Value</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-6">
+                                                            <ul class="property__detail-info-list list-unstyled">
+                                                                @{ i = 0;}
+                                                                @foreach (var det in prop.PropDetails)
+                                                                {
+                                                                    i++;
+                                                                    if (i < 6)
+                                                                    {
+                                                                        continue;
+                                                                    }
 
-                                                            }
+                                                                    <li><b>@det.Key</b> @det.Value</li>
 
-                                                        </ul>
+                                                                }
+
+                                                            </ul>
+                                                        </div>
                                                     </div>
+
                                                 </div>
-
+                                                <!-- END INFO PROPERTY DETAIL -->
                                             </div>
-                                            <!-- END INFO PROPERTY DETAIL -->
-                                        </div>
+                                        }
+
                                         <!-- END PROPERTY DETAILS SPEC -->
                                         <div class="clearfix"></div>
 
                                         <!-- FEATURES -->
-                                        <div class="single__detail-features">
-                                            <h6 class="text-capitalize detail-heading">features</h6>
-                                            <ul class="list-unstyled icon-checkbox">
-                                                @foreach (var feature in prop.PropFeatures)
-                                                {
-                                                    if (feature.Value)
+                                        @if (prop.PropFeatures.Count() == 0)
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            <div class="single__detail-features">
+                                                <h6 class="text-capitalize detail-heading">Əlavə göstəricilər</h6>
+                                                <ul class="list-unstyled icon-checkbox">
+                                                    @foreach (var feature in prop.PropFeatures)
                                                     {
-                                                        <li>@feature.Key</li>
+                                                        if (feature.Value)
+                                                        {
+                                                            <li>@feature.Key</li>
+                                                        }
+
                                                     }
 
-                                                }
+                                                </ul>
+                                            </div>
+                                        }
 
-                                            </ul>
-                                        </div>
                                         <!-- END FEATURES -->
                                         <!-- FLOR PLAN -->
-                                        <div class="single__detail-features">
-                                            <h6 class="text-capitalize detail-heading">floor plan</h6>
-                                            <!-- FLOR PLAN IMAGE -->
-                                            <div id="accordion" class="floorplan" role="tablist">
-                                                @{var a = 0;
-                                                    var b = "headingOne";
-                                                    var c = "collapseOne";
-                                                }
-                                                @foreach (var floor in prop.PropFloors)
-                                                {
-                                                    a++;
-                                                    if (a != 1)
-                                                    {
-                                                        if (a == 2)
-                                                        {
-                                                            b = "headingTwo";
-                                                            c = "collapseTwo";
-                                                        }
-                                                        else
-                                                        {
-                                                            b = "headingThree";
-                                                            c = "collapseThree";
-                                                        }
+                                        @if (prop.PropFloors.Count() == 0)
+                                        {
 
+                                        }
+                                        else
+                                        {
+                                            <div class="single__detail-features">
+                                                <h6 class="text-capitalize detail-heading">mərtəbə planı</h6>
+                                                <!-- FLOR PLAN IMAGE -->
+                                                <div id="accordion" class="floorplan" role="tablist">
+                                                    @{var a = 0;
+                                                        var b = "headingOne";
+                                                        var c = "collapseOne";
                                                     }
-                                                    <div class="card">
-                                                        <div class="card-header" role="tab" id="@b">
-                                                            <a class="collapsed text-capitalize" data-toggle="collapse" href="#@c"
-                                                               aria-expanded="true" aria-controls="@c">
-                                                                @floor.Name <span class="badge badge-light rounded p-1 ml-2">
-                                                                    @floor.Area
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                        <div id="@c" class="collapse" role="tabpanel"
-                                                             aria-labelledby="headingOne" data-parent="#accordion">
-                                                            <div class="card-body">
-                                                                <figure>
-                                                                    <img src="@_CloudinaryService.BuildUrl(floor.Photo)" alt="" class="img-fluid">
-                                                                </figure>
+                                                    @foreach (var floor in prop.PropFloors)
+                                                    {
+                                                        a++;
+                                                        if (a != 1)
+                                                        {
+                                                            if (a == 2)
+                                                            {
+                                                                b = "headingTwo";
+                                                                c = "collapseTwo";
+                                                            }
+                                                            else
+                                                            {
+                                                                b = "headingThree";
+                                                                c = "collapseThree";
+                                                            }
 
+                                                        }
+                                                        <div class="card">
+                                                            <div class="card-header" role="tab" id="@b">
+                                                                <a class="collapsed text-capitalize" data-toggle="collapse" href="#@c"
+                                                                   aria-expanded="true" aria-controls="@c">
+                                                                    @floor.Name <span class="badge badge-light rounded p-1 ml-2">
+                                                                        @floor.Area
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div id="@c" class="collapse" role="tabpanel"
+                                                                 aria-labelledby="headingOne" data-parent="#accordion">
+                                                                <div class="card-body">
+                                                                    <figure>
+                                                                        <img src="@_CloudinaryService.BuildUrl(floor.Photo)" alt="" class="img-fluid">
+                                                                    </figure>
+
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                }
+                                                    }
 
 
+                                                </div>
                                             </div>
-                                        </div>
+                                        }
                                         <!-- END FLOR PLAN -->
                                         <div class="single__detail-features">
                                             <h6 class="text-capitalize detail-heading">Əmlak videosu</h6>
@@ -354,7 +376,7 @@
                                                 <!-- COMMENT -->
                                                 @{ Model.Name = "";
                                                     Model.CreatedBy = "";
-                                                    }
+                                                }
                                                 <hr>
                                                 <form method="post">
                                                     <input asp-for="catId" value="@Model.Id" type="hidden" />
@@ -484,7 +506,7 @@
                                             <div class="profile__agent__header">
                                                 <div class="profile__agent__header-avatar">
                                                     <figure>
-                                                        <img src="~/images/profile-blog.jpg" alt="" class="img-fluid">
+                                                        <img src="@_CloudinaryService.BuildUrl(item.Photo)" alt="" class="img-fluid">
                                                     </figure>
                                                    
                                                     <ul class="list-unstyled mb-0">
@@ -562,16 +584,17 @@
                                             {
                                                 @foreach (var props in item.Properties)
                                                 {
+                                                    var n = "";
 
                                                     @if (prop.IsFeatured)
                                                     {
-                                                        c = "Önə çıxan";
+                                                        n = "Önə çıxan";
                                                     }
                                                     else
                                                     {
                                                         if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
                                                         {
-                                                            c = "Satılıb";
+                                                            n = "Satılıb";
                                                         }
                                                     }
 
@@ -579,7 +602,7 @@
                                                         <!-- ONE -->
                                                         <div class="card__image">
                                                             <div class="card__image-header h-250">
-                                                                <div class="ribbon text-capitalize">@c</div>
+                                                                <div class="ribbon text-capitalize">@n</div>
                                                                 @foreach (var img in props.PropImages)
 	                                                            {
                                                             <img src="@_CloudinaryService.BuildUrl(img.Photo)" alt="" class="img-fluid w100 img-transition">

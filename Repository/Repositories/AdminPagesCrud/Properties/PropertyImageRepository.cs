@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace Repository.Repositories.AdminPagesCrud.Properties
 
         public IEnumerable<PropImage> GetAllPropImages()
         {
-            return _context.PropImages.ToList();
+            return _context.PropImages.Include("Property").ToList();
         }
 
         public void UpdatePropImage(PropImage PropImageToUpdate, PropImage model)

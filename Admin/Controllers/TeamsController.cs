@@ -60,7 +60,7 @@ namespace Admin.Controllers
                 _TeamRepository.UpdateTeam(TeamToUpdate, abs);
                 return RedirectToAction("index");
             }
-            return Ok(abs);
+            return View(abs);
         }
         public IActionResult Delete(int id)
         {

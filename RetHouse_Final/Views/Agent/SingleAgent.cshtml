@@ -149,9 +149,8 @@
                                      aria-labelledby="pills-tab-one">
                                     <div class="single__detail-desc">
                                         <h5 class="text-capitalize detail-heading">Salam, Necəsən?</h5>
-                                        <div class="show__more">
+                                        <div >
                                             @Html.Raw(item.Description)
-                                            <a href="javascript:void(0)" class="show__more-button ">Daha çox</a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -197,7 +196,7 @@
 
                                                                 <span class="badge badge-primary text-capitalize mb-2">@Model.Name</span>
                                                                 <h6>
-                                                                    <a href="#">@prop.Name</a>
+                                                                    <a asp-controller="property" asp-action="singleproduct" asp-route-id="@Model.Id" asp-route-agentId="@item.Id" asp-route-propId="@prop.Id">@prop.Name</a>
                                                                 </h6>
                                                                 <div class="card__image__body-desc">
                                                                     <!-- <p class="text-capitalize">

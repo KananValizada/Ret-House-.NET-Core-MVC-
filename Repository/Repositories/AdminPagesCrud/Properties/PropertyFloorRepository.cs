@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace Repository.Repositories.AdminPagesCrud.Properties
 
         public IEnumerable<PropFloor> GetAllPropFloors()
         {
-            return _context.PropFloors.ToList();
+            return _context.PropFloors.Include("Property").ToList();
         }
 
         public void UpdatePropFloor(PropFloor PropFloorToUpdate, PropFloor model)

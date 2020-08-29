@@ -914,9 +914,6 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<int>("AgencyId")
-                        .HasColumnType("int");
-
                     b.Property<int>("AgentId")
                         .HasColumnType("int");
 
@@ -966,9 +963,6 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<int>("PropFilter")
-                        .HasColumnType("int");
-
                     b.Property<int>("PropStatus")
                         .HasColumnType("int");
 
@@ -984,8 +978,6 @@ namespace Repository.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AgencyId");
 
                     b.HasIndex("AgentId");
 
@@ -1108,7 +1100,6 @@ namespace Repository.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ActionText")
-                        .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
@@ -1120,7 +1111,6 @@ namespace Repository.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("EndPoint")
-                        .IsRequired()
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
 
@@ -1141,8 +1131,8 @@ namespace Repository.Migrations
 
                     b.Property<string>("Slogan")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
@@ -1328,12 +1318,6 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Repository.Models.Property", b =>
                 {
-                    b.HasOne("Repository.Models.Agency", "Agency")
-                        .WithMany("Properties")
-                        .HasForeignKey("AgencyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Repository.Models.Agent", "Agent")
                         .WithMany("Properties")
                         .HasForeignKey("AgentId")

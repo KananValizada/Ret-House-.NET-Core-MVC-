@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<PeopleSay>
+@inject ICloudinaryService _cloudinaryService
     <!-- TESTIMONIAL -->
 @foreach (var item in Model)
 {
@@ -10,7 +11,7 @@
         </div>
         <div class="testimonial__block-users">
             <div class="testimonial__block-users-img">
-                <img src="~/images/@item.PersonImage" alt="" class="img-fluid">
+                <img src="@_cloudinaryService.BuildUrl(item.PersonImage)" alt="" class="img-fluid">
             </div>
             <div class="testimonial__block-users-name">
                 @item.PersonName <br>

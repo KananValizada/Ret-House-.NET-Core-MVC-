@@ -46,12 +46,21 @@ namespace Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Agent Agent)
         {
+            if(Agent.AgencyId > 0)
+            {
+                var agency = _agencyRepository.GetAgencyById(Agent.AgencyId);
+                Agent.CategoryId = agency.CategoryId;
+            }
             if (ModelState.IsValid)
             {
+                
                 Agent.CreatedBy = _admin.Fullname;
                 _AgentRepository.CreateAgent(Agent);
                 return RedirectToAction("index");
             }
+            ViewBag.Category = _categoryRepository.GetAllCategories();
+            ViewBag.Agencies = _agencyRepository.GetAllAgencies();
+            ViewBag.Cities = _cityRepository.GetAllCities();
             return View(Agent);
         }
         public IActionResult Edit(int id)
@@ -67,6 +76,11 @@ namespace Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Agent abs)
         {
+            if (abs.AgencyId > 0)
+            {
+                var agency = _agencyRepository.GetAgencyById(abs.AgencyId);
+                abs.CategoryId = agency.CategoryId;
+            }
             if (ModelState.IsValid)
             {
                 abs.ModifiedBy = _admin.Fullname;
@@ -75,7 +89,10 @@ namespace Admin.Controllers
                 _AgentRepository.UpdateAgent(AgentToUpdate, abs);
                 return RedirectToAction("index");
             }
-            return Ok(abs);
+            ViewBag.Category = _categoryRepository.GetAllCategories();
+            ViewBag.Agencies = _agencyRepository.GetAllAgencies();
+            ViewBag.Cities = _cityRepository.GetAllCities();
+            return View(abs);
         }
         public IActionResult Delete(int id)
         {

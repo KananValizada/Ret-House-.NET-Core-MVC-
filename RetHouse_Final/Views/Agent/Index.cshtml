@@ -2,6 +2,7 @@
 @inject ICloudinaryService _cloudinaryService
 @{
     ViewData["Title"] = "Agent Page";
+    var count = 0;
 }
 
 <!-- BREADCRUMB -->
@@ -54,7 +55,18 @@
                     {
                         @foreach (var agent in item.Agents)
                         {
-                            <div class="col-lg-12 cards mt-0">
+                            count++;
+                            var style = "";
+                            if (count > 3)
+                            {
+                                style = "d-none";
+                            }
+                            else
+                            {
+                                style = "";
+                            }
+
+                            <div class="col-lg-12 cards mt-0 @style" >
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
                                         <a asp-controller="agent" asp-action="SingleAgent" asp-route-id="@item.Id" asp-route-agentId="@agent.Id" class="profile__agents-avatar">
@@ -130,6 +142,11 @@
                             </div>
                         }
                     }
+
+                    @if (count > 3)
+                    {
+                        <button type="button" class="btn btn-primary mt-3" id="moreProp"> Daha çox göstər</button>
+                    }
                 </div>
 
             </div>
@@ -138,3 +155,25 @@
 </section>
 
 <!-- END LISTING LIST -->
+
+@section Scripts
+{
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#moreProp").click(function () {
+            var list = $(".d-none");
+            if (list.length > 3) {
+                $(".d-none").first().removeClass("d-none");
+                $(".d-none").first().removeClass("d-none");
+                $(".d-none").first().removeClass("d-none");
+            } else {
+                list.removeClass("d-none")
+                $(this).hide();
+            }
+
+        });
+    });
+    </script>
+
+}

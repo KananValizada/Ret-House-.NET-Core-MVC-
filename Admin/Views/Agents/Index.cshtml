@@ -28,7 +28,6 @@
                             <th>Faks</th>
                             <th>E-poçt</th>
                             <th>Ətraflı</th>
-                            <th>Kateqoriya</th>
                             <th>Şəhər</th>
                             <th>Agentlik</th>
                             <th></th>
@@ -45,7 +44,6 @@
                             <th>Faks</th>
                             <th>E-poçt</th>
                             <th>Ətraflı</th>
-                            <th>Kateqoriya</th>
                             <th>Şəhər</th>
                             <th>Agentlik</th>
                             <th></th>
@@ -75,9 +73,8 @@
                             <td>@item.Fax</td>
                             <td>@item.Email</td>
                             <td>@item.Description</td>
-                            <td>@item.CategoryId</td>
-                            <td>@item.CityId</td>
-                            <td>@item.AgencyId</td>
+                            <td>@item.City.Name</td>
+                            <td>@item.Agency.Name</td>
                             <td>
                                 <a class="btn btn-info btn-circle btn-sm" asp-action="edit" asp-route-id="@item.Id">
                                     <i class="fas fa-pencil-alt"></i>

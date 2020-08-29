@@ -6,11 +6,11 @@
 {
     @foreach (var prop in item.Properties)
     {
-        if (prop.PropFilter == Repository.Enums.PropFilter.Mənzil)
+        if (item.Category.Name == "Mənzil")
         {
             datCat = "1";
         }
-        else if (prop.PropFilter == Repository.Enums.PropFilter.Ev)
+        else if (item.Category.Name == "Həyət evi")
         {
             datCat = "2";
         }
@@ -36,7 +36,7 @@
 
             </div>
             <div class="card__image-body">
-                <span class="badge badge-primary text-capitalize mb-2">@prop.PropFilter</span>
+                <span class="badge badge-primary text-capitalize mb-2">@item.Category.Name</span>
                 <h6 class="text-capitalize">
                     <a asp-controller="property" asp-action="SingleProduct" asp-route-id="@item.CategoryId" asp-route-agentId="@item.Id" asp-route-propId="@prop.Id">
 
@@ -53,19 +53,19 @@
 
                         <span>
                            Hamam <br>
-                            <i class="fa fa-bath"></i>@prop.BathCount
+                            <i class="fa fa-bath"></i>  @prop.BathCount
                         </span>
                     </li>
                     <li class="list-inline-item">
                         <span>
                             Yataq <br>
-                            <i class="fa fa-bed"></i> @prop.BedCount
+                            <i class="fa fa-bed"></i>  @prop.BedCount
                         </span>
                     </li>
                     <li class="list-inline-item">
                         <span>
                             otaqlar <br>
-                            <i class="fa fa-inbox"></i> @prop.RoomCount
+                            <i class="fa fa-inbox"></i>  @prop.RoomCount
                         </span>
                     </li>
                     <li class="list-inline-item">
@@ -91,8 +91,13 @@
                 </ul>
                 <ul class="list-inline my-auto ml-auto">
                     <li class="list-inline-item">
+                        @if (prop.PropStatus == Repository.Enums.PropStatus.Satılır)
+                        {
+                            <h6> @prop.Price ₼</h6>
+                        }else{
+                             <h6> @prop.Price ₼ /aylıq</h6>
+                        }
 
-                        <h6>$ @prop.Price</h6>
                     </li>
 
                 </ul>

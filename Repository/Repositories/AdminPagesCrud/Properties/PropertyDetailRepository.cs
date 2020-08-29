@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace Repository.Repositories.AdminPagesCrud.PropDetails
 
         public IEnumerable<PropDetail> GetAllPropDetails()
         {
-            return _context.PropDetails.ToList();
+            return _context.PropDetails.Include("Property").ToList();
         }
 
         public void UpdatePropDetail(PropDetail PropDetailToUpdate, PropDetail model)

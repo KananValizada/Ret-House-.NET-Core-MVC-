@@ -62,7 +62,7 @@ namespace Admin.Controllers
                 _BlogRepository.UpdateBlog(BlogToUpdate, abs);
                 return RedirectToAction("index");
             }
-            return Ok(abs);
+            return View(abs);
         }
         public IActionResult Delete(int id)
         {

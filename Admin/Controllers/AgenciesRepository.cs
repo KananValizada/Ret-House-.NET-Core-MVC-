@@ -63,7 +63,7 @@ namespace Admin.Controllers
                 _AgencyRepository.UpdateAgency(AgencyToUpdate, abs);
                 return RedirectToAction("index");
             }
-            return Ok(abs);
+            return View(abs);
         }
         public IActionResult Delete(int id)
         {
